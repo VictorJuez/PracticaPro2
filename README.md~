@@ -1,0 +1,24 @@
+CONFIGURAR GUIT
+
+git config --global user.name "nom"
+git config --global user.email "mail@mail.com"
+----------------------------------------------------------------
+cd existing_folder
+git init
+git remote add origin git@gitlab.com:VictorCodingC/prova.git
+git add .
+git commit
+git push -u origin master
+----------------------------------------------------------------
+
+//per pujar arxius o modificacions//
+git add <nom arxiu>
+git commit -m "descripcio canvis"
+git push -u origin master
+
+//per actualitzar la carpeta//
+git pull
+
+
+
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
