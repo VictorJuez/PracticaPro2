@@ -1,7 +1,7 @@
 CONFIGURAR GUIT
 
-git config --global user.name "victor"
-git config --global user.email "victorjuez.alu@gmail.com"
+git config --global user.name "nom"
+git config --global user.email "mail@mail.com"
 ----------------------------------------------------------------
 cd existing_folder
 git init
