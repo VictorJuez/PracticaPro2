@@ -1,19 +1,13 @@
-
-
-Class Frase{
-
-//Tipus de mòdul: dades
-//Descripció del tipus: Conté un conjunt de paraules que formen la frase i aquestes poden estar separades per comes, punts i comes i dos punts. Tota frase //està acabada en interrogant de tancar, admiració de tancar o en punt. Conté la variable num_paraules , la cual ens indica quantes paraules conté la
-//frase.
+class Cjt_Frases{
 
 private:
 
 public:
 	// Constructores
 
-	Frase();
+	Cjt_Frases();
 	/* Pre: cert */
-	/* Post: el resultat és una frase buida*/
+	/* Post: el resultat és un conjunt de frases buit*/
 	
 	//Modificadores
 	
@@ -28,6 +22,10 @@ public:
 	int numero_de_paraules() const;
 	/*Pre: cert*/
 	/*Post: el resultat es el numero de paraules del paràmetre implícit*/
+        
+        int numero_de_frases() const;
+	/*Pre: cert*/
+	/*Post: el resultat es el numero de frases del paràmetre implícit*/
 
 	bool conte_paraula(string paraula) const;
 	/* Pre: cert */
@@ -39,11 +37,15 @@ public:
 	
 	//Lectura i escriptura
 	
+	void taula_frequencies() const;
+        /*Pre: cert*/
+        /*Post: s'ha escrit la taula de frequencies del paràmetre implícit al canal estàndar de sortida*/
+	
 	void llegir();
-	/* Pre: estan preparats al canal estandar d'entrada una seqüència de paraules i/o signes de puntuació no buit, acabada en punt, signe d'interrocació de tancament o signe d'exclamació de tancament*/
-	/*Post: el paràmetre implícit passa a tenir els atrivuts llegits pel canal estàndard d'entrada*/
+	/* Pre: estan preparats al canal estandar d'entrada una seqüència de frases acabada en **** */
+	/*Post: el paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada*/
 
 	void escriure() const;
 	/* Pre: cert*/
-	/* Post: s'ha escrit la seqüència de paraules del paràmetre implícit al canal estàndar de sortida*/
+	/* Post: s'ha escrit la seqüència de frases del paràmetre implícit al canal estàndar de sortida*/
 }
