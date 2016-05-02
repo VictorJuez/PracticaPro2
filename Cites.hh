@@ -1,43 +1,68 @@
+/** @file Cites.hh
+    @brief Especificació de la clase Cites
+*/
+
+/** @class Cites
+    @brief Conté operacions de cites.
+
+    Todas las operaciones son de <b>coste constante</b>
+*/
+
 class Cites{
 
 private:
 
 public:
 	// Constructores
-
+	
+	/** @brief Creadora per defecte. 
+		S'executa automàticament al declarar una cita
+		\pre <em>Cert</em>
+		\post el resultat és un conjunt de cites buit.
+	*/ 
 	Cites();
-	/* Pre: cert */
-	/* Post: el resultat és un conjunt de cites buit*/
 	
 	//Modificadores
-	
-        void afegir_cita(int x, int y, Text& text);
-        /*Pre: Text no és buit i es compleix 1 <= x <= y <= n on n es el nombre de frases de text*/
-	/*Post: S'ha afegit una nova cita amb la seva referencia corresponent*/
-        
-        void eliminar_cita(string& referencia);
-        /*Pre: Existeix una cita amb la mateixa referencia*/
-	/*Post: S'ha eliminat la cita que tenia la mateixa referencia*/
+	/** @brief Modificadora afegir cita. 
+		S'executa automàticament al declarar una cita
+		\pre <em>Text no és buit i es compleix 1 <= x <= y <= n on n es el nombre de frases de text</em>
+		\post S'ha afegit una nova cita amb la seva referencia corresponent.
+	*/ 	
+	void afegir_cita(int x, int y, Text& text);
+ 	
+ 	/** @brief Modificadora eliminar cita. 
+		\pre <em>Existeix una cita amb la mateixa referencia</em>
+		\post S'ha eliminat la cita que tenia la mateixa referència.
+	*/ 	       
+	void eliminar_cita(string& referencia);
 
 	//Destructora
 	
 	//Consultores
 	
 	//Lectura i escriptura
+	
+ 	/** @brief Imprimir cita. 
+		\pre <em>Existeix una cita amb la mateixa referència</em>
+		\post S'escriu pel canal estandar de sortida la cita amb aquesta referència.
+	*/         
+        void escriure_cita(string& referencia);
         
-        void escriure_cite(string& referencia);
-        /*Pre: Exiseix una cita amb la mateixa referencia*/
-        /*Post: S'escriu pel canal estandar de sortida la cite amb aquesta referencia*/
-        
+ 	/** @brief Imprimir cites d'autor. 
+		\pre <em>Existeix l'autor dins de les cites</em>
+		\post S'han escrit pel canal estàndar de sortida les cites de l'autor autor.
+	*/       
         void escriure_cites_autor(string& autor);
-        /*Pre: Existeix l'autor dins de les cites*/
-        /*Post: S'han escrit pel canal estandar de sortida les cites de l'autor*/
-        
+
+ 	/** @brief Imprimir cita triat. 
+		\pre <em>Ha d'haver un text triat</em>
+		\post S'han escrit pel canal estàndar de sortida totes les cites del text triat.
+	*/         
         void escriure_cite_triat();
-        /*Pre: Hi ha d'haver un text triat*/
-        /*Post: S'han escrit pel canal estandar de sortida totes els cites d'un text triat*/
         
+ 	/** @brief Imprimir cites. 
+		\pre <em>Cert</em>
+		\post S'han escrit pel canal estàndar de sortida totes les cites.
+	*/        
         void escriure_cites();
-        /*Pre: Cert*/
-        /*Post: S'han escrit pel canal estandar de sortida totes les cites*/
 }
