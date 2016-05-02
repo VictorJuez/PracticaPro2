@@ -1,3 +1,15 @@
+/**
+ * @mainpage Practica Pro2.
+S'introdueixen les classes <em>Frase</em>, <em>Cjt_Frases</em>, <em>Text</em>, <em>Cjt_Textos</em> i <em>Cites</em> .
+
+Només es documenten elements públics.
+*/
+
+/** @file main.cc
+    @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
+*/
+
+
 #include <sstream>
 #include <string>
 #include <iostream>
@@ -9,7 +21,8 @@
 
 using namespace std;
 
-
+/** @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
+*/
 int main(){
     Cjt_Textos conjunt_textos;
     Text text, text_triat;
