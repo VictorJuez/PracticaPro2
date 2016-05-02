@@ -1,37 +1,85 @@
+/** @file Cjt_Textos.hh
+    @brief Especificació de la clase Cjt_Textos
+*/
+
+/** @class Cjt_Textos
+    @brief Conté un conjunt de textos.
+
+    Todas las operaciones son de <b>coste constante</b>
+*/
 class Cjt_Textos{
 
 private:
 
 public:
 	// Constructores
-
+	
+	/** @brief Creadora por defecte. 
+		S'executa automàticament al declarar un cjt_textos
+		\pre <em>Cert</em>
+		\post El resultat és un conjunt de textos buit.
+	*/ 
 	Cjt_Textos();
-	/* Pre: cert */
-	/* Post: el resultgit at és un Text sense autor, ni títol, ni contingut, ni cites*/
 	
 	//Modificadores
-	
+	/** @brief Modificadora afegir text. 
+		afegeix un text al paràmetre implícit
+		\pre <em>El text té un títol diferent a qualsevol text ja existent al paràmetre implícit</em>
+		\post S'ha afegit el text al conjunt de textos.
+	*/ 
 	void afegir_text(const Text& text);
-        /*Pre: El text té un títol diferent a qualsevol text ja existent al paràmetre implícit*/
-        /*Post: S'ha afegit el text al conjunt de textos*/
-        
-        void eliminar_text();
-        /*Pre: Tenim un text triat*/
-        /*Post: S'ha eliminat el text i no tenim cap text triat*/
+   
+	/** @brief Modificadora eliminar text. 
+		elimina un text al paràmetre implícit
+		\pre <em>Tenim un text triat*</em>
+		\post S'ha eliminat el text i no tenim cap text triat.
+	*/      
+	void eliminar_text();
+	
+	/** @brief Modificadora triar text. 
+		busca el text que conté les paraules.
+		\pre <em>Existeix un únic text amb les paraules introduïdes</em>
+		\post El text triat és el que conté les paraules.
+	*/ 	
+	void triar_text(vector<string>& s);
+	
 	
 	//Destructora
 	
 	~Cjt_Textos();
 	
-	void eliminar_text();
-        /* Pre: hi ha un text seleccionat*/
-        /* Post: s'ha elminat el text seleccionat i no hi ha cap text seleccionat*/
-	
 	//Consultores
 	
+	/** @brief Consultora text triat. 
+		Consulta si hi ha un text triat o no.
+		\pre <em>Cert</em>
+		\post Retorna cert si hi ha un text triat i fals si no.
+	*/ 	
+	bool text_triat();
+	
+	/** @brief Retorna el text triat. 
+		\pre <em>Hi ha un text triat</em>
+		\post Retorna el text triat.
+	*/ 		
+	Text consultar_text_triat();
+	
 	//Lectura i escriptura
-        
-        void escriure();
-        /*Pre: cert*/
-        /*Post: s'ha escrit pel canal estandar de sortida el títoli l'autor de cada text del conjunt*/
+	
+	/** @brief Imprimeix titol i autor. 
+		\pre <em>Cert</em>
+		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text.
+	*/ 		
+	void imprimir_textos() const;
+	
+	/** @brief Imprimeix els títols de l'autor. 
+		\pre <em>Existeix l'autor</em>
+		\post Escriu pel canal estàndar de sortida els títols dels textos de l'autor.
+	*/ 			
+	void imprimir_textos_autor(string& autor) const;
+	
+	/** @brief Imprimeix tots els autors amb el nombre de textos, frases i paraules. 
+		\pre <em>El conjunt de textos no és buit</em>
+		\post Escriu pel canal estàndar de sortida els autors amb el nombre de textos, frases i paraules.
+	*/ 		
+	void imprimir_tots_autors() const;
 }
