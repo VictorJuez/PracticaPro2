@@ -31,7 +31,7 @@ public:
    
 	/** @brief Modificadora eliminar text. 
 		elimina un text al paràmetre implícit
-		\pre <em>Tenim un text triat*</em>
+		\pre <em>Tenim un text triat</em>
 		\post S'ha eliminat el text i no tenim cap text triat.
 	*/      
 	void eliminar_text();
@@ -67,7 +67,7 @@ public:
 	
 	/** @brief Imprimeix titol i autor. 
 		\pre <em>Cert</em>
-		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text.
+		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text ordenats per autor i després títol.
 	*/ 		
 	void imprimir_textos() const;
 	
