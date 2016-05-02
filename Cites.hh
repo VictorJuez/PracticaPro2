@@ -58,7 +58,7 @@ public:
 		\pre <em>Ha d'haver un text triat</em>
 		\post S'han escrit pel canal estàndar de sortida totes les cites del text triat.
 	*/         
-        void escriure_cite_triat();
+        void escriure_cita_triat();
         
  	/** @brief Imprimir cites. 
 		\pre <em>Cert</em>
