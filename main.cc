@@ -1,0 +1,104 @@
+#include <sstream>
+#include <string>
+#include <iostream>
+#include "Cjt_Textos.hh"
+#include "Frases.hh"
+#include "Cjt_Frases.hh"
+#include "Cites.hh"
+#include "Text.hh"
+
+using namespace std;
+
+
+int main(){
+    Cjt_Textos conjunt_textos;
+    Text text, text_triat;
+    Cjt_Frases conjunt_frases;
+    Frase frase;
+    Cites cites;
+       
+    string linia;
+    getline(cin,linia,);
+    while (linia!="sortir"){
+        istringstream iss(linia);
+        string op;
+        iss >> op;
+        if (op == "afegir"){
+            iss >> op;
+            if (op == "text"){
+                text.llegir(iss);
+                conjunt_textos.afegir_text(text);
+            }
+            else if (op == "cita"){
+                int x, y;
+                iss >> x;
+                iss >> y;
+                cites.afegir_cita(x,y,text_triat);
+            }
+            else cout << "Funcio incorrecte" << endl;
+        }
+        else if (op == "triar"){
+            iss >> op;
+            vector <string> paraules;
+            while(iss >> op){
+                paraules.push_back(op);
+            }
+            conjunt_textos.triar_text(paraules);
+        }
+        else if (op == "eliminar"){
+            iss >> op;
+            if (op == "text"){
+                conjunt_textos.eliminar_text();
+            }
+            else if (op == "cita"){
+                string referencia;
+                iss >> referencia;
+                cites.eliminar_cita(referencia);
+            }
+            else cout << "Funcio incorrecte" << endl;
+        }
+        else if (op == "substitueix"){
+            string paraula1, paraula2;
+            iss >> paraula1;
+            iss >> paraula2;
+            text_triat.substituir_paraules(paraula1,paraula2);
+        }
+        else if (op == "textos"){
+            string autor;
+            iss >> autor;
+            conjunt_textos.imprimir_textos_autor(autor);
+        }
+        else if (op == "tots"){
+            iss >> op;
+            if (op == "textos"){
+                iss >> op;
+                if (op != '?') cout << "Error" << endl;
+                else conjunt_textos.imprimir_textos();
+            }
+            else if (op == "autors"){
+                iss >> op;
+                if (op != '?') cout << "Error" << endl;
+                else conjunt_textos.imrpimir_tots_autors();
+            }
+        }
+        else if (op == "info"){
+            is >> op;
+            if (op!= '?') cout << "Error" << endl;
+            else{
+                string autor = text_triat.consultar_autor();
+                string titol = text_triat.consultar_titol();
+                cout << autor << ' ' << titol << ' ';
+                Cjt_frases frases;
+                frases = text_triat.consultar_contingut();
+                int nfrases, nparaules;
+                nfrases = frases.numero_de_frases();
+                nparaules = frases.numero_de_paraules();
+                cout << autor << ' ' << titol << ' ' << nfrases << ' ' << nparaules << endl;
+            }
+        }
+        else if (op == "autor"){
+            is >> op;
+            if (op != '?') cout << "Error" << endl;
+        }
+    }
+}
