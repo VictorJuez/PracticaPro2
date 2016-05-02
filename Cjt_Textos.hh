@@ -75,5 +75,11 @@ public:
 		\pre <em>Existeix l'autor</em>
 		\post Escriu pel canal estàndar de sortida els títols dels textos de l'autor.
 	*/ 			
-	void imprimri_textos_autor(string& autor) const;
+	void imprimir_textos_autor(string& autor) const;
+	
+	/** @brief Imprimeix tots els autors amb el nombre de textos, frases i paraules. 
+		\pre <em>El conjunt de textos no és buit</em>
+		\post Escriu pel canal estàndar de sortida els autors amb el nombre de textos, frases i paraules.
+	*/ 		
+	void imprimir_tots_autors() const;
 }
