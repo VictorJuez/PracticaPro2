@@ -206,4 +206,5 @@ int main(){
         getline (cin,linia);
         
     }
+    
 }
