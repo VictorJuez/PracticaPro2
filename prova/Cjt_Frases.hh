@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
 
 
 /** @class Cjt_Frases
@@ -19,7 +20,7 @@ using namespace std;
 class Cjt_Frases{
 
 private:
-    vector <vector <string> > vfrases;
+    vector <list <string> > vfrases;
     int nparaules;
     struct freq{
         int repeticions;
@@ -53,7 +54,7 @@ public:
 		\pre <em>Cert</em>
 		\post El resultat es el número de paraules del paràmetre implícit.
 	*/
-//	int numero_de_paraules() const;
+	int numero_de_paraules() const;
 	
 	/** @brief Consultora del número de frases. 
 		\pre <em>Cert</em>
