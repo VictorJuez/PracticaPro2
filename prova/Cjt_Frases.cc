@@ -1,76 +1,47 @@
 #include "Cjt_Frases.hh"
+#include "Frase.hh"
 
 Cjt_Frases::Cjt_Frases(){
-    nparaules = 0;
-}
-/*
-void substituir_paraula(string paraula1, string paraula2){
-    for(int i=0; i<vfrases.size(); ++i){
-        vfrases[i].substituir_paraula(paraula1, paraula2);
-    }
+	nparaules = 0;
 }
 
-int numero_de_paraules() const {
-    int sum=0;
-    for(int i=0; i<vfrases.size(); ++i){
-        sum += vfrases[i].num_de_paraules();
-    }
-    return sum;
-}
-
-int numero_de_frases() const {
-    return vfrases.size();
-}
-
-bool conte_paraula(string paraula) const {
-    bool trobat=false;
-    for(int i=0; i<vfrases.size() and not trobat; ++i){
-        if (vfrases[i].conte_paraula(paraula)) trobat=true;
-    }
-    return trobat;
-}
-
-bool conte_paraules(vector<string>& paraules) const {
-    bool trobat = false;
-    for(int i=0; i<vfrases.size() and not trobat; ++i){
-        if(vfrases[i].conte_paraules(paraules)) trobat=true;
-    }
-    return trobat;
-}
-
-void taula_frequencies() const; */
-
-void Cjt_Frases::llegir() {	
+void Cjt_Frases::llegir() {    
     string paraula;
     cin >> paraula;
+	list <string>::iterator it;
     int i = 0;
     while (paraula != "*****"){
-        vector <string> v(0);
-        vfrases.push_back(v);
-        while (paraula[paraula.size()-1] != '.' and paraula[paraula.size()-1] != '?' and paraula[paraula.size()-1] != '!'){
-            vfrases[i].push_back(paraula);
-            ++nparaules;
-            cin >> paraula;
-        }
-        if (paraula != "*****"){
-            vfrases[i].push_back(paraula);
-            cin >> paraula;
-        }
+		list <string> l ;
+        it = l.begin();
+        char fi = paraula[paraula.size()-1];
+        while (fi != '.' and fi != '?' and fi != '!'){
+			l.insert(it, paraula);
+			++nparaules;
+			cin >> paraula;
+			fi = paraula[paraula.size()-1];
+			}
+            
+		if (paraula != "*****"){
+			l.insert(it,paraula);
+			cin >> paraula;
+			}
+		vfrases.push_back(l);
         ++nparaules;
-        ++i;
+    ++i;
     }
 }
 
 void Cjt_Frases::escriure() const{
-    bool primer = true;
+    bool primer = true;    
+    list<string> ::const_iterator it;
     for (int i = 0; i < vfrases.size(); ++i){
-        for (int j = 0; j < vfrases[i].size(); ++j){
-            if (primer){
-                primer = false;
-                cout << vfrases[i][j];
-            }
-            else cout << ' ' << vfrases[i][j];
-        }
-    }
-    cout << endl;
+		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
+			if (primer){
+				primer = false;
+				cout << *it;
+				}
+			else cout << ' ' << *it;
+			}
+		}
+	cout << endl;
 }
