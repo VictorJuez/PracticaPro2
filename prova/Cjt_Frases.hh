@@ -27,6 +27,10 @@ private:
         string paraula;
     };
     vector <freq> taula;
+    bool conte_paraules_plus(list<string>& l, vector<string>& s);
+    string treure_signes(string aux);
+    char guardar_signe(string aux);
+    bool te_signe(string aux);
 
 public:
 	// Constructores
@@ -43,7 +47,7 @@ public:
 		\pre <em>La paraula1 ha d'apareixer com a mínim un cop en el paràmetre implícit.</em>
 		\post S'han substituït totes les paraules coincidents a paraula1 del paràmetre implícit per paraula2.
 	*/ 
-//	void substituir_paraula(string paraula1, string paraula2);
+	void substituir_paraula(string paraula1, string paraula2);
 
 	//Destructora
 	
@@ -60,19 +64,19 @@ public:
 		\pre <em>Cert</em>
 		\post El resultat es el número de frases del paràmetre implícit
 	*/       
-//	int numero_de_frases() const;
+	int numero_de_frases() const;
 	
 	/** @brief Consultora conté paraula. 
 		\pre <em>El vector de paraules no és buit</em>
 		\post El resultat indica si el paràmetre implícit conté o no la paraula
 	*/  
-//	bool conte_paraula(string paraula) const;
+	bool conte_paraula(string paraula);
 	
 	/** @brief Consultora paraules. 
 		\pre <em>el vector paraules no és buit</em>
 		\post el resultat ens indica si la frase conté la mateixa seqüència de paraules.
 	*/  
-//	bool conte_paraules(vector<string> paraules) const;
+	bool conte_paraules(vector<string> paraules);
 	
 	//Lectura i escriptura
 

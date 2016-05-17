@@ -42,8 +42,30 @@ bool conte_paraules(vector<string>& paraules) const {
 
 void taula_frequencies() const;
 
-void llegir() {	
-	
+void Cjt_Frases::llegir() {    
+    string paraula;
+    cin >> paraula;
+	list <string>::iterator it;
+    int i = 0;
+    while (paraula != "*****"){
+		list <string> l ;
+        it = l.begin();
+        char fi = paraula[paraula.size()-1];
+        while (fi != '.' and fi != '?' and fi != '!'){
+			l.insert(it, paraula);
+			++nparaules;
+			cin >> paraula;
+			fi = paraula[paraula.size()-1];
+			}
+            
+		if (paraula != "*****"){
+			l.insert(it,paraula);
+			cin >> paraula;
+			}
+		vfrases.push_back(l);
+        ++nparaules;
+    ++i;
+    }
 }
 
 void escriure() const;
