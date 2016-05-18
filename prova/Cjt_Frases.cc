@@ -1,10 +1,5 @@
 #include "Cjt_Frases.hh"
 
-
-Cjt_Frases::Cjt_Frases(){
-	nparaules = 0;
-}
-
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
 		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z')){
@@ -75,6 +70,10 @@ bool Cjt_Frases::ord(freq a,freq b){
 	return a.paraula < b.paraula;
 }
 
+Cjt_Frases::Cjt_Frases(){
+	nparaules = 0;
+}
+
 void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 	for(int i=0; i<vfrases.size(); ++i){
 		list<string>::iterator it;
@@ -110,16 +109,8 @@ int Cjt_Frases::numero_de_frases() const{
 }
 
 bool Cjt_Frases::conte_paraula(string paraula){
-	for(int i=0; i < vfrases.size(); ++i){
-		list<string>::const_iterator it;
-		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			string aux = *it;
-			
-			if (te_signe(aux)){
-				aux=treure_signes(aux);
-				}
-			if(aux == paraula) return true;
-			}
+	for(int i=0; i<taula.size(); ++i){
+		if (paraula == taula[i].paraula) return true;
 		}
 	return false;
 }
