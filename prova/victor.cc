@@ -29,15 +29,16 @@ string Cjt_Frases::treure_signes(string aux){ //modificat
 bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	list<string>::iterator it;
 	for(it=l.begin(); it!=l.end(); ++it){
-		string aux;
-		if(te_signe(*it)){ //modificat
-			aux=treure_signes(*it);
+		string aux=*it;
+		if(te_signe(aux)){ //modificat
+			aux=treure_signes(aux);
 		}	
 		if (aux==s[0]){
 			for(int i=1; i<s.size(); ++i){
 				++it;
-				if(te_signe(*it)){ //modificat
-				aux=treure_signes(*it);
+				string aux2=*it;
+				if(te_signe(aux2)){ //modificat
+				aux=treure_signes(aux2);
 					}
 				if(aux != s[i]) return false;
 				}
@@ -73,10 +74,10 @@ bool Cjt_Frases::conte_paraula(string paraula){
 	for(int i=0; i < vfrases.size(); ++i){
 		list<string>::const_iterator it;
 		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			string aux;
+			string aux = *it;
 			
-			if(te_signe(*it)){ //modificat
-				aux=treure_signes(*it);
+			if(te_signe(aux)){ //modificat
+				aux=treure_signes(aux);
 			}
 			
 			if(aux == paraula) return true;
@@ -96,7 +97,6 @@ void Cjt_Frases::llegir() {
     string paraula;
     cin >> paraula;
 	list <string>::iterator it;
-    int i = 0;
     while (paraula != "*****"){
 		list <string> l ;
         it = l.begin();
@@ -113,7 +113,6 @@ void Cjt_Frases::llegir() {
 			}
 		vfrases.push_back(l);
         ++nparaules;
-    ++i;
     }
 }
 
