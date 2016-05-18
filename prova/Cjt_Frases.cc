@@ -59,23 +59,26 @@ string Cjt_Frases::treure_signes(string aux){
 
 bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	list<string>::iterator it;
+	int cont=0;
 	for(it=l.begin(); it!=l.end(); ++it){
-		string aux = *it;
-		if(te_signe(aux)){
+		if((l.size()-cont) < s.size()) return false;
+		string aux=*it;
+		if(te_signe(aux)){ //modificat
 			aux=treure_signes(aux);
-			}
-			
+		}
 		if (aux==s[0]){
-			for(int i=1; i<s.size(); ++i){
+			bool b=false;
+			for(int i=1; i<s.size() and not b; ++i){
 				++it;
-				string aux2 = *it;
-				if (te_signe(aux2)){
-					aux=treure_signes(aux2);
+				string aux=*it;
+				if(te_signe(aux)){ //modificat
+				aux=treure_signes(aux);
+					}
+				if(aux != s[i]) b=true;
+				if(i == s.size()-1) return true;
 				}
-				if(aux != s[i]) return false;
-				}
-			return true;
 			}
+		++cont;
 		}
 	return false;
 }
@@ -100,6 +103,14 @@ void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 			else if(aux == paraula1) *it=paraula2;
 			}
 		}
+	bool trobat = false;
+	for (int i = 0;not trobat and i < taula.size(); ++i){
+		if (taula[i].paraula == paraula1) {
+			taula[i].paraula = paraula2;
+			trobat = true;
+			}
+		}
+	sort(taula.begin(),taula.end(),ord);
 }
 
 bool Cjt_Frases::conte_paraula(string paraula){

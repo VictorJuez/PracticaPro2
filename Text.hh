@@ -2,6 +2,11 @@
     @brief Especificació de la clase Text
 */
 
+#ifndef TEXT_HH
+#define TEXT_HH
+
+#include "Cjt_Frases.hh"
+
 /** @class Text
     @brief Conté un conjunt de frases.
 
@@ -10,6 +15,10 @@
 class Text{
 
 private:
+
+	string autor;
+	string titol;
+	Cjt_Frases cjtfrase;
 
 public:
 	// Constructores
@@ -67,4 +76,5 @@ public:
 		\post S'ha escrit el títol, l'autor i el contingut pel canal estandar de sortida
 	*/ 	
 	void escriure() const;
-}
+};
+#endif
