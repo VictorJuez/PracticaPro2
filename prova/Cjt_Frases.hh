@@ -29,13 +29,13 @@ private:
     };
     vector <freq> taula;
     
-    bool conte_paraules_plus(list<string>& l, vector<string>& s);
+    bool te_signe(string aux);
     string treure_signes(string aux);
     char guardar_signe(string aux);
-    bool te_signe(string aux);
-    
-    static bool ord(freq a,freq b);
+    bool conte_paraules_plus(list<string>& l, vector<string>& s);
     void afegir(string& s);
+    static bool ord(freq a,freq b);
+    
 
 public:
 	// Constructores

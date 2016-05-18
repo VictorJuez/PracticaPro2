@@ -5,30 +5,6 @@ Cjt_Frases::Cjt_Frases(){
 	nparaules = 0;
 }
 
-void Cjt_Frases::afegir(string& s){
-	bool nova = false;
-	for (int i = 0;not nova and (i < taula.size());++i){
-		if (taula[i].paraula == s){
-			taula[i].repeticions++;
-			nova = true;
-			}
-		}
-	if (not nova){
-		freq p;
-		p.paraula = s;
-		p.repeticions = 1;
-		taula.push_back(p);
-		}
-}
-
-bool Cjt_Frases::ord(freq a,freq b){
-	if (a.repeticions > b.repeticions) return true;
-	else if (a.repeticions < b.repeticions) return false;
-	else if (a.paraula.size() < b.paraula.size()) return true;
-	else if (a.paraula.size() > b.paraula.size()) return false;
-	return a.paraula < b.paraula;
-	}
-
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
 		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z')){
@@ -37,18 +13,17 @@ bool Cjt_Frases::te_signe(string aux){
 		return false;
 }
 
+string Cjt_Frases::treure_signes(string aux){
+	aux.erase(aux.end()-1);
+	return aux;
+}
+
 char Cjt_Frases::guardar_signe(string aux){
 	char last = aux[aux.size()-1];
 		if (te_signe(aux)){
 				return aux[aux.size()-1];
 				}	
 }
-
-string Cjt_Frases::treure_signes(string aux){
-	aux.erase(aux.end()-1);
-	return aux;
-}
-
 
 bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	list<string>::iterator it;
@@ -75,15 +50,29 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 		}
 	return false;
 }
-void Cjt_Frases::taula_frequencies(){
-	int tamany = taula.size();
-	for (int i = 0; i < tamany; ++i){
-		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
+
+void Cjt_Frases::afegir(string& s){
+	bool nova = false;
+	for (int i = 0;not nova and (i < taula.size());++i){
+		if (taula[i].paraula == s){
+			taula[i].repeticions++;
+			nova = true;
+			}
+		}
+	if (not nova){
+		freq p;
+		p.paraula = s;
+		p.repeticions = 1;
+		taula.push_back(p);
 		}
 }
 
-int Cjt_Frases::numero_de_frases() const{
-	return vfrases.size();
+bool Cjt_Frases::ord(freq a,freq b){
+	if (a.repeticions > b.repeticions) return true;
+	else if (a.repeticions < b.repeticions) return false;
+	else if (a.paraula.size() < b.paraula.size()) return true;
+	else if (a.paraula.size() > b.paraula.size()) return false;
+	return a.paraula < b.paraula;
 }
 
 void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
@@ -112,6 +101,14 @@ void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 	sort(taula.begin(),taula.end(),ord);
 }
 
+int Cjt_Frases::numero_de_paraules() const{
+	return nparaules;
+}
+
+int Cjt_Frases::numero_de_frases() const{
+	return vfrases.size();
+}
+
 bool Cjt_Frases::conte_paraula(string paraula){
 	for(int i=0; i < vfrases.size(); ++i){
 		list<string>::const_iterator it;
@@ -132,6 +129,13 @@ bool Cjt_Frases::conte_paraules(vector<string> paraules){
 		if(conte_paraules_plus(vfrases[i], paraules)) return true;
 		}
 	return false;
+}
+
+void Cjt_Frases::taula_frequencies(){
+	int tamany = taula.size();
+	for (int i = 0; i < tamany; ++i){
+		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
+		}
 }
 
 void Cjt_Frases::llegir() {    
