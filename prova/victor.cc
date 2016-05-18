@@ -1,5 +1,4 @@
 #include "Cjt_Frases.hh"
-#include "Frase.hh"
 
 Cjt_Frases::Cjt_Frases(){
 	nparaules = 0;
@@ -28,29 +27,33 @@ string Cjt_Frases::treure_signes(string aux){ //modificat
 
 bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	list<string>::iterator it;
+	int cont=0;
 	for(it=l.begin(); it!=l.end(); ++it){
+		if((l.size()-cont) < s.size()) return false;
 		string aux=*it;
 		if(te_signe(aux)){ //modificat
 			aux=treure_signes(aux);
-		}	
+		}
 		if (aux==s[0]){
-			for(int i=1; i<s.size(); ++i){
+			bool b=false;
+			for(int i=1; i<s.size() and not b; ++i){
 				++it;
-				string aux2=*it;
-				if(te_signe(aux2)){ //modificat
-				aux=treure_signes(aux2);
+				string aux=*it;
+				if(te_signe(aux)){ //modificat
+				aux=treure_signes(aux);
 					}
-				if(aux != s[i]) return false;
+				if(aux != s[i]) b=true;
+				if(i == s.size()-1) return true;
 				}
-			return true;
 			}
+		++cont;
 		}
 	return false;
 }
 
-int Cjt_Frases::numero_de_frases() const{
+/*int Cjt_Frases::numero_de_frases() const{
 	return vfrases.size();
-}
+}*/
 
 void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 	for(int i=0; i<vfrases.size(); ++i){

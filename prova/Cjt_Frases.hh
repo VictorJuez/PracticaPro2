@@ -56,7 +56,7 @@ public:
 
 	//Destructora
 	
-//	~Cjt_Frases();
+	~Cjt_Frases();
 	//Consultores
 	
 	/** @brief Consultora del número de paraules. 

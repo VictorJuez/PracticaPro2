@@ -4,7 +4,6 @@ using namespace std;
 int main(){
     Cjt_Frases cjtfrase;
     cjtfrase.llegir();
-    cjtfrase.escriure();
     string s;
     s="hola";
     
@@ -23,5 +22,7 @@ int main(){
     cjtfrase.substituir_paraula("hola", ss);
     
     cjtfrase.escriure();
+    
+    cjtfrase.taula_frequencies();
 }
 
