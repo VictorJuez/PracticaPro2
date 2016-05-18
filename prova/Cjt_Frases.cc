@@ -91,11 +91,26 @@ void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 			}
 		}
 	bool trobat = false;
-	for (int i = 0;not trobat and i < taula.size(); ++i){
-		if (taula[i].paraula == paraula1) {
-			taula[i].paraula = paraula2;
+	bool existent = false;
+	int i;
+	for (i = 0;not existent and i < taula.size(); ++i){
+		if (taula[i].paraula == paraula2) existent = true;
+		}
+	--i;
+	int j;
+	for (j = 0;not trobat and j < taula.size(); ++j){
+		if (taula[j].paraula == paraula1) {
+			taula[j].paraula = paraula2;
+			taula[j].repeticions += taula[i].repeticions;
 			trobat = true;
 			}
+		}
+	--j;
+	if (existent){
+		for (i; i < taula.size() - 1; ++i){
+			taula[i] = taula[i+1];
+			}
+		taula.pop_back();
 		}
 	sort(taula.begin(),taula.end(),ord);
 }
