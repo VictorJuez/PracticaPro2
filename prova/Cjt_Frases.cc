@@ -28,13 +28,6 @@ bool Cjt_Frases::ord(freq a,freq b){
 	else if (a.paraula.size() > b.paraula.size()) return false;
 	return a.paraula < b.paraula;
 	}
-	
-void Cjt_Frases::taula_frequencies(){
-	int tamany = taula.size();
-	for (int i = 0; i < tamany; ++i){
-		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
-		}
-}
 
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
@@ -81,6 +74,12 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 		++cont;
 		}
 	return false;
+}
+void Cjt_Frases::taula_frequencies(){
+	int tamany = taula.size();
+	for (int i = 0; i < tamany; ++i){
+		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
+		}
 }
 
 int Cjt_Frases::numero_de_frases() const{
