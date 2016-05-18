@@ -20,10 +20,8 @@ char Cjt_Frases::guardar_signe(string aux){
 				}	
 }
 
-string Cjt_Frases::treure_signes(string aux){
-		if (te_signe(aux)){
-				aux.erase(aux.end()-1);
-				}
+string Cjt_Frases::treure_signes(string aux){ //modificat
+	aux.erase(aux.end()-1);
 	return aux;
 }
 
@@ -32,11 +30,15 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	list<string>::iterator it;
 	for(it=l.begin(); it!=l.end(); ++it){
 		string aux;
-		aux=treure_signes(*it);
+		if(te_signe(*it)){ //modificat
+			aux=treure_signes(*it);
+		}	
 		if (aux==s[0]){
 			for(int i=1; i<s.size(); ++i){
 				++it;
+				if(te_signe(*it)){ //modificat
 				aux=treure_signes(*it);
+					}
 				if(aux != s[i]) return false;
 				}
 			return true;
@@ -72,7 +74,11 @@ bool Cjt_Frases::conte_paraula(string paraula){
 		list<string>::const_iterator it;
 		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
 			string aux;
-			aux=treure_signes(*it);
+			
+			if(te_signe(*it)){ //modificat
+				aux=treure_signes(*it);
+			}
+			
 			if(aux == paraula) return true;
 			}
 		}
