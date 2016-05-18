@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 
 /** @class Cjt_Frases
@@ -27,10 +28,14 @@ private:
         string paraula;
     };
     vector <freq> taula;
+    
     bool conte_paraules_plus(list<string>& l, vector<string>& s);
     string treure_signes(string aux);
     char guardar_signe(string aux);
     bool te_signe(string aux);
+    
+    static bool ord(freq a,freq b);
+    void afegir(string& s);
 
 public:
 	// Constructores
@@ -84,7 +89,7 @@ public:
 		\pre <em>cert</em>
 		\post s'ha escrit la taula de frequencies del paràmetre implícit al canal estàndar de sortida
 	*/
-//	void taula_frequencies() const;
+	void taula_frequencies();
 
 	/** @brief Llegeix un Cjt_Frases. 
 		\pre <em>Estan preparats al canal estandar d'entrada una seqüència de frases acabada en ****</em>
