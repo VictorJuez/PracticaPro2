@@ -25,27 +25,28 @@ int main() {
     istringstream iss(linia);
     string op;
     iss >> op;
+
     if (op == "afegir"){
 		iss>>op;
 		if(op == "text"){
-			text.llegir(iss);
+			text.llegir(linia);
 			}
 	}
-	cfrases=text.consultar_contingut();
-	cfrases.escriure();
+	//cfrases=text.consultar_contingut();
+	//cfrases.escriure();
 	
-	list<string> autor;
-	list<string> titol;
+	//string autor;
+	//string titol;
 	
-	autor=text.consultar_autor();
-	titol=text.consultar_titol();
+	//autor=text.consultar_autor();
+	//titol=text.consultar_titol();
 	
-	escriure_llista(autor);
-	escriure_llista(titol);
+	//cout << '"' << autor << '"' << endl;
+	//cout << '"' << titol << '"' << endl;
 	
-	text.substituir_paraula("lol", "XD");
-	cfrases=text.consultar_contingut();
-	cfrases.escriure();
+	//text.substituir_paraula("lol", "XD");
+	//cfrases=text.consultar_contingut();
+	//cfrases.escriure();
 	
-	cfrases.taula_frequencies();
+	//cfrases.taula_frequencies();
 }
