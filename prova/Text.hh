@@ -7,7 +7,7 @@
 
 #include "Cjt_Frases.hh"
 #include <sstream>
-
+#include <string>
 /** @class Text
     @brief Conté un conjunt de frases.
 
@@ -42,7 +42,7 @@ public:
 	
 	//Destructora
 	
-	~Text();
+//	~Text();
 	
 	//Consultores
 	
@@ -70,12 +70,11 @@ public:
 		\pre <em>Estan preparats al canal estandar d'entrada un títol, un autor i un contingut</em>
 		\post El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada
 	*/ 		
-	void llegir(istringstream iss);
+	void llegir(istringstream& iss);
 
 	/** @brief Impresió d'un text. 
 		\pre <em>Cert</em>
 		\post S'ha escrit el títol, l'autor i el contingut pel canal estandar de sortida
 	*/ 	
-	void escriure() const;
 };
 #endif

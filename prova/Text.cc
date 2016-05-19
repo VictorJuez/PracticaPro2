@@ -1,7 +1,27 @@
 #include "Text.hh"
 
+Text::Text(){
+	
+}
+//~Text()
 
-void Text::llegir(istringstream iss){
+void Text::substituir_paraula(string paraula1, string paraula2){
+	cjtfrase.substituir_paraula(paraula1, paraula2);
+}
+
+list<string> Text::consultar_autor(){
+	return autor;
+}
+
+list<string> Text::consultar_titol(){
+	return titol;
+}
+
+Cjt_Frases Text::consultar_contingut(){
+	return cjtfrase;
+}
+
+void Text::llegir(istringstream& iss){
 	string paraula;
 	iss >> paraula;
 	bool primer = true;
@@ -19,7 +39,7 @@ void Text::llegir(istringstream iss){
 			}
 		}
 	int ultima = paraula.size()-1;
-	paraula.erase(ultima,0);
+	paraula.erase(ultima,1);
 	titol.insert(it,paraula);
 	
 	it = autor.begin();
