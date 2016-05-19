@@ -6,6 +6,7 @@
 #define TEXT_HH
 
 #include "Cjt_Frases.hh"
+#include <sstream>
 
 /** @class Text
     @brief Conté un conjunt de frases.
@@ -16,8 +17,8 @@ class Text{
 
 private:
 
-	string autor;
-	string titol;
+	list <string> autor;
+	list <string> titol;
 	Cjt_Frases cjtfrase;
 
 public:
@@ -49,13 +50,13 @@ public:
 		\pre <em>El text té autor</em>
 		\post el resultat és l'autor del text en qüestió.
 	*/ 		
-	string consultar_autor();
+	list <string> consultar_autor();
 	
 	/** @brief Consultora de títol. 
 		\pre <em>El text té títol</em>
 		\post el resultat és el títol del text en qüestió.
 	*/        
-	string consultar_titol();
+	list <string> consultar_titol();
 	
 	/** @brief Consultora del contingut. 
 		\pre <em>El text té contingut</em>
@@ -69,7 +70,7 @@ public:
 		\pre <em>Estan preparats al canal estandar d'entrada un títol, un autor i un contingut</em>
 		\post El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada
 	*/ 		
-	void llegir();
+	void llegir(istringstream iss);
 
 	/** @brief Impresió d'un text. 
 		\pre <em>Cert</em>
