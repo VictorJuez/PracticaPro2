@@ -24,6 +24,7 @@ void Text::llegir(istringstream iss){
 	
 	it = autor.begin();
 	cin >> paraula;
+	cin >> paraula;
 	primer = true;
 	while (paraula[paraula.size()-1] != '"'){
 		if (primer){
@@ -38,7 +39,7 @@ void Text::llegir(istringstream iss){
 			}
 		}
 	ultima = paraula.size()-1;
-	paraula.erase(ultima,0);
+	paraula.erase(ultima,1);
 	autor.insert(it,paraula);
 	cjtfrase.llegir();
 }
