@@ -24,9 +24,9 @@ using namespace std;
 /** @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
 */
 int main(){
-    Cjt_Textos conjunt_textos;
+    Cjt_Textos ctextos;
     Text text, text_triat;
-    Cjt_Frases conjunt_frases;
+    Cjt_Frases cfrases;
     Frase frase;
     Cites cites;
        
@@ -38,9 +38,9 @@ int main(){
         iss >> op;
         if (op == "afegir"){
             iss >> op;
-            if (op == "text"){
-                text.llegir(iss);
-                conjunt_textos.afegir_text(text);
+            if (op == "text"){				// "correcte"
+				text.llegir(linia);			//
+				ctextos.afegir_text(text);	//
             }
             else if (op == "cita"){
                 int x, y;
@@ -61,7 +61,10 @@ int main(){
         else if (op == "eliminar"){
             iss >> op;
             if (op == "text"){
-                conjunt_textos.eliminar_text();
+				if (ctextos.text_triat()){		//modificada -> comprobar
+					ctextos.eliminar_text();	//
+				}								//
+				else cout << "error" << endl;	//
             }
             else if (op == "cita"){
                 string referencia;
@@ -71,14 +74,22 @@ int main(){
             else cout << "Funcio incorrecte" << endl;
         }
         else if (op == "substitueix"){
-            string paraula1, paraula2;
-            iss >> paraula1;
-            iss >> paraula2;
-            text_triat.substituir_paraules(paraula1,paraula2);
+            string paraula1, paraula2;							//modificada -> comprobar
+            iss >> paraula1;									//
+            paraula1.erase(0,1);								//	
+            paraula1.erase(paraula1.size()-1,1);				//
+            iss >> op;											//
+            iss >> paraula2;									//	
+            paraula2.erase(0,1);								//
+            paraula2.erase(paraula2.size()-1,1);				//
+            text_triat.substituir_paraula(paraula1,paraula2);	//
         }
         else if (op == "textos"){
             string autor;
+            iss >> op;
             iss >> autor;
+            autor.erase(0,1);
+            autor.erase(autor.size()-1,1);
             conjunt_textos.imprimir_textos_autor(autor);
         }
         else if (op == "tots"){
@@ -97,20 +108,21 @@ int main(){
         else if (op == "info"){
             is >> op;
             if (op == "cita"){
-                string referencia;
-                iss >> referencia;
-                cites.escriure_cita(referencia);
+                string referencia;						//cal implementar cites encara
+                iss >> referencia;						//
+                referencia.erase(0,1);					//
+                referencia.erase(referencia.size()-1,1);//
+                cites.escriure_cita(referencia);		//
             }
             else if (op == '?'){
-                string autor = text_triat.consultar_autor();
-                string titol = text_triat.consultar_titol();
-                cout << autor << ' ' << titol << ' ';
-                Cjt_frases frases;
-                frases = text_triat.consultar_contingut();
-                int nfrases, nparaules;
-                nfrases = frases.numero_de_frases();
-                nparaules = frases.numero_de_paraules();
-                cout << autor << ' ' << titol << ' ' << nfrases << ' ' << nparaules << endl;
+                string autor = text_triat.consultar_autor();		//falten les cites associades
+                string titol = text_triat.consultar_titol();		//
+                cout << autor << ' ' << '"' << titol << '"';		//
+                cfrases = text_triat.consultar_contingut();			//
+                int nfrases, nparaules;								//
+                nfrases = cfrases.numero_de_frases();				//
+                nparaules = cfrases.numero_de_paraules();			//
+                cout << ' ' << nfrases << ' ' << nparaules << endl;	//
             }
             else cout << "Error" << endl;
         }
