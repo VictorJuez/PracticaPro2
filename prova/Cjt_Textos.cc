@@ -5,11 +5,21 @@ Cjt_Textos::Cjt_Textos(){
 	it_triat = ctextos.end();
 }
 
+void Cjt_Textos::imprimir_vector(vector<string>& v){
+	for(int i=0; i<v.size(); ++i){
+		cout << v[i] << ' ';
+	}
+	cout << endl;
+}
+
 void Cjt_Textos::crear_vfrase(string s, vector<string>& frase){
 	istringstream iss(s);
 	string op;
 	iss >> op;
-	while(iss) frase.push_back(op);
+	while(iss){
+		frase.push_back(op);
+		iss >> op;
+		}
 }
 
 bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
@@ -26,13 +36,15 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 			if(v[i] == titol[j]) vb[i] = true;
 		}
 	}
+	cout << "ok1 !!!! " << endl;
 		
 	for(int i=0; i<v.size(); ++i){  //buscar al autor
 		for(int j=0; j<autor.size() and not vb[i]; ++j){
 			if(v[i] == autor[j]) vb[i] = true;
 		}
 	}
-	
+	cout << "ok2 !!!! " << endl;
+		
 	for(int i=0; i<v.size(); ++i){  //buscar al contingut
 		if (not vb[i]){
 			Cjt_Frases cfrases;
@@ -40,6 +52,7 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 			if(cfrases.conte_paraula(v[i])) vb[i]=true;
 			}
 	}
+	cout << "ok3 !!!! " << endl;	
 	
 	for(int i=0; i<vb.size(); ++i){
 		if (not vb[i]) return false;
@@ -70,15 +83,21 @@ void Cjt_Textos::triar_text(string& s){
 	bool b2=false;
 	for(it=ctextos.begin(); it!=ctextos.end(); ++it){
 		Text t=*it;
-		//if(t.consultar_titol == s or t.consultar_autor == s) return true;
 		vector <string> frase;
 		crear_vfrase(s, frase);
 		if(trobar_paraules(frase, t) and not b){
 			b=true;
 			it_triat=it;
+			triat=true;
 			}
-		else if (trobar_paraules(frase, t) and b) cout << "errror company "<< endl;
+		else if (trobar_paraules(frase, t) and b){
+			b2=true;
+			triat=false;
+			break;	
 		}
+	}
+	if(not b) triat=false;
+	
 }
 
 bool Cjt_Textos::text_triat(){
