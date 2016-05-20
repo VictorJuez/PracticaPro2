@@ -75,21 +75,45 @@ Cjt_Frases::Cjt_Frases(){
 }
 
 void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
-	for(int i=0; i<vfrases.size(); ++i){
-		list<string>::iterator it;
-		for(it=vfrases[i].begin(); it !=vfrases[i].end(); ++it){
-			string aux= *it;
+	list <list <string> >::iterator it;
+	for(it = vfrases.begin(); it!=vfrases.end(); ++it){
+		list<string>::iterator it1;
+		for(it1=(*it).begin(); it1 !=(*it).end(); ++it1){
+			string aux= *it1;
 			if(te_signe(aux)){
 				char c;
 				c= guardar_signe(aux);
 				aux=treure_signes(aux);
 				if(aux == paraula1){
-					*it = paraula2 + c;
+					*it1 = paraula2 + c;
 					}
 				}
-			else if(aux == paraula1) *it=paraula2;
+			else if(aux == paraula1) *it1=paraula2;
 			}
 		}
+	bool trobat = false;
+	bool existent = false;
+	int i;
+	for (i = 0;not existent and i < taula.size(); ++i){
+		if (taula[i].paraula == paraula2) existent = true;
+		}
+	--i;
+	int j;
+	for (j = 0;not trobat and j < taula.size(); ++j){
+		if (taula[j].paraula == paraula1) {
+			taula[j].paraula = paraula2;
+			taula[j].repeticions += taula[i].repeticions;
+			trobat = true;
+			}
+		}
+	--j;
+	if (existent){
+		for (i; i < taula.size() - 1; ++i){
+			taula[i] = taula[i+1];
+			}
+		taula.pop_back();
+		}
+	sort(taula.begin(),taula.end(),ord);
 }
 
 int Cjt_Frases::numero_de_paraules() const{
@@ -101,40 +125,21 @@ int Cjt_Frases::numero_de_frases() const{
 }
 
 bool Cjt_Frases::conte_paraula(string paraula){
-	for(int i=0; i < vfrases.size(); ++i){
-		list<string>::const_iterator it;
-		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			string aux = *it;
-			
-			if (te_signe(aux)){
-				aux=treure_signes(aux);
-				}
-			if(aux == paraula) return true;
-			}
+	for(int i=0; i<taula.size(); ++i){
+		if (paraula == taula[i].paraula) return true;
 		}
 	return false;
 }
 
 bool Cjt_Frases::conte_paraules(vector<string> paraules){
-	for(int i=0; i<vfrases.size(); ++i){
-		if(conte_paraules_plus(vfrases[i], paraules)) return true;
+	list <list < string > >::iterator it;
+	for( it=vfrases.begin(); it!=vfrases.end(); ++it){
+		if(conte_paraules_plus(*it, paraules)) return true;
 		}
 	return false;
 }
 
 void Cjt_Frases::taula_frequencies(){
-	list <string>::iterator it;
-	for (int i = 0; i < vfrases.size(); ++i){
-		for (it = vfrases[i].begin(); it != vfrases[i].end();++it){
-			string paraula = (*it);
-			if (te_signe(paraula)){
-				paraula = treure_signes(paraula);
-				afegir(paraula);
-				}
-			else afegir(paraula);
-			}
-		}
-	sort(taula.begin(),taula.end(),ord);
 	int tamany = taula.size();
 	for (int i = 0; i < tamany; ++i){
 		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
@@ -144,38 +149,53 @@ void Cjt_Frases::taula_frequencies(){
 void Cjt_Frases::llegir() {    
     string paraula;
     cin >> paraula;
-	list <string>::iterator it;
+	list <list <string> >::iterator it;
+	it = vfrases.begin();
+	list <string>::iterator it1;
     while (paraula != "****"){
 		list <string> l ;
-        it = l.begin();
+        it1 = l.begin();
         char fi = paraula[paraula.size()-1];
         while (fi != '.' and fi != '?' and fi != '!'){
-			l.insert(it, paraula);
+			l.insert(it1, paraula);
 			++nparaules;
+			/*if (te_signe(paraula)){
+				paraula = treure_signes(paraula);
+				afegir(paraula);
+				}
+			else afegir(paraula);*/
 			cin >> paraula;
 			fi = paraula[paraula.size()-1];
 			}
             
 		if (paraula != "****"){
-			l.insert(it,paraula);
-
+			l.insert(it1,paraula);
+			/*if (te_signe(paraula)){
+				paraula = treure_signes(paraula);
+				afegir(paraula);
+				}
+			else afegir(paraula);*/
 			cin >> paraula;
 			}
-		vfrases.push_back(l);
+		vfrases.insert(it,l);
         ++nparaules;
     }
+    //sort(taula.begin(),taula.end(),ord);
 }
 
 void Cjt_Frases::escriure() const{
     bool primer = true;    
-    list<string>::const_iterator it;
-    for (int i = 0; i < vfrases.size(); ++i){
-		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
+    list<string>::const_iterator it1;
+    list <list <string> >::const_iterator it;
+    for (it = vfrases.begin(); it != vfrases.end(); ++it){
+		list <string> l1 = (*it);
+		for (it1 = l1.begin(); it1 != l1.end(); ++it1){
+			string aux = (*it1);
 			if (primer){
 				primer = false;
-				cout << *it;
+				cout << aux;
 				}
-			else cout << ' ' << *it;
+			else cout << ' ' << aux;
 			}
 		}
 	cout << endl;

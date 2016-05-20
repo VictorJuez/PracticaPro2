@@ -21,7 +21,7 @@ using namespace std;
 class Cjt_Frases{
 
 private:
-    list <list <string> > vfrases;
+    vector <list <string> > vfrases;
     int nparaules;
     struct freq{
         int repeticions;
