@@ -70,15 +70,14 @@ int main() {
 	if (op== "triar"){
 		iss3 >> op;
 		if(op == "text"){
-			linia.erase(0,12);
-			linia.erase(linia.size()-1, 1);
 			cout << linia << endl;
 			ctextos.triar_text(linia);
-			cout << "Text triat  " << endl;
 			
 			if(ctextos.text_triat()){
+			cout << "Text triat  " << endl;
 			text = ctextos.consultar_text_triat();
 			cout << text.consultar_titol() << endl;}
+			else cout <<"cap text triat, error" << endl;
 			}
 		}
 	

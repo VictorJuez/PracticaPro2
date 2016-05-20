@@ -36,14 +36,12 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 			if(v[i] == titol[j]) vb[i] = true;
 		}
 	}
-	cout << "ok1 !!!! " << endl;
 		
 	for(int i=0; i<v.size(); ++i){  //buscar al autor
 		for(int j=0; j<autor.size() and not vb[i]; ++j){
 			if(v[i] == autor[j]) vb[i] = true;
 		}
 	}
-	cout << "ok2 !!!! " << endl;
 		
 	for(int i=0; i<v.size(); ++i){  //buscar al contingut
 		if (not vb[i]){
@@ -52,7 +50,6 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 			if(cfrases.conte_paraula(v[i])) vb[i]=true;
 			}
 	}
-	cout << "ok3 !!!! " << endl;	
 	
 	for(int i=0; i<vb.size(); ++i){
 		if (not vb[i]) return false;
@@ -78,6 +75,8 @@ void Cjt_Textos::eliminar_text(){
 	}
 	
 void Cjt_Textos::triar_text(string& s){
+	s.erase(0,12);
+	s.erase(s.size()-1, 1);
 	list<Text>::iterator it;
 	bool b=false;
 	bool b2=false;
