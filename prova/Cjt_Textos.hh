@@ -25,6 +25,7 @@ private:
 	
 	static bool ordena(aut_tit a,aut_tit b);
 	
+	void imprimir_vector(vector<string>& v);
 	bool apareix_contingut(string& s);
 	void crear_vfrase(string s, vector<string>& frase);
 	bool trobar_paraules(vector<string> v, Text& t);
