@@ -1,4 +1,4 @@
-#include "Text.hh"
+#include "Cjt_Textos.hh"
 #include <iostream>
 using namespace std;
 
@@ -17,8 +17,9 @@ void escriure_llista(list<string>& imp){
 
 
 int main() {
-    Text text, text_triat;
+    Text text, text1, text2;
     Cjt_Frases cfrases;
+    Cjt_Textos ctextos;
        
     string linia;
     getline(cin,linia);
@@ -30,29 +31,30 @@ int main() {
 		iss>>op;
 		if(op == "text"){
 			text.llegir(linia);
+			ctextos.afegir_text(text);
 			}
 	}
-	cfrases = text.consultar_contingut();
-	cfrases.taula_frequencies();
-	text.substituir_paraula("lol", "XD");
-	cfrases = text.consultar_contingut();
-	cfrases.escriure();
-	cfrases.taula_frequencies();
-	/*cfrases=text.consultar_contingut();
-	cfrases.escriure();
 	
-	string autor;
-	string titol;
+	getline(cin,linia);
+    iss >> op;
+    
+    if (op == "afegir"){
+		iss>>op;
+		if(op == "text"){
+			text1.llegir(linia);
+			ctextos.afegir_text(text1);
+			}
+	}
+	getline(cin,linia);
+    iss >> op;
+    
+    if (op == "afegir"){
+		iss>>op;
+		if(op == "text"){
+			text2.llegir(linia);
+			ctextos.afegir_text(text2);
+			}
+	}
 	
-	autor=text.consultar_autor();
-	titol=text.consultar_titol();
-	
-	cout << '"' << autor << '"' << endl;
-	cout << '"' << titol << '"' << endl;
-	
-	text.substituir_paraula("lol", "XD");
-	cfrases=text.consultar_contingut();
-	cfrases.escriure();
-	
-	cfrases.taula_frequencies();*/
+	ctextos.imprimir_textos();
 }
