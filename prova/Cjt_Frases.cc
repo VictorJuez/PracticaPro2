@@ -142,8 +142,11 @@ void Cjt_Frases::taula_frequencies(){
 }
 
 void Cjt_Frases::llegir() {    
+    string linia;
+    getline(cin,linia);
+    istringstream iss(linia);
     string paraula;
-    cin >> paraula;
+    iss >> paraula;
 	list <string>::iterator it;
     while (paraula != "****"){
 		list <string> l ;
@@ -152,14 +155,14 @@ void Cjt_Frases::llegir() {
         while (fi != '.' and fi != '?' and fi != '!'){
 			l.insert(it, paraula);
 			++nparaules;
-			cin >> paraula;
+			iss >> paraula;
 			fi = paraula[paraula.size()-1];
 			}
             
 		if (paraula != "****"){
 			l.insert(it,paraula);
 
-			cin >> paraula;
+			iss >>paraula;
 			}
 		vfrases.push_back(l);
         ++nparaules;

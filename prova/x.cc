@@ -30,31 +30,40 @@ int main() {
     if (op == "afegir"){
 		iss>>op;
 		if(op == "text"){
+			cout << linia << endl;
 			text.llegir(linia);
 			ctextos.afegir_text(text);
 			}
 	}
 	
+	ws(cin);
 	getline(cin,linia);
-    iss >> op;
-    
+	istringstream iss1(linia);
+	iss1 >> op;
+	cout << op << endl;
     if (op == "afegir"){
-		iss>>op;
+		iss1>>op;
 		if(op == "text"){
-			text1.llegir(linia);
-			ctextos.afegir_text(text1);
+			text.llegir(linia);
+			ctextos.afegir_text(text);
 			}
 	}
+	
+	ws(cin);
 	getline(cin,linia);
-    iss >> op;
-    
+	istringstream iss2(linia);
+	iss2 >> op;
+	cout << op << endl;
     if (op == "afegir"){
-		iss>>op;
+		iss2>>op;
 		if(op == "text"){
-			text2.llegir(linia);
-			ctextos.afegir_text(text2);
+			text.llegir(linia);
+			ctextos.afegir_text(text);
 			}
 	}
+	
+	
+
 	
 	ctextos.imprimir_textos();
 }

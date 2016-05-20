@@ -21,11 +21,11 @@ Cjt_Frases Text::consultar_contingut(){
 	return cjtfrase;
 }
 
-void Text::llegir(string& linia){
+void Text::llegir(string linia){
 	linia.erase(0,13);
     linia.erase(linia.size()-1,1);
     titol = linia;
-    
+
     getline(cin,linia);
     linia.erase(0,7);
     linia.erase(linia.size()-1,1);

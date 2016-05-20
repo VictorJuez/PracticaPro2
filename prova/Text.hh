@@ -70,7 +70,7 @@ public:
 		\pre <em>Estan preparats al canal estandar d'entrada un títol, un autor i un contingut</em>
 		\post El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada
 	*/ 		
-	void llegir(string& linia);
+	void llegir(string linia);
 
 	/** @brief Impresió d'un text. 
 		\pre <em>Cert</em>
