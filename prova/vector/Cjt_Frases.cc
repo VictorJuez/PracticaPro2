@@ -101,8 +101,16 @@ int Cjt_Frases::numero_de_frases() const{
 }
 
 bool Cjt_Frases::conte_paraula(string paraula){
-	for(int i=0; i<taula.size(); ++i){
-		if (paraula == taula[i].paraula) return true;
+	for(int i=0; i < vfrases.size(); ++i){
+		list<string>::const_iterator it;
+		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
+			string aux = *it;
+			
+			if (te_signe(aux)){
+				aux=treure_signes(aux);
+				}
+			if(aux == paraula) return true;
+			}
 		}
 	return false;
 }
