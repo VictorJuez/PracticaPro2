@@ -2,6 +2,9 @@
     @brief Especificació de la clase Cjt_Textos
 */
 
+#ifndef CJTTEXTOS_HH
+#define CJTTEXTOS_HH
+
 /** @class Cjt_Textos
     @brief Conté un conjunt de textos.
 
@@ -10,7 +13,9 @@
 class Cjt_Textos{
 
 private:
-
+	list <Text> ctextos;
+	list <Text>::iterator it;
+	bool triat;
 public:
 	// Constructores
 	
@@ -82,4 +87,5 @@ public:
 		\post Escriu pel canal estàndar de sortida els autors amb el nombre de textos, frases i paraules.
 	*/ 		
 	void imprimir_tots_autors() const;
-}
+};
+#endif
