@@ -5,6 +5,8 @@
 #ifndef CJTTEXTOS_HH
 #define CJTTEXTOS_HH
 
+#include "Text.hh"
+
 /** @class Cjt_Textos
     @brief Conté un conjunt de textos.
 
