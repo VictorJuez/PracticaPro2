@@ -32,6 +32,12 @@ int main() {
 			text.llegir(linia);
 			}
 	}
+	cfrases = text.consultar_contingut();
+	cfrases.taula_frequencies();
+	text.substituir_paraula("lol", "XD");
+	cfrases = text.consultar_contingut();
+	cfrases.escriure();
+	cfrases.taula_frequencies();
 	/*cfrases=text.consultar_contingut();
 	cfrases.escriure();
 	
