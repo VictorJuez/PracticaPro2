@@ -61,7 +61,23 @@ int main() {
 			ctextos.afegir_text(text);
 			}
 	}
+	ws(cin);
+	getline(cin, linia);
+	istringstream iss3(linia);
+	iss3 >> op;
+	cout << op << endl;
 	
+	if (op== "triar"){
+		iss3 >> op;
+		if(op == "text"){
+			linia.erase(0,1);
+			linia.erase(linia.size()-1, 1);
+			ctextos.triar_text(linia);
+			cout << "Text triat  " << endl;
+			text = ctextos.consultar_text_triat();
+			cout << text.consultar_titol() << endl;
+			}
+		}
 	
 
 	

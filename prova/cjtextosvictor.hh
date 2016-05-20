@@ -18,17 +18,10 @@ private:
 	list <Text> ctextos;
 	list <Text>::iterator it_triat;
 	bool triat;
-	struct aut_tit{
-		string autor;
-		string titol;
-	};
-	
-	static bool ordena(aut_tit a,aut_tit b);
 	
 	bool apareix_contingut(string& s);
 	void crear_vfrase(string s, vector<string>& frase);
 	bool trobar_paraules(vector<string> v, Text& t);
-
 public:
 	// Constructores
 	
@@ -38,7 +31,6 @@ public:
 		\post El resultat és un conjunt de textos buit.
 	*/ 
 	Cjt_Textos();
-	
 	
 	//Modificadores
 	/** @brief Modificadora afegir text. 
@@ -65,7 +57,7 @@ public:
 	
 	//Destructora
 	
-
+	~Cjt_Textos();
 	
 	//Consultores
 	
@@ -88,7 +80,7 @@ public:
 		\pre <em>Cert</em>
 		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text ordenats per autor i després títol.
 	*/ 		
-	void imprimir_textos();
+	void imprimir_textos() const;
 	
 	/** @brief Imprimeix els títols de l'autor. 
 		\pre <em>Existeix l'autor</em>
