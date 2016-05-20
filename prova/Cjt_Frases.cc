@@ -75,19 +75,20 @@ Cjt_Frases::Cjt_Frases(){
 }
 
 void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
-	for(int i=0; i<vfrases.size(); ++i){
-		list<string>::iterator it;
-		for(it=vfrases[i].begin(); it !=vfrases[i].end(); ++it){
-			string aux= *it;
+	list <list <string> >::iterator it;
+	for(it = vfrases.begin(); it!=vfrases.end(); ++it){
+		list<string>::iterator it1;
+		for(it1=(*it).begin(); it1 !=(*it).end(); ++it1){
+			string aux= *it1;
 			if(te_signe(aux)){
 				char c;
 				c= guardar_signe(aux);
 				aux=treure_signes(aux);
 				if(aux == paraula1){
-					*it = paraula2 + c;
+					*it1 = paraula2 + c;
 					}
 				}
-			else if(aux == paraula1) *it=paraula2;
+			else if(aux == paraula1) *it1=paraula2;
 			}
 		}
 	bool trobat = false;
@@ -131,8 +132,9 @@ bool Cjt_Frases::conte_paraula(string paraula){
 }
 
 bool Cjt_Frases::conte_paraules(vector<string> paraules){
-	for(int i=0; i<vfrases.size(); ++i){
-		if(conte_paraules_plus(vfrases[i], paraules)) return true;
+	list <list < string > >::iterator it;
+	for( it=vfrases.begin(); it!=vfrases.end(); ++it){
+		if(conte_paraules_plus(*it, paraules)) return true;
 		}
 	return false;
 }
@@ -147,13 +149,15 @@ void Cjt_Frases::taula_frequencies(){
 void Cjt_Frases::llegir() {    
     string paraula;
     cin >> paraula;
-	list <string>::iterator it;
-    while (paraula != "*****"){
+	list <list <string> >::iterator it;
+	it = vfrases.begin();
+	list <string>::iterator it1;
+    while (paraula != "****"){
 		list <string> l ;
-        it = l.begin();
+        it1 = l.begin();
         char fi = paraula[paraula.size()-1];
         while (fi != '.' and fi != '?' and fi != '!'){
-			l.insert(it, paraula);
+			l.insert(it1, paraula);
 			++nparaules;
 			if (te_signe(paraula)){
 				paraula = treure_signes(paraula);
@@ -164,8 +168,8 @@ void Cjt_Frases::llegir() {
 			fi = paraula[paraula.size()-1];
 			}
             
-		if (paraula != "*****"){
-			l.insert(it,paraula);
+		if (paraula != "****"){
+			l.insert(it1,paraula);
 			if (te_signe(paraula)){
 				paraula = treure_signes(paraula);
 				afegir(paraula);
@@ -173,7 +177,7 @@ void Cjt_Frases::llegir() {
 			else afegir(paraula);
 			cin >> paraula;
 			}
-		vfrases.push_back(l);
+		vfrases.insert(it,l);
         ++nparaules;
     }
     sort(taula.begin(),taula.end(),ord);
@@ -181,14 +185,17 @@ void Cjt_Frases::llegir() {
 
 void Cjt_Frases::escriure() const{
     bool primer = true;    
-    list<string> ::const_iterator it;
-    for (int i = 0; i < vfrases.size(); ++i){
-		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
+    list<string>::const_iterator it1;
+    list <list <string> >::const_iterator it;
+    for (it = vfrases.begin(); it != vfrases.end(); ++it){
+		list <string> l1 = (*it);
+		for (it1 = l1.begin(); it1 != l1.end(); ++it1){
+			string aux = (*it1);
 			if (primer){
 				primer = false;
-				cout << *it;
+				cout << aux;
 				}
-			else cout << ' ' << *it;
+			else cout << ' ' << aux;
 			}
 		}
 	cout << endl;
