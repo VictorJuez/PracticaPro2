@@ -114,10 +114,6 @@ bool Cjt_Textos::text_triat(){
 	
 Text Cjt_Textos::consultar_text_triat(){
 	Text text = (*it_triat);
-	
-	Cjt_Frases a;
-	a = text.consultar_contingut();
-	a.escriure();
 	return text;
 	}
 
@@ -182,8 +178,6 @@ void Cjt_Textos::imprimir_tots_autors() const{
 }
 
 void Cjt_Textos::imprimir_textos_autor(string& linia) const{
-	linia.erase(0,14);
-	linia.erase(linia.size()-3,3);
 	vector <string> v;
 	list <Text>::const_iterator it;
 	for (it = ctextos.begin(); it != ctextos.end(); ++it){

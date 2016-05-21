@@ -168,17 +168,13 @@ void Cjt_Frases::llegir() {
     }
 }
 
-void Cjt_Frases::escriure() const{
-    bool primer = true;    
+void Cjt_Frases::escriure() const{    
     list<string>::const_iterator it;
     for (int i = 0; i < vfrases.size(); ++i){
+		cout << i+1;
 		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			if (primer){
-				primer = false;
-				cout << *it;
-				}
-			else cout << ' ' << *it;
+			 cout << ' ' << *it;
 			}
+		cout << endl;
 		}
-	cout << endl;
 }
