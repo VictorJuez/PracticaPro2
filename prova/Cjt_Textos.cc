@@ -181,7 +181,7 @@ void Cjt_Textos::imprimir_tots_autors() const{
 		}
 }
 
-void Cjt_Textos::imprimir_textos_autor(string& linia){
+void Cjt_Textos::imprimir_textos_autor(string& linia) const{
 	linia.erase(0,14);
 	linia.erase(linia.size()-3,3);
 	vector <string> v;
