@@ -29,6 +29,8 @@ private:
 		int num_paraules;
 	};
 	static bool ordena(aut_tit a,aut_tit b);
+	static bool o(string a, string b);
+	static bool u(s1 a, s1 b);
 	
 	void imprimir_vector(vector<string>& v);
 	bool apareix_contingut(string& s);
@@ -68,7 +70,6 @@ public:
 	*/ 	
 	void triar_text(string& s);
 	
-	
 	//Destructora
 	
 
@@ -94,6 +95,9 @@ public:
 		\pre <em>Cert</em>
 		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text ordenats per autor i després títol.
 	*/ 		
+	
+	void imprimir();
+	
 	void imprimir_textos();
 	
 	/** @brief Imprimeix els títols de l'autor. 

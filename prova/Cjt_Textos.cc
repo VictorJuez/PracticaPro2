@@ -60,10 +60,15 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 bool Cjt_Textos::ordena(aut_tit a,aut_tit b){
 	if (a.autor != b.autor) return a.autor < b.autor;
 	return a.titol < b.titol;
+	
 }
 
 bool Cjt_Textos::o(string a, string b){
 	return a < b;
+	}
+
+bool Cjt_Textos::u(s1 a, s1 b){
+	return a.aautor < b.aautor;
 	}
 
 
@@ -109,6 +114,10 @@ bool Cjt_Textos::text_triat(){
 	
 Text Cjt_Textos::consultar_text_triat(){
 	Text text = (*it_triat);
+	
+	Cjt_Frases a;
+	a = text.consultar_contingut();
+	a.escriure();
 	return text;
 	}
 
@@ -126,6 +135,52 @@ void Cjt_Textos::imprimir_textos(){
 		cout << v[i].autor << ' ' << '"' << v[i].titol << '"' << endl;
 		}
 	}
+
+
+void Cjt_Textos::imprimir() {
+	list<Text>::iterator it;
+	Cjt_Frases cfrases;
+	for(it=ctextos.begin(); it!= ctextos.end(); ++it){
+		Text aux = *it;
+		cout << aux.consultar_autor() << ' ' << aux.consultar_titol() << endl;
+		aux.consultar_contingut().escriure();
+		}
+}
+
+void Cjt_Textos::imprimir_tots_autors() const{
+	vector<s1> v;
+	list<Text>::const_iterator it;
+	for(it=ctextos.begin(); it!=ctextos.end(); ++it){
+		Text text=*it;
+		Cjt_Frases cfrases = text.consultar_contingut();
+		bool b=false;
+		int i;
+		for(i=0; not b and i<v.size() ; ++i){
+			if(v[i].aautor==text.consultar_autor()) b=true;
+			}
+		--i;
+		
+		if(b) {
+			++v[i].num_textos;
+			v[i].num_paraules += cfrases.numero_de_paraules();
+			v[i].num_frases += cfrases.numero_de_frases();
+			}
+
+		else{
+			s1 aux;
+			aux.num_textos = 1;
+			aux.aautor = text.consultar_autor();
+			aux.num_frases = cfrases.numero_de_frases();
+			aux.num_paraules = cfrases.numero_de_paraules();
+			v.push_back(aux);
+			}
+	}
+	sort(v.begin(),v.end(),u);
+	for(int i=0; i<v.size(); ++i){
+		cout << v[i].aautor << ' ' << v[i].num_textos << ' ' << v[i].num_frases << ' ' << v[i].num_paraules << endl;
+		}
+}
+
 void Cjt_Textos::imprimir_textos_autor(string& linia){
 	linia.erase(0,14);
 	linia.erase(linia.size()-3,3);
@@ -144,4 +199,3 @@ void Cjt_Textos::imprimir_textos_autor(string& linia){
 		cout << '"' << v[i] << '"' << endl;
 		}
 	}
-
