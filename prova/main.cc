@@ -50,13 +50,8 @@ int main(){
             }
             else cout << "Funcio incorrecte" << endl;
         }
-        else if (op == "triar"){
-            iss >> op;
-            vector <string> paraules;
-            while(iss >> op){
-                paraules.push_back(op);
-            }
-            conjunt_textos.triar_text(paraules);
+        else if (op == "triar"){				// "funciona"
+            conjunt_textos.triar_text(linia);	//
         }
         else if (op == "eliminar"){
             iss >> op;
