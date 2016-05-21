@@ -1,4 +1,4 @@
-#include "Cjt_Textos.hh"
+#include "cjtextosvictor.hh"
 
 Cjt_Textos::Cjt_Textos(){
 	triat = false;
