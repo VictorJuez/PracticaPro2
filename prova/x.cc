@@ -80,8 +80,32 @@ int main() {
 			else cout <<"cap text triat, error" << endl;
 			}
 		}
-	
+	ws(cin);
+	getline(cin, linia);
+	istringstream iss4(linia);
+	iss4 >> op;
+	cout << op << endl;
 
+	if (op== "tots"){
+		iss4 >> op;
+		cout << "ok" << endl;
+		if(op == "autors"){
+			cout << "ok" << endl;
+			cout << linia << endl;
+			ctextos.imprimir_tots_autors();
+		}
 	
 	//ctextos.imprimir_textos();
+	}
+	string h = "triar text {halooo}";
+	ctextos.triar_text(h);
+	text = ctextos.consultar_text_triat();
+	
+	cout << text.consultar_autor() << endl;
+	
+	cfrases = text.consultar_contingut();
+	
+	cout << cfrases.numero_de_frases() << ' ' << cfrases.numero_de_paraules() << endl;
+	
+	cfrases.escriure();
 }

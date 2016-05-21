@@ -22,7 +22,12 @@ private:
 		string autor;
 		string titol;
 	};
-	
+	struct s1{
+		string aautor;
+		int num_textos;
+		int num_frases;
+		int num_paraules;
+	};
 	static bool ordena(aut_tit a,aut_tit b);
 	
 	void imprimir_vector(vector<string>& v);

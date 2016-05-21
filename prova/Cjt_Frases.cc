@@ -161,7 +161,6 @@ void Cjt_Frases::llegir() {
             
 		if (paraula != "****"){
 			l.insert(it,paraula);
-
 			iss >>paraula;
 			}
 		vfrases.push_back(l);
