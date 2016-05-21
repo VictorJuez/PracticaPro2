@@ -60,7 +60,16 @@ bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 bool Cjt_Textos::ordena(aut_tit a,aut_tit b){
 	if (a.autor != b.autor) return a.autor < b.autor;
 	return a.titol < b.titol;
+	
 }
+
+bool Cjt_Textos::o(string a, string b){
+	return a < b;
+	}
+
+bool Cjt_Textos::u(s1 a, s1 b){
+	return a.aautor < b.aautor;
+	}
 
 
 void Cjt_Textos::afegir_text(const Text& text){
@@ -166,7 +175,27 @@ void Cjt_Textos::imprimir_tots_autors() const{
 			v.push_back(aux);
 			}
 	}
+	sort(v.begin(),v.end(),u);
 	for(int i=0; i<v.size(); ++i){
 		cout << v[i].aautor << ' ' << v[i].num_textos << ' ' << v[i].num_frases << ' ' << v[i].num_paraules << endl;
 		}
 }
+
+void Cjt_Textos::imprimir_textos_autor(string& linia){
+	linia.erase(0,14);
+	linia.erase(linia.size()-3,3);
+	vector <string> v;
+	list <Text>::const_iterator it;
+	for (it = ctextos.begin(); it != ctextos.end(); ++it){
+		Text t = (*it);
+		string aut = t.consultar_autor();
+		if (aut == linia){
+			string tit = t.consultar_titol();
+			v.push_back(tit);
+			}
+		}
+	sort (v.begin(),v.end(),o);
+	for (int i = 0; i < v.size();++i){
+		cout << '"' << v[i] << '"' << endl;
+		}
+	}

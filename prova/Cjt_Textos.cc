@@ -62,6 +62,10 @@ bool Cjt_Textos::ordena(aut_tit a,aut_tit b){
 	return a.titol < b.titol;
 }
 
+bool Cjt_Textos::o(string a, string b){
+	return a < b;
+	}
+
 
 void Cjt_Textos::afegir_text(const Text& text){
 	list <Text>::iterator fi;
@@ -120,6 +124,24 @@ void Cjt_Textos::imprimir_textos(){
 	sort(v.begin(), v.end(),ordena);
 	for (int i = 0; i < v.size();++i){
 		cout << v[i].autor << ' ' << '"' << v[i].titol << '"' << endl;
+		}
+	}
+void Cjt_Textos::imprimir_textos_autor(string& linia){
+	linia.erase(0,14);
+	linia.erase(linia.size()-3,3);
+	vector <string> v;
+	list <Text>::const_iterator it;
+	for (it = ctextos.begin(); it != ctextos.end(); ++it){
+		Text t = (*it);
+		string aut = t.consultar_autor();
+		if (aut == linia){
+			string tit = t.consultar_titol();
+			v.push_back(tit);
+			}
+		}
+	sort (v.begin(),v.end(),o);
+	for (int i = 0; i < v.size();++i){
+		cout << '"' << v[i] << '"' << endl;
 		}
 	}
 
