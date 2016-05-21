@@ -105,6 +105,10 @@ bool Cjt_Textos::text_triat(){
 	
 Text Cjt_Textos::consultar_text_triat(){
 	Text text = (*it_triat);
+	
+	Cjt_Frases a;
+	a = text.consultar_contingut();
+	a.escriure();
 	return text;
 	}
 
@@ -123,6 +127,17 @@ void Cjt_Textos::imprimir_textos(){
 		}
 	}
 
+
+void Cjt_Textos::imprimir() {
+	list<Text>::iterator it;
+	Cjt_Frases cfrases;
+	for(it=ctextos.begin(); it!= ctextos.end(); ++it){
+		Text aux = *it;
+		cout << aux.consultar_autor() << ' ' << aux.consultar_titol() << endl;
+		aux.consultar_contingut().escriure();
+		}
+}
+
 void Cjt_Textos::imprimir_tots_autors() const{
 	vector<s1> v;
 	list<Text>::const_iterator it;
@@ -131,17 +146,15 @@ void Cjt_Textos::imprimir_tots_autors() const{
 		Cjt_Frases cfrases = text.consultar_contingut();
 		bool b=false;
 		int i;
-		for(i=0; i<v.size() and not b; ++i){
+		for(i=0; not b and i<v.size() ; ++i){
 			if(v[i].aautor==text.consultar_autor()) b=true;
 			}
 		--i;
-		cout << "la i ---> "<< i << endl;
 		
 		if(b) {
 			++v[i].num_textos;
 			v[i].num_paraules += cfrases.numero_de_paraules();
 			v[i].num_frases += cfrases.numero_de_frases();
-			cout << "segon text ---> "<< v[i].num_frases << endl;
 			}
 
 		else{
@@ -151,10 +164,8 @@ void Cjt_Textos::imprimir_tots_autors() const{
 			aux.num_frases = cfrases.numero_de_frases();
 			aux.num_paraules = cfrases.numero_de_paraules();
 			v.push_back(aux);
-			cout << "primer text ---> "<< aux.num_frases << endl;
 			}
 	}
-	cout << "tamany vector ---> " << v.size() << endl;
 	for(int i=0; i<v.size(); ++i){
 		cout << v[i].aautor << ' ' << v[i].num_textos << ' ' << v[i].num_frases << ' ' << v[i].num_paraules << endl;
 		}

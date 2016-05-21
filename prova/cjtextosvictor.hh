@@ -68,7 +68,6 @@ public:
 	*/ 	
 	void triar_text(string& s);
 	
-	
 	//Destructora
 	
 
@@ -94,6 +93,9 @@ public:
 		\pre <em>Cert</em>
 		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text ordenats per autor i després títol.
 	*/ 		
+	
+	void imprimir();
+	
 	void imprimir_textos();
 	
 	/** @brief Imprimeix els títols de l'autor. 

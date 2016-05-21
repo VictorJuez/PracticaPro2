@@ -142,29 +142,29 @@ void Cjt_Frases::taula_frequencies(){
 }
 
 void Cjt_Frases::llegir() {    
-    string linia;
-    getline(cin,linia);
-    istringstream iss(linia);
     string paraula;
-    iss >> paraula;
+    cin >> paraula;
 	list <string>::iterator it;
     while (paraula != "****"){
-		list <string> l ;
+		list <string> l;
         it = l.begin();
         char fi = paraula[paraula.size()-1];
         while (fi != '.' and fi != '?' and fi != '!'){
 			l.insert(it, paraula);
 			++nparaules;
-			iss >> paraula;
+			cin >> paraula;
 			fi = paraula[paraula.size()-1];
 			}
             
 		if (paraula != "****"){
 			l.insert(it,paraula);
-			iss >>paraula;
+			cin >>paraula;
 			}
 		vfrases.push_back(l);
         ++nparaules;
+     
+       
+        
     }
 }
 
