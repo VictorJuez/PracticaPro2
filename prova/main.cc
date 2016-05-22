@@ -197,6 +197,17 @@ int main(){
 			else cout << "error" << endl;
 		}
 		
+		else if (op == "frases"){
+			if(ctextos.text_triat()){
+				Cjt_Frases frases = text_triat.consultar_contingut();
+				int n, m;
+				iss >> n;
+				iss >> m;
+				cout << n << m << endl;
+				frases.frasesxy(n, m);
+				}
+			}
+		
 		/*else if (op == "cites"){
 			iss >> op;
 			if (op == "autor"){
