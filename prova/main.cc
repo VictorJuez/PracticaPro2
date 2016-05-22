@@ -55,6 +55,8 @@ int main(){
         }
         
         else if (op == "triar"){				// "funciona"
+			linia.erase(0,12);
+			linia.erase(linia.size()-1, 1);
             ctextos.triar_text(linia);
             text_triat = ctextos.consultar_text_triat();
         }
@@ -79,7 +81,7 @@ int main(){
 				string paraula1, paraula2;							//modificada -> comprobar
 				iss >> paraula1;									//
             
-				paraula1 = netejar(paraula1);				//
+				paraula1 = netejar(paraula1);				
             
 				iss >> op;											//
 				iss >> paraula2;									//	
@@ -94,9 +96,8 @@ int main(){
         }
         else if (op == "textos"){
             string autor;
-            iss >> op;
-            iss >> autor;
-			autor = netejar(autor);
+			autor = linia.erase(0,14);
+			autor = autor.erase(autor.size()-1, 1);
             ctextos.imprimir_textos_autor(autor);
         }
         else if (op == "tots"){
