@@ -161,11 +161,19 @@ void Cjt_Frases::llegir() {
 			cin >>paraula;
 			}
 		vfrases.push_back(l);
-        ++nparaules;
-     
-       
-        
+        ++nparaules; 
     }
+}
+
+void Cjt_Frases::frasesxy(int n, int m) const{
+	list<string>::const_iterator it;
+    for (int i = n-1; i < m; ++i){
+		cout << i+1;
+		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
+			 cout << ' ' << *it;
+			}
+		cout << endl;
+		}
 }
 
 void Cjt_Frases::escriure() const{    
