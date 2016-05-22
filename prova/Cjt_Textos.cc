@@ -84,8 +84,6 @@ void Cjt_Textos::eliminar_text(){
 	}
 	
 void Cjt_Textos::triar_text(string& s){
-	s.erase(0,12);
-	s.erase(s.size()-1, 1);
 	list<Text>::iterator it;
 	bool b=false;
 	bool b2=false;
