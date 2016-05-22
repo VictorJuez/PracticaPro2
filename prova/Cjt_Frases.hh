@@ -103,5 +103,7 @@ public:
 		\post S'ha escrit la seqüència de frases del paràmetre implícit al canal estàndar de sortida.
 	*/	
 	void escriure() const;
+	
+	void frasesxy(int n, int m) const;
 };
 #endif
