@@ -30,13 +30,12 @@ int main(){
     Cjt_Textos ctextos;
     Text text_triat;
     Cjt_Frases cfrases;
-       
+    Text text;
     string linia;
     ws(cin);
     getline(cin,linia);
     while (linia!="sortir"){
 		cout << linia << endl;
-		Text text;
         istringstream iss(linia);
         string op;
         iss >> op;
