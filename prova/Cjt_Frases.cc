@@ -1,5 +1,29 @@
 #include "Cjt_Frases.hh"
 
+void Cjt_Frases::imprimir_frase(list<string>& l) const{
+	bool primer=true;
+	list<string>::const_iterator it;
+	for(it=l.begin(); it!=l.end(); ++it){
+		if(primer){
+			cout << *it;
+			primer=false;
+			}
+		else cout << ' ' << *it;
+		}
+	cout << endl;
+}
+
+void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
+	istringstream iss(s);
+	string op;
+	iss >> op;
+	while(iss){
+		frase.push_back(op);
+		iss >> op;
+		}
+}
+
+
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
 		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z')){
@@ -30,6 +54,7 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 			aux=treure_signes(aux);
 		}
 		if (aux==s[0]){
+			if(s.size() == 1) return true;
 			bool b=false;
 			for(int i=1; i<s.size() and not b; ++i){
 				++it;
@@ -115,11 +140,15 @@ bool Cjt_Frases::conte_paraula(string paraula){
 	return false;
 }
 
-bool Cjt_Frases::conte_paraules(vector<string> paraules){
+void Cjt_Frases::conte_paraules(string paraules){
+	vector<string> v;
+	crear_vfrase(paraules, v);
 	for(int i=0; i<vfrases.size(); ++i){
-		if(conte_paraules_plus(vfrases[i], paraules)) return true;
+		if(conte_paraules_plus(vfrases[i], v)) {
+			cout << i+1 << ' ';
+			imprimir_frase(vfrases[i]);
 		}
-	return false;
+	}
 }
 
 void Cjt_Frases::taula_frequencies(){
