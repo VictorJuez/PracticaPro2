@@ -197,15 +197,31 @@ int main(){
 		}
 		
 		else if (op == "frases"){
-			if(ctextos.text_triat()){
-				Cjt_Frases frases = text_triat.consultar_contingut();
-				int n, m;
-				iss >> n;
-				iss >> m;
-				cout << n << m << endl;
-				frases.frasesxy(n, m);
+			iss >> op;
+			char c;
+			c = op[0];
+			
+			if(op[0] != '"'){
+				linia.erase(0,7);
+				istringstream aux(linia);
+				if(ctextos.text_triat()){
+					Cjt_Frases frases = text_triat.consultar_contingut();
+					int n, m;
+					aux >> n;
+					aux >> m;
+					frases.frasesxy(n, m);
+					}
+				}
+			else{
+				linia.erase(0,8);
+				linia.erase(linia.size()-1, 1);
+				cout << linia << endl;
+				if(ctextos.text_triat()){
+					Cjt_Frases frases = text_triat.consultar_contingut();
+					frases.conte_paraules(linia);
 				}
 			}
+		}
 		
 		/*else if (op == "cites"){
 			iss >> op;
