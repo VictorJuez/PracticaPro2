@@ -1,6 +1,6 @@
 afegir text "hola avui"
 autor "enric"
-xapala burru. ebwoooo. ****
+xapala burru. ebwoooo ka fas fillda. xupam lanus, xd. HOla com estas. Aduuuu, jajaj lol. ****
 
 afegir text "deu bon home"
 autor "allahu akbar"
@@ -28,8 +28,17 @@ eliminar text
 
 tots textos ?
 
-eliminar text
+triar text {deu bon}
 
+frases 1 2
+
+triar text {burru}
+
+frases "fas"
+
+triar text {hola avui}
+
+try
 
 
 sortir
