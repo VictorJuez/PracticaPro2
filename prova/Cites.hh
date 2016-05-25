@@ -21,6 +21,12 @@ private:
 		};
 		
 	map <string, cita> mcites;
+	
+	struct sref{
+		string ref;
+		int contador;
+		};
+	vector<sref> vref;
 public:
 	// Constructores
 	
