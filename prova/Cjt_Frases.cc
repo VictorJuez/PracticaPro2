@@ -195,6 +195,19 @@ void Cjt_Frases::llegir() {
     }
 }
 
+void Cjt_Frases::consultar_frasesxy(int n, int m) {
+	vector< list<string> > aux;
+	for(int i=n-1; i<m; ++i){
+		aux.push_back(vfrases[i]);
+		}
+	vfrases.resize(0);
+	vfrases = aux;
+}
+
+void Cjt_Frases::imprimir_nfrase(int n){
+	imprimir_frase(vfrases[n-1]);
+}
+
 void Cjt_Frases::frasesxy(int n, int m) const{
 	list<string>::const_iterator it;
     for (int i = n-1; i < m; ++i){
