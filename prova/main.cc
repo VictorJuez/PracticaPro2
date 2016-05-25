@@ -197,10 +197,7 @@ int main(){
 		}
 		
 		else if (op == "frases"){
-			iss >> op;
-			char c;
-			c = op[0];
-			
+			iss >> op;			
 			if(op[0] != '"'){
 				linia.erase(0,7);
 				istringstream aux(linia);
