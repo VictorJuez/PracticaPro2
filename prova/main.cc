@@ -30,6 +30,7 @@ int main(){
     Cjt_Textos ctextos;
     Text text_triat;
     Cjt_Frases cfrases;
+    Cites cites;
     Text text;
     string linia;
     ws(cin);
@@ -41,19 +42,28 @@ int main(){
         iss >> op;
         if (op == "afegir"){
             iss >> op;
-            if (op == "text"){				// "correcte"
-				text.llegir(linia);			//
-				ctextos.afegir_text(text);	//
+            if (op == "text"){				
+				text.llegir(linia);			
+				ctextos.afegir_text(text);	
             }
-           /* else if (op == "cita"){
-                int x, y;
-                iss >> x;
-                iss >> y;
-                cites.afegir_cita(x,y,text_triat);
-            }*/
+            else if (op == "cita"){
+				if (ctextos.text_triat()){ 
+					int x, y;
+					iss >> x;
+					iss >> y;
+					if (x <= Y and y <= cfrases.numero_de_frases() and x > 0){
+						if (not cites.existeix_cita(x,y,text_triat.consultar_titol()){
+							cites.afegir_cita(x,y,text_triat);
+						}
+						else cout << "error"
+					}
+					else cout << "error" << endl;
+				}
+				else cout << "error" << endl;
+            }
         }
         
-        else if (op == "triar"){				// "funciona"
+        else if (op == "triar"){
 			linia.erase(0,12);
 			linia.erase(linia.size()-1, 1);
             ctextos.triar_text(linia);
@@ -62,33 +72,32 @@ int main(){
         else if (op == "eliminar"){
             iss >> op;
             if (op == "text"){
-				if (ctextos.text_triat()){		//modificada -> comprobar
-					ctextos.eliminar_text();	//
-				}								//
-				else cout << "error" << endl;	//
+				if (ctextos.text_triat()){		
+					ctextos.eliminar_text();	
+				}								
+				else cout << "error" << endl;	
             }
-            /*else if (op == "cita"){
+            
+            else if (op == "cita"){
                 string referencia;
                 iss >> referencia;
-                cites.eliminar_cita(referencia);
-            }*/
-            else cout << "Funcio incorrecte" << endl;
+                if (cites.existeix_cita_ref(referencia)){
+					cites.eliminar_cita(referencia);
+				}
+				else cout << "error" << endl;
+            }
         }
         
         else if (op == "substitueix"){
 			if(ctextos.text_triat()){
-				string paraula1, paraula2;							//modificada -> comprobar
-				iss >> paraula1;									//
-            
+				string paraula1, paraula2;						
+				iss >> paraula1;									
 				paraula1 = netejar(paraula1);				
-            
-				iss >> op;											//
-				iss >> paraula2;									//	
-            
+				iss >> op;											
+				iss >> paraula2;										
 				paraula2 = netejar(paraula2);
 				text_triat.substituir_paraula(paraula1, paraula2);
 				}
-				
 			else cout << "error" << endl;
 			
 			
@@ -103,86 +112,84 @@ int main(){
             iss >> op;
             if (op == "textos"){
                 iss >> op;
-                if (op != "?") cout << "Error" << endl;
-                else ctextos.imprimir_textos();
+                if (op == "?")ctextos.imprimir_textos();
             }
             else if (op == "autors"){
                 iss >> op;
-                if (op != "?") cout << "Error" << endl;
-                else ctextos.imprimir_tots_autors();
+                if (op == "?")ctextos.imprimir_tots_autors();
             }
         }
         else if (op == "info"){
             iss >> op;
-            /*if (op == "cita"){
-                string referencia;						//cal implementar cites encara
-                iss >> referencia;						//
-                referencia.erase(0,1);					//
-                referencia.erase(referencia.size()-1,1);//
-                cites.escriure_cita(referencia);		//
-            }
+            if (op == "cita"){
+                string referencia;
+                iss >> referencia;
+                referencia.erase(0,1);	
+                referencia.erase(referencia.size()-1,1);
+                if (existeix_cita_ref(referencia)){
+					cites.escriure_cita_ref(referencia);
+				}
+				else cout << "error" << endl;
+            } 
             else if (op == '?'){
 				if(ctextos.text_triat()){
-					string autor = text_triat.consultar_autor();		//falten les cites associades
-					string titol = text_triat.consultar_titol();		//
-					cout << autor << ' ' << '"' << titol << '"';		//
-					cfrases = text_triat.consultar_contingut();			//
-					int nfrases, nparaules;								//
-					nfrases = cfrases.numero_de_frases();				//
-					nparaules = cfrases.numero_de_paraules();			//
-					cout << ' ' << nfrases << ' ' << nparaules << endl;	//
+					string autor = text_triat.consultar_autor();		
+					string titol = text_triat.consultar_titol();		
+					cout << autor << ' ' << '"' << titol << '"';		
+					cfrases = text_triat.consultar_contingut();			
+					int nfrases, nparaules;								
+					nfrases = cfrases.numero_de_frases();				
+					nparaules = cfrases.numero_de_paraules();			
+					cout << ' ' << nfrases << ' ' << nparaules << endl;	
+					cout << "Cites Associades:" << endl;
+					cites.escriure_cita_info(string titol);
 					}
-				else cout << "Error" << endl;
+				else cout << "error" << endl;
             }
-            */
+            
         }
         else if (op == "autor"){
 			if(ctextos.text_triat()){
 				iss >> op;
-				if (op != "?") cout << "Error" << endl;
-				else cout << text_triat.consultar_autor() << endl;
+				cout << text_triat.consultar_autor() << endl;
 			}
-			else cout << "Error" << endl;
+			else cout << "error" << endl;
         }
         else if (op == "contingut"){
 			if(ctextos.text_triat()){
 				iss >> op;
-				if (op != "?") cout << "Error" << endl;
-				else text_triat.consultar_contingut().escriure();
+				text_triat.consultar_contingut().escriure();
 			}
-			else cout << "Error" << endl;
+			else cout << "error" << endl;
         }
-        /*else if (op == "frases"){
-            int x, y;
-            iss >> x;
-            iss >> y;
-            iss >> op;
-            if (op != '?') cout << "Error" << endl;
-            else{
-                Cjt_frases frases = text_triat.consultar_contingut();
-                Cjt_frases aux = frases.frases_xy(x,y);
-                aux.escriure();
+        else if (op == "frases"){
+			if (ctextos.text_triat()){
+				int x, y;
+				iss >> x;
+				iss >> y;
+				cfrases = text_triat.consultar_contingut();
+				if (x <=y and y <= cfrases.numero_de_frases() and x > 0)
+					cfrases = text_triat.consultar_contingut();
+					cfrases.frases_xy(x,y);
+				else cout << "error" << endl;
+            else cout << "error" << endl;
             }
             
-        }*/
+        }
         else if (op == "nombre"){
 			if(ctextos.text_triat()){
 				iss >> op;
 				iss >> op;
 				if (op == "frases"){
 					iss >> op;
-					if (op != "?") cout << "Error" << endl;
-					else{
-						int nfrases = text_triat.consultar_contingut().numero_de_frases();
-						cout << nfrases << endl;
+					int nfrases = text_triat.consultar_contingut().numero_de_frases();
+					cout << nfrases << endl;
 					}
 				}
 				else if (op == "paraules"){
 					iss >> op;
-					if (op != "?") cout << "Error" << endl;
-					else{
-						int nparaules = text_triat.consultar_contingut().numero_de_paraules();
-						cout << nparaules << endl;
+					int nparaules = text_triat.consultar_contingut().numero_de_paraules();
+					out << nparaules << endl;
 					}
 				}
 			}
@@ -190,8 +197,8 @@ int main(){
         }
         else if (op == "taula"){
 			if(ctextos.text_triat()){
-				Cjt_Frases frases = text_triat.consultar_contingut();
-				frases.taula_frequencies();
+				cfrases = text_triat.consultar_contingut();
+				cfrases.taula_frequencies();
 			}
 			else cout << "error" << endl;
 		}
@@ -202,7 +209,7 @@ int main(){
 				linia.erase(0,7);
 				istringstream aux(linia);
 				if(ctextos.text_triat()){
-					Cjt_Frases frases = text_triat.consultar_contingut();
+					cfrases = text_triat.consultar_contingut();
 					int n, m;
 					aux >> n;
 					aux >> m;
@@ -214,44 +221,31 @@ int main(){
 				linia.erase(linia.size()-1, 1);
 				cout << linia << endl;
 				if(ctextos.text_triat()){
-					Cjt_Frases frases = text_triat.consultar_contingut();
-					frases.conte_paraules(linia);
+					cfrases = text_triat.consultar_contingut();
+					cfrases.conte_paraules(linia);
 				}
 			}
 		}
 		
-		/*else if (op == "cites"){
+		else if (op == "cites"){
 			iss >> op;
 			if (op == "autor"){
 				string autor;
 				iss >> autor;
+				iss >> op;
 				cites.escriure_cites_autor(autor);
 				}
 			else if (op == '?'){
-                cites.escriure_cita_triat();
+				if (ctextos.text_triat()){
+					cites.escriure_cita_triat();
 				}
-            else cout << "Error" << endl;
-        }*/
+				else cout << "error" << endl;
+        }
         
-        /*else if (op == "totes"){
-            iss >> op;
-            if (op != 'cites') cout << "Error" << endl;
-            else{
-                iss >> op;
-                if (op == '?')cites.escriure_cites();
-                else cout << "Error" << endl;
-            }
-        }*/
+        else if (op == "totes"){
+                cites.escriure_cites();
+        }
         
-        /*else if (op == "eliminar"){
-            iss >> op;
-            if (op == "cita"){
-                string referencia;
-                iss >> referencia;
-                cites.eliminar_cita(referencia);
-            }
-            else cout << "Error" << endl;
-        }*/
         cout << endl;
         ws(cin);
         getline (cin,linia);
