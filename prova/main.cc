@@ -68,7 +68,10 @@ int main(){
 			linia.erase(0,12);
 			linia.erase(linia.size()-1, 1);
             ctextos.triar_text(linia);
-            text_triat = ctextos.consultar_text_triat();
+            if(ctextos.text_triat()){
+				text_triat = ctextos.consultar_text_triat();
+			}
+			else cout << "error" << endl;
         }
         else if (op == "eliminar"){
             iss >> op;
@@ -106,7 +109,7 @@ int main(){
         else if (op == "textos"){
             string autor;
 			autor = linia.erase(0,14);
-			autor = autor.erase(autor.size()-1, 1);
+			autor = autor.erase(autor.size()-3, 3);
             ctextos.imprimir_textos_autor(autor);
         }
         else if (op == "tots"){
@@ -165,19 +168,27 @@ int main(){
         }
         else if (op == "frases"){
 			if (ctextos.text_triat()){
-				int x, y;
-				iss >> x;
-				iss >> y;
-				cfrases = text_triat.consultar_contingut();
-				if (x <=y and y <= cfrases.numero_de_frases() and x > 0){
-					cfrases = text_triat.consultar_contingut();
-					cfrases.frasesxy(x,y);
-				}
-				else cout << "error" << endl;
-				}
-            else cout << "error" << endl;
-            
-        }
+				iss >> op;
+					if (op[0] == '"'){
+						cfrases = text_triat.consultar_contingut();
+						string aux = linia.erase(0,8);
+						aux.erase(aux.size()-3,3);
+						cfrases.conte_paraules(linia);
+					}
+					else{
+						int x, y;
+						op = x;
+						iss >> y;
+						cfrases = text_triat.consultar_contingut();
+						if (x <=y and y <= cfrases.numero_de_frases() and x > 0){
+							cfrases = text_triat.consultar_contingut();
+							cfrases.frasesxy(x,y);
+						}
+						else cout << "error" << endl;
+					}
+			}
+			else cout << "error" << endl;
+		}            
         else if (op == "nombre"){
 			if(ctextos.text_triat()){
 				iss >> op;

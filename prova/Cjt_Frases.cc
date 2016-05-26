@@ -26,7 +26,7 @@ void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
 
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
-		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z')){
+		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z') and (last < '0' or last > '9')){
 				return true;
 				}
 		return false;
@@ -180,7 +180,7 @@ void Cjt_Frases::llegir() {
 		list <string> l;
         it = l.begin();
         char fi = paraula[paraula.size()-1];
-        while (fi != '.' and fi != '?' and fi != '!'){
+        while (fi != '.' and fi != '?' and fi != '!' or (fi >= '0' and fi <= '9')){
 			l.insert(it, paraula);
 			++nparaules;
 			cin >> paraula;
