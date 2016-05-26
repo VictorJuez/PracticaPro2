@@ -64,6 +64,8 @@ public:
 	*/ 	    
 	Cjt_Frases consultar_contingut();
 	
+	void consultar_frasesxy(int x, int y);
+	
 	//Lectura i escriptura
 	
 	/** @brief Lectura d'un text. 
