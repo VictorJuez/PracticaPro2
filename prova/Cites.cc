@@ -1,33 +1,45 @@
 #include "Cites.hh"
+#include <list>
 
-void Cites::escriure_aux(Cjt_Frases& c){
-	int aux=inici;
-	for(int i=1; i<=c.numero_de_frases(); ++i, ++aux){
-		cout << aux << ' ';
-		c.imprimir_nfrase(i);
+bool Cites::comp(const cita& a, const cita& b){
+	string primer = a.referencia;
+	primer.erase(2,primer.size()-1);
+	string segon = b.referencia;
+	segon.eares(2,segon.size()-1);
+	if (primer != segon) return primer < segon;
+	primer = a.referencia;
+	primer.erase(0,2);
+	int p = atoi(primer.c_str());
+	segon = b.referencia;
+	segon.erase(0,2);
+	int s = atoi(segon.c_str());	
+	return p < s;
+	}
+
+void Cites::escriure_cites(){
+	lcites.sort(comp);
+	list <cita>::const_iterator it;
+	for (it = lcites.begin(); it != lcites.end(); ++it){
+		string s = (*it).referencia;
+		cout << s << endl;
+		escriure_cita(s);
+		string a = (*it).tcita.consultar_autor();
+		string t = (*it).tcita.consultar_titol();
+		cout << a << ' ' << t << endl;
 		}
 }
 
-void Cites::afegir_cita(int x, int y, Text text){
-	text.consultar_contingut.consultar_frasesxy(x, y);
-	string ref;
-	string autor = text.consultar_autor();
-	ref= autor[0]+
-	mcites.insert(make_pair(ref, text));
-}
-
-void Cites::eliminar_cita(string& referencia){
-	map <string, cita>::const_iterator it = mcites.find(referencia);
-	if (it != mcites.end()) mcites.erase(referencia);
-	else cout << "error" << endl;
-}
-
-void Cites::escriure_cita(string& referencia) const{
-	map <string, cita>::const_iterator it = mcites.find(referencia);
-	if (it != mcites.end()){
-		it -> second;
-		escriure_aux(*it.consultar_contingut());
-		
+void Cites::escriure_cita_triat(string titol){
+	lcites.sort(comp);
+	list <cita>::const_iterator it;
+	for (it = lcites.begin(); it != lcites.end(); ++it){
+		if (titol == (*it).tcita.consultar_autor()){
+			string ref = (*it).referencia;
+			cout << ref << endl;
+			escriure_cita(ref);
+			string a = (*it).tcita.consultar_autor();
+			string t = (*it).tcita.consultar_titol();
+			cout << a << ' ' << t << endl;
+			}
 		}
-	else cout << "error" << endl;
 }
