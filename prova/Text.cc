@@ -21,6 +21,10 @@ Cjt_Frases Text::consultar_contingut(){
 	return cjtfrase;
 }
 
+void Text::consultar_frasesxy(int x, int y){
+	cjtfrase.consultar_frasesxy(x,y);
+}
+
 void Text::llegir(string linia){
 	linia.erase(0,13);
     linia.erase(linia.size()-1,1);
