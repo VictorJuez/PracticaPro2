@@ -14,7 +14,7 @@ Només es documenten elements públics.
 #include <string>
 #include <iostream>
 #include "Cjt_Textos.hh"
-#include "Cites.hh"
+#include "lcites.hh"
 using namespace std;
 
 /** @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
@@ -31,6 +31,7 @@ int main(){
     Cjt_Textos ctextos;
     Text text_triat;
     Cjt_Frases cfrases;
+    Cites lol;
     Text text;
     string linia;
     ws(cin);
@@ -232,10 +233,26 @@ int main(){
 			
 			}
 		else if (op== "try2"){
-			
-			
-			
+			lol.afegir_cita(2,4, text_triat);
+			//string s = "EH1";
+			//lol.escriure_cita(s);
+		
 			}
+		else if (op == "try3"){
+			string s, s1, s2;
+			s= "EH1";
+			s1= "EH2";
+			s2 = "EA1";
+			
+			lol.escriure_cita_ref(s);
+			lol.escriure_cita_ref(s1);
+			lol.escriure_cita_ref(s2);
+			
+			//string s = "Enric Hola";
+			
+			//lol.escriure_cites_autor(s);
+			
+		}
 		
 		/*else if (op == "cites"){
 			iss >> op;
