@@ -248,11 +248,15 @@ int main(){
 			lol.escriure_cita_ref(s1);
 			lol.escriure_cita_ref(s2);
 			
-			//string s = "Enric Hola";
+			string s4 = "Enric Hola";
 			
-			//lol.escriure_cites_autor(s);
+			lol.escriure_cites_autor(s4);
 			
 		}
+		
+		else if (op== "try4"){
+			lol.escriure_cita_triat(text_triat.consultar_titol());
+			}
 		
 		/*else if (op == "cites"){
 			iss >> op;
