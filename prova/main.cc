@@ -14,6 +14,7 @@ Només es documenten elements públics.
 #include <string>
 #include <iostream>
 #include "Cjt_Textos.hh"
+#include "Cites.hh"
 using namespace std;
 
 /** @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
@@ -51,11 +52,11 @@ int main(){
 					int x, y;
 					iss >> x;
 					iss >> y;
-					if (x <= Y and y <= cfrases.numero_de_frases() and x > 0){
-						if (not cites.existeix_cita(x,y,text_triat.consultar_titol()){
+					if (x <= y and y <= cfrases.numero_de_frases() and x > 0){
+						if (not cites.existeix_cita(x, y, text_triat.consultar_titol() )){
 							cites.afegir_cita(x,y,text_triat);
 						}
-						else cout << "error"
+						else cout << "error" << endl;
 					}
 					else cout << "error" << endl;
 				}
@@ -126,12 +127,12 @@ int main(){
                 iss >> referencia;
                 referencia.erase(0,1);	
                 referencia.erase(referencia.size()-1,1);
-                if (existeix_cita_ref(referencia)){
+                if (cites.existeix_cita_ref(referencia)){
 					cites.escriure_cita_ref(referencia);
 				}
 				else cout << "error" << endl;
             } 
-            else if (op == '?'){
+            else if (op == "?"){
 				if(ctextos.text_triat()){
 					string autor = text_triat.consultar_autor();		
 					string titol = text_triat.consultar_titol();		
@@ -142,7 +143,7 @@ int main(){
 					nparaules = cfrases.numero_de_paraules();			
 					cout << ' ' << nfrases << ' ' << nparaules << endl;	
 					cout << "Cites Associades:" << endl;
-					cites.escriure_cita_info(string titol);
+					cites.escriure_cita_info(titol);
 					}
 				else cout << "error" << endl;
             }
@@ -168,12 +169,13 @@ int main(){
 				iss >> x;
 				iss >> y;
 				cfrases = text_triat.consultar_contingut();
-				if (x <=y and y <= cfrases.numero_de_frases() and x > 0)
+				if (x <=y and y <= cfrases.numero_de_frases() and x > 0){
 					cfrases = text_triat.consultar_contingut();
-					cfrases.frases_xy(x,y);
+					cfrases.frasesxy(x,y);
+				}
 				else cout << "error" << endl;
+				}
             else cout << "error" << endl;
-            }
             
         }
         else if (op == "nombre"){
@@ -185,14 +187,12 @@ int main(){
 					int nfrases = text_triat.consultar_contingut().numero_de_frases();
 					cout << nfrases << endl;
 					}
-				}
 				else if (op == "paraules"){
 					iss >> op;
 					int nparaules = text_triat.consultar_contingut().numero_de_paraules();
-					out << nparaules << endl;
+					cout << nparaules << endl;
 					}
 				}
-			}
 			else cout << "error" << endl;
         }
         else if (op == "taula"){
@@ -213,7 +213,7 @@ int main(){
 					int n, m;
 					aux >> n;
 					aux >> m;
-					frases.frasesxy(n, m);
+					cfrases.frasesxy(n, m);
 					}
 				}
 			else{
@@ -235,16 +235,17 @@ int main(){
 				iss >> op;
 				cites.escriure_cites_autor(autor);
 				}
-			else if (op == '?'){
+			else if (op == "?"){
 				if (ctextos.text_triat()){
-					cites.escriure_cita_triat();
+					cites.escriure_cita_triat(text_triat.consultar_titol());
 				}
 				else cout << "error" << endl;
-        }
+			}
         
-        else if (op == "totes"){
+			else if (op == "totes"){
                 cites.escriure_cites();
-        }
+			}
+		}
         
         cout << endl;
         ws(cin);

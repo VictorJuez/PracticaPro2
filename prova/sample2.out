@@ -1,0 +1,253 @@
+afegir text "The Picture of Dorian Gray"
+
+afegir text "La ciencia. Su metodo y su filosofia"
+
+tots textos ?
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Oscar Wilde "The Picture of Dorian Gray"
+
+info ?
+error
+
+triar text {moral beautiful charming}
+
+contingut ?
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+3 Those who find beautiful meanings in beautiful things are the cultivated.
+4 For these there is hope.
+5 They are the elect to whom beautiful things mean only Beauty.
+6 There is no such thing as a moral or an immoral book.
+7 Books are well written, or badly written.
+8 That is all.
+
+substitueix "Books" per "Journals"
+
+frases 5 7 ?
+5 They are the elect to whom beautiful things mean only Beauty.
+6 There is no such thing as a moral or an immoral book.
+7 Journals are well written, or badly written.
+
+textos autor "Mario Bunge" ?
+
+tots autors ?
+Mario Bunge 1 1 24
+Oscar Wilde 1 8 66
+
+totes cites ?
+
+afegir cita 1 2
+
+info ?
+Oscar Wilde "The Picture of Dorian Gray" 8 66
+Cites Associades:
+OW1
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+
+autor ?
+Oscar Wilde
+
+afegir text "Where the wild things are"
+
+afegir text "Los sistemas de riego antes del siglo X"
+
+afegir text "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+
+tots textos ?
+Mar Sierra "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+Maurice Sendak "Where the wild things are"
+Oscar Wilde "The Picture of Dorian Gray"
+
+triar text {Saturn moon}
+
+triar text {el una}
+
+triar text {cientifica filosofia hombre}
+
+contingut ?
+1 Por medio de la investigacion cientifica, el hombre ha alcanzado una reconstruccion conceptual del mundo que es cada vez mas amplia, profunda y exacta.
+
+nombre de frases ?
+1
+
+nombre de paraules ?
+24
+
+taula de frequencies ?
+y 1
+de 1
+el 1
+es 1
+ha 1
+la 1
+Por 1
+del 1
+mas 1
+que 1
+una 1
+vez 1
+cada 1
+medio 1
+mundo 1
+amplia 1
+exacta 1
+hombre 1
+profunda 1
+alcanzado 1
+cientifica 1
+conceptual 1
+investigacion 1
+reconstruccion 1
+
+afegir cita 1 1
+
+triar text {eyes another roars}
+
+contingut ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+
+frases "they terrible" ?
+error
+
+frases "their terrible" ?
+error
+
+afegir cita 2 3
+
+cites ?
+MS1
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+Maurice Sendak "Where the wild things are"
+
+eliminar cita "MS1"
+error
+
+cites ?
+MS1
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+Maurice Sendak "Where the wild things are"
+
+afegir cita 5 6
+
+afegir cita 1 1
+
+info ?
+Maurice Sendak "Where the wild things are" 6 84
+Cites Associades:
+MS1
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+MS2
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+MS3
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+
+triar text {agricultura ganaderia bosques}
+
+afegir cita 1 1
+
+triar text {Puquios riego canales}
+
+taula de frequencies ?
+de 7
+el 4
+en 4
+que 4
+la 3
+construcciones 3
+y 2
+se 2
+Los 2
+una 2
+zona 2
+Estas 2
+Nazca 2
+Puquios 2
+espiral 2
+desertica 2
+20 1
+al 1
+600 1
+del 1
+esa 1
+fue 1
+los 1
+por 1
+red 1
+son 1
+sur 1
+Peru 1
+agua 1
+anos 1
+eran 1
+para 1
+entre 1
+forma 1
+hasta 1
+hogar 1
+mismo 1
+claves 1
+fueron 1
+hunden 1
+nombre 1
+pueblo 1
+tierra 1
+viento 1
+canales 1
+cultura 1
+especie 1
+pudiera 1
+sistema 1
+conducia 1
+distribuir 1
+sobrevivir 1
+distribuyen 1
+ventilacion 1
+sofisticadas 1
+subterraneos 1
+
+afegir cita 1 1
+
+tots autors ?
+Mar Sierra 1 4 89
+Mario Bunge 1 1 24
+Mariona Blay Andreu 1 4 85
+Maurice Sendak 1 6 84
+Oscar Wilde 1 8 66
+
+totes cites ?
+
+eliminar text
+
+tots autors ?
+Mar Sierra 1 4 89
+Mario Bunge 1 1 24
+Maurice Sendak 1 6 84
+Oscar Wilde 1 8 66
+
+totes cites ?
+
+cites autor "Oscar Wilde" ?
+
+info cita "OW1" ?
+The Picture of Dorian Gray
+1-2
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+
+eliminar cita "OW1"
+error
+
+totes cites ?
+

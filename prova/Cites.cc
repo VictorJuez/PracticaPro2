@@ -1,4 +1,4 @@
-#include "lcites.hh"
+#include "Cites.hh"
 #include <stdlib.h>
 
 Cites::Cites(){
@@ -23,12 +23,22 @@ string Cites::crear_ref(string s, int n){
 	return s;
 }
 
-bool Cites::existeix_cita(int x, int y, Text& t){
-	/*list<cita>::iterator it;
+bool Cites::existeix_cita(int x, int y, string titol){
+	list<cita>::iterator it;
 	
 	for(it=lcites.begin(); it!=lcites.end(); ++it){
-		if
-		}*/
+		if((*it).tcita.consultar_titol() == titol){
+			if(((*it).inici == x)and ((*it).inici + (*it).tcita.consultar_contingut().numero_de_frases()-1 == y)) return true;
+			}
+		}
+	return false;
+}
+
+bool Cites::existeix_cita_ref(string referencia){
+	list<cita>::iterator it;
+	buscar_referencia(referencia, it);
+	if (it == lcites.end()) return false;
+	else return true;
 }
 
 void Cites::buscar_referencia(string s, list<cita>::iterator& it){
@@ -68,7 +78,6 @@ void Cites::afegir_cita(int x, int y, Text text){
 		r=crear_ref(r, 1);
 		vref.push_back(saux);
 		}
-		cout << r << endl;
 		
 	cita xcita;
 	xcita.referencia=r;
@@ -106,9 +115,22 @@ void Cites::escriure_cita_ref(string& referencia){
 }
 
 void Cites::escriure_cites_autor(string& autor){
+	lcites.sort(comp);
 	list<cita>::iterator it;
 	for(it=lcites.begin(); it!=lcites.end(); ++it){
 		if((*it).tcita.consultar_autor() == autor){
+			cout <<(*it).referencia << endl;
+			escriure_cita((*it).referencia);
+			cout << '"' << (*it).tcita.consultar_titol() << '"' << endl;
+			}
+		}
+}
+
+void Cites::escriure_cita_info(string titol){
+	list<cita>::iterator it;
+	for(it=lcites.begin(); it!=lcites.end(); ++it){
+		if((*it).tcita.consultar_titol() == titol){
+			cout << (*it).referencia << endl;
 			escriure_cita((*it).referencia);
 			}
 		}

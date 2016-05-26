@@ -35,6 +35,8 @@ private:
 	void buscar_referencia(string s, list<cita>::iterator& it);
 	string crear_ref(string s, int n);
 	static bool comp(const cita& a, const cita& b);
+	
+	 void escriure_cita(string& referencia);
 public:
 	// Constructores
 	
@@ -64,7 +66,9 @@ public:
 	//Consultores
 	Cjt_Frases consultar_contingut(string r);
 	
-	bool existeix_cita(int x, int y, Text& t);
+	bool existeix_cita(int x, int y, string titol);
+	
+	bool existeix_cita_ref(string referencia);
 	
 	//Lectura i escriptura
 	
@@ -72,7 +76,6 @@ public:
 		\pre <em>Existeix una cita amb la mateixa referència</em>
 		\post S'escriu pel canal estandar de sortida la cita amb aquesta referència.
 	*/         
-        void escriure_cita(string& referencia);
         void escriure_cita_ref(string& referencia);
         
  	/** @brief Imprimir cites d'autor. 
@@ -86,6 +89,8 @@ public:
 		\post S'han escrit pel canal estàndar de sortida totes les cites del text triat.
 	*/         
         void escriure_cita_triat(string titol);
+        
+        void escriure_cita_info(string titol);
         
  	/** @brief Imprimir cites. 
 		\pre <em>Cert</em>

@@ -171,7 +171,8 @@ void Cjt_Frases::taula_frequencies(){
 }
 
 void Cjt_Frases::llegir() {  
-	vfrases.resize(0);  
+	vfrases.resize(0);
+	nparaules = 0;  
     string paraula;
     cin >> paraula;
 	list <string>::iterator it;
