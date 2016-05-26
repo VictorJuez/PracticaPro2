@@ -61,6 +61,9 @@ public:
 	//Destructora
 	
 	//Consultores
+	Cjt_Frases consultar_contingut(string r);
+	
+	bool existeix_cita(int x, int y, Text& t);
 	
 	//Lectura i escriptura
 	
@@ -69,6 +72,7 @@ public:
 		\post S'escriu pel canal estandar de sortida la cita amb aquesta referència.
 	*/         
         void escriure_cita(string& referencia);
+        void escriure_cita_ref(string& referencia);
         
  	/** @brief Imprimir cites d'autor. 
 		\pre <em>Existeix l'autor dins de les cites</em>
