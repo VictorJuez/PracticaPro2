@@ -140,6 +140,19 @@ bool Cjt_Frases::conte_paraula(string paraula){
 	return false;
 }
 
+bool Cjt_Frases::conte_paraula_expressio(string paraula, int i){
+	list<string>::iterator it;
+	for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
+		string aux = *it;
+			
+		if (te_signe(aux)){
+			aux=treure_signes(aux);
+			}
+		if(aux == paraula) return true;
+		}
+	return false;
+}
+
 void Cjt_Frases::conte_paraules(string paraules){
 	vector<string> v;
 	crear_vfrase(paraules, v);
@@ -149,6 +162,70 @@ void Cjt_Frases::conte_paraules(string paraules){
 			imprimir_frase(vfrases[i]);
 		}
 	}
+}
+
+bool Cjt_Frases::expressio_i(string& exp, int j){
+	cout << exp << endl;
+	char signe;
+	if (exp[0] == '{' and exp[exp.size()-1] == '}'){
+		exp.erase(0,1);
+		exp.erase(exp.size()-1, 1);
+		istringstream iss(exp);
+		string paraula;
+		iss >> paraula;
+		bool b = true;
+		while(b and iss){
+			if(not conte_paraula_expressio(paraula, j)) b=false;
+			iss >> paraula;
+			}
+		return b;
+		}
+	else{
+		string esq, dre;
+		int cont = 0;
+		bool t = true;
+		for (int i = 0; i < exp.size(); ++i){
+			if (t) esq.insert(esq.end(),1,exp[i]);
+			else dre.insert(dre.end(),1,exp[i]);
+			
+			if (exp[i] == '(') ++cont;
+			else if (exp[i] == ')') --cont;
+			
+			if (cont == 1 and (exp[i] == '&' or exp[i] == '|')){
+				t = false;
+				signe = exp[i];
+			}
+		}
+		esq.erase(0,1);
+		for(int i=esq.size()-1; esq[i]!='}' and esq[i]!=')'; --i){
+			esq.erase(esq.end()-1);
+			}
+
+		for(int i=0; dre[i]!='{' and esq[i]!='('; ++i){
+			dre.erase(dre.begin());
+			}
+			
+		dre.erase(dre.size()-1,1);
+
+		if(signe == '&'){
+			if(expressio_i(esq,j) and expressio_i(dre,j)) return true;
+			else return false;
+			}
+		else if(signe == '|'){
+			if(expressio_i(esq,j) or expressio_i(dre,j)) return true;
+			else return false;
+			}
+		}
+}
+
+void Cjt_Frases::expressio(string& exp){
+	for(int j=0; j<vfrases.size(); ++j){
+		cout << "hh" << endl;
+		if(expressio_i(exp, j)) {
+			cout << "peerfect"<< endl;
+			//imprimir_nfrase(i+1);
+		}
+		}
 }
 
 void Cjt_Frases::taula_frequencies(){

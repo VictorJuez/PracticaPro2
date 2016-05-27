@@ -81,6 +81,14 @@ triar text {eyes another roars}
 
 contingut ?
 
+frases (({night wolf} | {When}) & {And}) ?
+
+frases (({night wolf} | {When}) & {and}) ?
+
+frases ({king} | {roars eyes}) ?
+
+frases (({tamed} | {mischief}) | {king wild}) ?
+
 frases "they terrible" ?
 
 frases "their terrible" ?

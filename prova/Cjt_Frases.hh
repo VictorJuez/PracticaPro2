@@ -38,6 +38,8 @@ private:
     void imprimir_frase(list<string>& l) const;
     static bool ord(freq a,freq b);
     void crear_vfrase(string s, vector<string>& frase);
+    bool conte_paraula_expressio(string paraula, int i);
+    bool expressio_i(string& exp, int j);
     
 
 public:
@@ -85,6 +87,8 @@ public:
 		\post el resultat ens indica si la frase conté la mateixa seqüència de paraules.
 	*/  
 	void conte_paraules(string paraules);
+	
+	void expressio(string& exp);
 	
 	//Lectura i escriptura
 
