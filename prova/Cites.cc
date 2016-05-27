@@ -56,11 +56,12 @@ void Cites::afegir_cita(int x, int y, Text text){
 	string autor = text.consultar_autor();
 	
 	istringstream iss(autor);
-	string n, c;
-	iss >> n;
-	iss >> c;
-	r.insert(0,1, n[0]);
-	r.insert(1,1, c[0]);
+	string nom;
+	iss >> nom;
+	while (iss){
+		r.insert(r.end(),1,nom[0]);
+		iss >> nom;
+		}
 	
 	bool trobat=false;
 	for(int i=0; i<vref.size() and not trobat; ++i){
@@ -108,7 +109,8 @@ void Cites::escriure_cita(string& referencia){
 void Cites::escriure_cita_ref(string& referencia){
 	list<cita>::iterator it;
 	buscar_referencia(referencia, it);
-	cout<< (*it).tcita.consultar_titol() << endl;
+	cout << (*it).tcita.consultar_autor() << ' ';
+	cout << '"' << (*it).tcita.consultar_titol()<< '"' << endl;
 	cout << (*it).inici << '-' << (*it).inici + (*it).tcita.consultar_contingut().numero_de_frases()-1 << endl;
 	escriure_cita(referencia);
 	
@@ -138,17 +140,36 @@ void Cites::escriure_cita_info(string titol){
 
 bool Cites::comp(const cita& a, const cita& b){
 	string primer = a.referencia;
-	primer.erase(2,primer.size()-1);
+	string primer_lletres;
+	for (int i = 0; i < primer.size(); ++i){
+		if ((primer[i] >= 'a' and primer[i] <= 'z') or (primer[i] > 'A' and primer[i] <= 'Z')){
+			primer_lletres.insert(primer_lletres.end(),1,primer[i]);
+			}
+		}
+	
 	string segon = b.referencia;
-	segon.erase(2,segon.size()-1);
-	if (primer != segon) return primer < segon;
-	primer = a.referencia;
-	primer.erase(0,2);
-	int p = atoi(primer.c_str());
-	segon = b.referencia;
-	segon.erase(0,2);
-	int s = atoi(segon.c_str());	
-	return p < s;
+	string segon_lletres;
+	for (int i = 0; i < segon.size(); ++i){
+		if ((segon[i] >= 'a' and segon[i] <= 'z') or (segon[i] > 'A' and segon[i] <= 'Z')){
+			segon_lletres.insert(segon_lletres.end(),1,segon[i]);
+			}
+		}
+	if (primer != segon) return primer_lletres < segon_lletres;
+	string p;
+	for (int i = 0; i < primer.size(); ++i){
+		if (primer[i] >= '0' and primer[i] <= '9'){
+			p.insert(p.end(),1,primer[i]);
+			}
+		}
+	string s;
+	for (int i = 0; i < segon.size(); ++i){
+		if (segon[i] >= '0' and segon[i] <= '9'){
+			s.insert(s.end(),1,primer[i]);
+			}
+		}
+	int pr = atoi(p.c_str());
+	int se = atoi(s.c_str());	
+	return pr < se;
 	}
 
 void Cites::escriure_cites(){
@@ -178,3 +199,4 @@ void Cites::escriure_cita_triat(string titol){
 			}
 		}
 }
+

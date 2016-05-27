@@ -85,6 +85,8 @@ int main(){
             else if (op == "cita"){
                 string referencia;
                 iss >> referencia;
+                referencia.erase(0,1);
+                referencia.erase(referencia.size()-1,1);
                 if (cites.existeix_cita_ref(referencia)){
 					cites.eliminar_cita(referencia);
 				}
@@ -173,15 +175,14 @@ int main(){
 						cfrases = text_triat.consultar_contingut();
 						string aux = linia.erase(0,8);
 						aux.erase(aux.size()-3,3);
-						cfrases.conte_paraules(linia);
+						cfrases.conte_paraules(aux);
 					}
 					else{
 						int x, y;
-						op = x;
+						x =atoi(op.c_str());
 						iss >> y;
 						cfrases = text_triat.consultar_contingut();
 						if (x <=y and y <= cfrases.numero_de_frases() and x > 0){
-							cfrases = text_triat.consultar_contingut();
 							cfrases.frasesxy(x,y);
 						}
 						else cout << "error" << endl;
@@ -242,9 +243,11 @@ int main(){
 			iss >> op;
 			if (op == "autor"){
 				string autor;
-				iss >> autor;
-				iss >> op;
+				autor = linia;
+				autor.erase(0,13);
+				autor.erase(autor.size()-3,3);
 				cites.escriure_cites_autor(autor);
+				
 				}
 			else if (op == "?"){
 				if (ctextos.text_triat()){
@@ -252,11 +255,11 @@ int main(){
 				}
 				else cout << "error" << endl;
 			}
-        
+        }
 			else if (op == "totes"){
                 cites.escriure_cites();
 			}
-		}
+		
         
         cout << endl;
         ws(cin);

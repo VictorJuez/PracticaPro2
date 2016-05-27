@@ -97,6 +97,7 @@ public:
 		\post S'han escrit pel canal estàndar de sortida totes les cites.
 	*/        
         void escriure_cites();
+        
 };
 #endif
 

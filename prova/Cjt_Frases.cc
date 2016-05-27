@@ -63,7 +63,7 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 				aux=treure_signes(aux);
 					}
 				if(aux != s[i]) b=true;
-				if(i == s.size()-1) return true;
+				if(not b and i == s.size()-1) return true;
 				}
 			}
 		++cont;
