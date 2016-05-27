@@ -181,7 +181,7 @@ int main(){
 						
 						linia.erase(0,7);
 						linia.erase(linia.size()-2,2);
-						cout << "expressio --> "<< linia << endl;
+						//cout << "expressio --> "<< linia << endl;
 						text_triat.consultar_contingut().expressio(linia);
 						}
 					else{

@@ -15,6 +15,6 @@ int main(){
 	hola.llegir(titol);
 	
 	string s;
-	s= "({hola & adeu} | {bye})";
+	s= "(({tamed} | {mischief}) | {king wild})";
 	hola.consultar_contingut().expressio(s);
 }

@@ -165,7 +165,7 @@ void Cjt_Frases::conte_paraules(string paraules){
 }
 
 bool Cjt_Frases::expressio_i(string& exp, int j){
-	cout << exp << endl;
+	//cout << exp << endl;
 	char signe;
 	if (exp[0] == '{' and exp[exp.size()-1] == '}'){
 		exp.erase(0,1);
@@ -201,7 +201,7 @@ bool Cjt_Frases::expressio_i(string& exp, int j){
 			esq.erase(esq.end()-1);
 			}
 
-		for(int i=0; dre[i]!='{' and esq[i]!='('; ++i){
+		while(dre[0]!='(' and dre[0]!='{'){
 			dre.erase(dre.begin());
 			}
 			
@@ -220,10 +220,9 @@ bool Cjt_Frases::expressio_i(string& exp, int j){
 
 void Cjt_Frases::expressio(string& exp){
 	for(int j=0; j<vfrases.size(); ++j){
-		cout << "hh" << endl;
 		if(expressio_i(exp, j)) {
-			cout << "peerfect"<< endl;
-			//imprimir_nfrase(i+1);
+			cout << j+1 << ' ';
+			imprimir_nfrase(j+1);
 		}
 		}
 }

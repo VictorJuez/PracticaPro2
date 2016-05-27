@@ -117,6 +117,21 @@ contingut ?
 5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
 6 They made him king of all wild things.
 
+frases (({night wolf} | {When}) & {And}) ?
+
+frases (({night wolf} | {When}) & {and}) ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+
+frases ({king} | {roars eyes}) ?
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+6 They made him king of all wild things.
+
+frases (({tamed} | {mischief}) | {king wild}) ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+
 frases "they terrible" ?
 
 frases "their terrible" ?
