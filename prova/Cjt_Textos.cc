@@ -71,6 +71,14 @@ bool Cjt_Textos::u(s1 a, s1 b){
 	return a.aautor < b.aautor;
 	}
 
+bool Cjt_Textos::existent(string titol, string autor){
+	list<Text>::iterator it;
+	for(it=ctextos.begin(); it!=ctextos.end(); ++it){
+		if((*it).consultar_autor() == autor and (*it).consultar_titol()== titol) return true;
+		}
+	return false;
+}
+
 
 void Cjt_Textos::afegir_text(const Text& text){
 	list <Text>::iterator fi;

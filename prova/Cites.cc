@@ -23,11 +23,11 @@ string Cites::crear_ref(string s, int n){
 	return s;
 }
 
-bool Cites::existeix_cita(int x, int y, string titol){
+bool Cites::existeix_cita(int x, int y, string titol, string autor){
 	list<cita>::iterator it;
 	
 	for(it=lcites.begin(); it!=lcites.end(); ++it){
-		if((*it).tcita.consultar_titol() == titol){
+		if((*it).tcita.consultar_titol() == titol and (*it).tcita.consultar_autor() == autor){
 			if(((*it).inici == x)and ((*it).inici + (*it).tcita.consultar_contingut().numero_de_frases()-1 == y)) return true;
 			}
 		}
@@ -128,10 +128,10 @@ void Cites::escriure_cites_autor(string& autor){
 		}
 }
 
-void Cites::escriure_cita_info(string titol){
+void Cites::escriure_cita_info(string titol, string autor){
 	list<cita>::iterator it;
 	for(it=lcites.begin(); it!=lcites.end(); ++it){
-		if((*it).tcita.consultar_titol() == titol){
+		if((*it).tcita.consultar_titol() == titol and (*it).tcita.consultar_autor() == autor){
 			cout << (*it).referencia << endl;
 			escriure_cita((*it).referencia);
 			}
@@ -185,11 +185,11 @@ void Cites::escriure_cites(){
 		}
 }
 
-void Cites::escriure_cita_triat(string titol){
+void Cites::escriure_cita_triat(string titol, string autor){
 	lcites.sort(comp);
 	list <cita>::iterator it;
 	for (it = lcites.begin(); it != lcites.end(); ++it){
-		if (titol == (*it).tcita.consultar_titol()){
+		if (titol == (*it).tcita.consultar_titol() and autor == (*it).tcita.consultar_autor()){
 			string ref = (*it).referencia;
 			cout << ref << endl;
 			escriure_cita(ref);

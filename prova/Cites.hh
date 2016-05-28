@@ -66,7 +66,7 @@ public:
 	//Consultores
 	Cjt_Frases consultar_contingut(string r);
 	
-	bool existeix_cita(int x, int y, string titol);
+	bool existeix_cita(int x, int y, string titol, string autor);
 	
 	bool existeix_cita_ref(string referencia);
 	
@@ -88,9 +88,9 @@ public:
 		\pre <em>Ha d'haver un text triat</em>
 		\post S'han escrit pel canal estàndar de sortida totes les cites del text triat.
 	*/         
-        void escriure_cita_triat(string titol);
+        void escriure_cita_triat(string titol, string autor);
         
-        void escriure_cita_info(string titol);
+        void escriure_cita_info(string titol, string autor);
         
  	/** @brief Imprimir cites. 
 		\pre <em>Cert</em>

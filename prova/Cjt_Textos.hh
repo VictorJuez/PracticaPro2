@@ -83,6 +83,8 @@ public:
 	*/ 	
 	bool text_triat();
 	
+	bool existent(string titol, string autor);
+	
 	/** @brief Retorna el text triat. 
 		\pre <em>Hi ha un text triat</em>
 		\post Retorna el text triat.

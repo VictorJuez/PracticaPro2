@@ -44,8 +44,11 @@ int main(){
         if (op == "afegir"){
             iss >> op;
             if (op == "text"){				
-				text.llegir(linia);			
-				ctextos.afegir_text(text);	
+				text.llegir(linia);
+				string autor = text.consultar_autor();
+				string titol = text.consultar_titol();
+				if(not ctextos.existent(titol, autor)) ctextos.afegir_text(text);
+				else cout << "error" << endl;
             }
             else if (op == "cita"){
 				if (ctextos.text_triat()){ 
@@ -53,7 +56,7 @@ int main(){
 					iss >> x;
 					iss >> y;
 					if (x <= y and y <= text_triat.consultar_contingut().numero_de_frases() and x > 0){
-						if (not cites.existeix_cita(x, y, text_triat.consultar_titol() )){
+						if (not cites.existeix_cita(x, y, text_triat.consultar_titol(), text_triat.consultar_autor() )){
 							cites.afegir_cita(x,y,text_triat);
 						}
 						else cout << "error" << endl;
@@ -148,7 +151,7 @@ int main(){
 					nparaules = cfrases.numero_de_paraules();			
 					cout << ' ' << nfrases << ' ' << nparaules << endl;	
 					cout << "Cites Associades:" << endl;
-					cites.escriure_cita_info(titol);
+					cites.escriure_cita_info(titol, autor);
 					}
 				else cout << "error" << endl;
             }
@@ -258,7 +261,7 @@ int main(){
 				}
 			else if (op == "?"){
 				if (ctextos.text_triat()){
-					cites.escriure_cita_triat(text_triat.consultar_titol());
+					cites.escriure_cita_triat(text_triat.consultar_titol(), text_triat.consultar_autor());
 				}
 				else cout << "error" << endl;
 			}
