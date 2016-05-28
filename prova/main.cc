@@ -52,7 +52,7 @@ int main(){
 					int x, y;
 					iss >> x;
 					iss >> y;
-					if (x <= y and y <= cfrases.numero_de_frases() and x > 0){
+					if (x <= y and y <= text_triat.consultar_contingut().numero_de_frases() and x > 0){
 						if (not cites.existeix_cita(x, y, text_triat.consultar_titol() )){
 							cites.afegir_cita(x,y,text_triat);
 						}
