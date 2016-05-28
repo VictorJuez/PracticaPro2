@@ -23,6 +23,23 @@ void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
 		}
 }
 
+void Cjt_Frases::substituir_cjtfrases(string s){
+	vector<list<string> > aux;
+	list<string> laux;
+	istringstream iss(s);
+	string paraula;
+	iss >> paraula;
+	list<string>::iterator it=laux.begin();
+	while (iss){
+        laux.insert(it, paraula);
+        iss >> paraula;
+    }
+    aux.push_back(laux);
+    
+    vfrases.resize(0);
+    vfrases = aux;
+}
+
 
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
@@ -38,10 +55,7 @@ string Cjt_Frases::treure_signes(string aux){
 }
 
 char Cjt_Frases::guardar_signe(string aux){
-	char last = aux[aux.size()-1];
-		if (te_signe(aux)){
-				return aux[aux.size()-1];
-				}	
+	return aux[aux.size()-1];
 }
 
 bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
@@ -165,7 +179,6 @@ void Cjt_Frases::conte_paraules(string paraules){
 }
 
 bool Cjt_Frases::expressio_i(string& exp, int j){
-	//cout << exp << endl;
 	char signe;
 	if (exp[0] == '{' and exp[exp.size()-1] == '}'){
 		exp.erase(0,1);
@@ -211,7 +224,7 @@ bool Cjt_Frases::expressio_i(string& exp, int j){
 			if(expressio_i(esq,j) and expressio_i(dre,j)) return true;
 			else return false;
 			}
-		else if(signe == '|'){
+		else {
 			if(expressio_i(esq,j) or expressio_i(dre,j)) return true;
 			else return false;
 			}
@@ -256,7 +269,7 @@ void Cjt_Frases::llegir() {
 		list <string> l;
         it = l.begin();
         char fi = paraula[paraula.size()-1];
-        while (fi != '.' and fi != '?' and fi != '!' or (fi >= '0' and fi <= '9')){
+        while ((fi != '.' and fi != '?' and fi != '!') or (fi >= '0' and fi <= '9')){
 			l.insert(it, paraula);
 			++nparaules;
 			cin >> paraula;

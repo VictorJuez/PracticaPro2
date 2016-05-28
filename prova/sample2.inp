@@ -1,11 +1,15 @@
-afegir text "The Universe"
-autor "Enric Aka The Owner"
-Hi havia una, vegada. Xd, com estas, lol. Jajajaj wtf, com estas avui. Primer anem a jugar? ****
+afegir text "The Universe. Fuck you"
+autor "Enric Eras"
+Hi havia una, vegada. Xd, com estas, Jajajaj wtf, com estas avui. Primer anem a jugar? ****
 
-afegir text "The Universe"
-autor "Enric Aka The Owner"
+afegir text "The Universe. Fuck you"
+autor "Enric Eras"
 Hola com estas. jajaj que bo. ****
 
-tots textos ?
+triar text {Universe Aka}
+
+afegir cita 1 2
+
+info ?
 
 sortir

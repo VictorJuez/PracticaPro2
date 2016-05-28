@@ -23,18 +23,16 @@ void Cjt_Textos::crear_vfrase(string s, vector<string>& frase){
 }
 
 bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
-	vector <string> titol;
-	crear_vfrase(t.consultar_titol(), titol);
+	Cjt_Frases titol;
+	titol.substituir_cjtfrases(t.consultar_titol());
 	
 	vector <string> autor;
 	crear_vfrase(t.consultar_autor(), autor);
 	
 	vector <bool> vb(v.size(), 0);
 	
-	for(int i=0; i<v.size(); ++i){  //buscar al títol
-		for(int j=0; j<titol.size() and not vb[i]; ++j){
-			if(v[i] == titol[j]) vb[i] = true;
-		}
+	for(int i=0; i<v.size() and not vb[i]; ++i){  //buscar al títol
+		if(titol.conte_paraula(v[i])) vb[i] = true;
 	}
 		
 	for(int i=0; i<v.size(); ++i){  //buscar al autor
@@ -95,7 +93,7 @@ void Cjt_Textos::triar_text(string& s){
 	list<Text>::iterator it;
 	bool b=false;
 	bool b2=false;
-	for(it=ctextos.begin(); it!=ctextos.end(); ++it){
+	for(it=ctextos.begin(); not b2 and it!=ctextos.end(); ++it){
 		Text t=*it;
 		vector <string> frase;
 		crear_vfrase(s, frase);
@@ -107,7 +105,6 @@ void Cjt_Textos::triar_text(string& s){
 		else if (trobar_paraules(frase, t) and b){
 			b2=true;
 			triat=false;
-			break;	
 		}
 	}
 	if(not b) triat=false;
@@ -133,8 +130,8 @@ void Cjt_Textos::imprimir_textos(){
 		++i;
 		}
 	sort(v.begin(), v.end(),ordena);
-	for (int i = 0; i < v.size();++i){
-		cout << v[i].autor << ' ' << '"' << v[i].titol << '"' << endl;
+	for (int j = 0; j < v.size();++j){
+		cout << v[j].autor << ' ' << '"' << v[j].titol << '"' << endl;
 		}
 	}
 

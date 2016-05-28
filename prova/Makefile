@@ -1,10 +1,10 @@
-OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG
+OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++0x
 
-main.exe: main.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
-	g++ -o main.exe main.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
+main.exe: program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
+	g++ -o program.exe program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
 
-main.o: main.cc
-	g++ -c main.cc $(OPCIONS)
+program.o: program.cc
+	g++ -c program.cc $(OPCIONS)
 
 Cjt_Frases.o: Cjt_Frases.cc
 	g++ -c Cjt_Frases.cc $(OPCIONS)

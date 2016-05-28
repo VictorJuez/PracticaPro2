@@ -59,6 +59,7 @@ public:
 	*/ 
 	void substituir_paraula(string paraula1, string paraula2);
 
+	void substituir_cjtfrases(string s);
 	//Destructora
 	
 //	~Cjt_Frases();
