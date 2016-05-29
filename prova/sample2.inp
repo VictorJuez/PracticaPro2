@@ -1,15 +1,43 @@
 afegir text "The Universe. Fuck you"
-autor "Enric Eras"
-Hi havia una, vegada. Xd, com estas, Jajajaj wtf, com estas avui. Primer anem a jugar? ****
+autor "Enric Eras El Amu"
+un. dos. tres. quatre. tontos cinc catorze lol. sis. set. vuit. nou. deu. onze. dotze. tretze. catorze de ebwos. catorze de tontos. ****
 
 afegir text "The Universe. Fuck you"
-autor "Enric Eras"
-Hola com estas. jajaj que bo. ****
+autor "Enric Eras El Am0"
+1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. ****
 
-triar text {Universe Aka}
+eliminar cita "EEEA1"
 
-afegir cita 1 2
+triar text {Am0                  Enric}
+
+frases "Catorze de tontos" ?
+
+frases ({catorze lol} | {ebwos}) ?
+
+afegir cita 1 16
+
+afegir cita -3 1
+
+afegir cita 5 1
+
+eliminar cita "EEEA1"
+
+afegir cita 2 3
 
 info ?
+
+totes cites ?
+
+frases 1 14 ?
+
+frases 15 15 ?
+
+frases 14 1 ?
+
+frases 16 16 ?
+
+frases 0 1 ?
+
+frases -1 -3 ?
 
 sortir

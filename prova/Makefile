@@ -1,6 +1,6 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++0x
 
-main.exe: program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
+program.exe: program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
 	g++ -o program.exe program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
 
 program.o: program.cc

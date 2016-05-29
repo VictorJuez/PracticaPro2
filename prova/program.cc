@@ -225,30 +225,6 @@ int main(){
 			else cout << "error" << endl;
 		}
 		
-		else if (op == "frases"){
-			iss >> op;			
-			if(op[0] != '"'){
-				linia.erase(0,7);
-				istringstream aux(linia);
-				if(ctextos.text_triat()){
-					cfrases = text_triat.consultar_contingut();
-					int n, m;
-					aux >> n;
-					aux >> m;
-					cfrases.frasesxy(n, m);
-					}
-				}
-			else{
-				linia.erase(0,8);
-				linia.erase(linia.size()-1, 1);
-				cout << linia << endl;
-				if(ctextos.text_triat()){
-					cfrases = text_triat.consultar_contingut();
-					cfrases.conte_paraules(linia);
-				}
-			}
-		}
-		
 		else if (op == "cites"){
 			iss >> op;
 			if (op == "autor"){

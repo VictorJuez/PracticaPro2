@@ -12,15 +12,11 @@ Cjt_Frases Cites::consultar_contingut(string r){
 }
 
 string Cites::crear_ref(string s, int n){
-	while(n>0){
-		int residu= n%10;
-		char c = char(residu) + char('0');
-		string ss;
-		
-		s.insert(s.size(), 1, c);
-		n=n/10;
-		}
-	return s;
+	string Result;         
+	ostringstream convert;  
+	convert << n;     
+	Result = convert.str();
+	return s + Result;
 }
 
 bool Cites::existeix_cita(int x, int y, string titol, string autor){
@@ -46,7 +42,7 @@ void Cites::buscar_referencia(string s, list<cita>::iterator& it){
 	for(it=lcites.begin(); not trobat and it!=lcites.end(); ++it){
 		if((*it).referencia == s) trobat=true;
 		}
-	--it;
+	if (lcites.size() != 0)--it;
 	if (not trobat) it=lcites.end();
 }
 
@@ -87,6 +83,7 @@ void Cites::afegir_cita(int x, int y, Text text){
 	
 	list<cita>::iterator it = lcites.end();
 	lcites.insert(it, xcita);
+	lcites.sort(comp);
 }
 
 void Cites::eliminar_cita(string& referencia){
@@ -129,6 +126,7 @@ void Cites::escriure_cites_autor(string& autor){
 }
 
 void Cites::escriure_cita_info(string titol, string autor){
+	lcites.sort(comp);
 	list<cita>::iterator it;
 	for(it=lcites.begin(); it!=lcites.end(); ++it){
 		if((*it).tcita.consultar_titol() == titol and (*it).tcita.consultar_autor() == autor){
