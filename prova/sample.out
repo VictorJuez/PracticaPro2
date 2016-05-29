@@ -1,20 +1,38 @@
-afegir text "The Universe. Fuck you"
+afegir text "The Universe . Fuck you"
 
-afegir text "The Universe. Fuck you"
+triar text {Universe}
 
-triar text {Arnau}
+contingut ?
+1 com com com.
+2 com: com hola.
+3 hola, com; com.
+4 com; hola, com.
+5 com: com: hola com.
+6 hola; hola com com hola.
+7 com hola com com.
 
-afegir cita 1 1
+nombre de paraules ?
+25
 
-triar text {Bover}
+nombre de frases ?
+7
 
-afegir cita 1 1
+frases "com hola" ?
+2 com: com hola.
+4 com; hola, com.
+5 com: com: hola com.
+6 hola; hola com com hola.
+7 com hola com com.
 
-totes cites ?
-AZ1
-1 un.
-Arnau Zeta "The Universe. Fuck you"
-BC1
-1 1.
-Bover Centelles "The Universe. Fuck you"
+triar text {fock u}
+error
+
+frases 1 7 ?
+error
+
+substitueix "com" per "pene"
+error
+
+contingut ?
+error
 

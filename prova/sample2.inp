@@ -1,19 +1,23 @@
-afegir text "The Universe. Fuck you"
-autor "Arnau Zeta"
-un. dos. tres. quatre. tontos cinc catorze lol. sis. set. vuit. nou. deu. onze. dotze. tretze. catorze de ebwos. catorze de tontos. ****
+afegir text "The Universe . Fuck you"
+autor "Arnau Zeta El Amu"
+com com com . com : com hola . hola , com; com. com; hola , com. com: com : hola com. hola ; hola com com hola. com hola com com. ****
 
-afegir text "The Universe. Fuck you"
-autor "Bover Centelles"
-1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. ****
+triar text {Universe}
 
-triar text {Arnau}
+contingut ?
 
-afegir cita 1 1
+nombre de paraules ?
 
-triar text {Bover}
+nombre de frases ?
 
-afegir cita 1 1
+frases "com hola" ?
 
-totes cites ?
+triar text {fock u}
+
+frases 1 7 ?
+
+substitueix "com" per "pene"
+
+contingut ?
 
 sortir

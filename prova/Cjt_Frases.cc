@@ -70,18 +70,19 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 		if (aux==s[0]){
 			if(s.size() == 1) return true;
 			bool b=false;
+			list<string>::iterator it2 = it;
 			for(int i=1; i<s.size() and not b; ++i){
-				++it;
-				string aux=*it;
+				++it2;
+				string aux=*it2;
 				if(te_signe(aux)){ //modificat
 				aux=treure_signes(aux);
 					}
 				if(aux != s[i]) b=true;
 				if(not b and i == s.size()-1) return true;
 				}
-			}
-		++cont;
 		}
+		++cont;
+	}
 	return false;
 }
 
@@ -270,18 +271,33 @@ void Cjt_Frases::llegir() {
         it = l.begin();
         char fi = paraula[paraula.size()-1];
         while ((fi != '.' and fi != '?' and fi != '!') or (fi >= '0' and fi <= '9')){
-			l.insert(it, paraula);
-			++nparaules;
+			if (paraula == "," or paraula == ";" or paraula == ":"){
+				list<string>::iterator it2 = it;
+				--it2;
+				(*it2) += paraula;
+			}
+			else{	 
+				l.insert(it,paraula);
+				++nparaules;
+			}
 			cin >> paraula;
 			fi = paraula[paraula.size()-1];
 			}
             
 		if (paraula != "****"){
-			l.insert(it,paraula);
-			cin >>paraula;
+			if (paraula == "." or paraula == "?" or paraula == "!"){
+				list<string>::iterator it2 = it;
+				--it2;
+				(*it2) += paraula;
 			}
-		vfrases.push_back(l);
-        ++nparaules; 
+			else{
+				l.insert(it,paraula);
+				++nparaules;
+			}
+			
+			cin >>paraula;
+		}
+		vfrases.push_back(l); 
     }
 }
 
