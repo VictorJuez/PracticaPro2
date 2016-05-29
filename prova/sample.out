@@ -2,70 +2,19 @@ afegir text "The Universe. Fuck you"
 
 afegir text "The Universe. Fuck you"
 
-eliminar cita "EEEA1"
-error
+triar text {Arnau}
 
-triar text {Am0                  Enric}
+afegir cita 1 1
 
-frases "Catorze de tontos" ?
+triar text {Bover}
 
-frases ({catorze lol} | {ebwos}) ?
-
-afegir cita 1 16
-error
-
-afegir cita -3 1
-error
-
-afegir cita 5 1
-error
-
-eliminar cita "EEEA1"
-error
-
-afegir cita 2 3
-
-info ?
-Enric Eras El Am0 "The Universe. Fuck you" 14 14
-Cites Associades:
-EEEA1
-2 2.
-3 3.
+afegir cita 1 1
 
 totes cites ?
-EEEA1
-2 2.
-3 3.
-Enric Eras El Am0 "The Universe. Fuck you"
-
-frases 1 14 ?
+AZ1
+1 un.
+Arnau Zeta "The Universe. Fuck you"
+BC1
 1 1.
-2 2.
-3 3.
-4 4.
-5 5.
-6 6.
-7 7.
-8 8.
-9 9.
-10 10.
-11 11.
-12 12.
-13 13.
-14 14.
-
-frases 15 15 ?
-error
-
-frases 14 1 ?
-error
-
-frases 16 16 ?
-error
-
-frases 0 1 ?
-error
-
-frases -1 -3 ?
-error
+Bover Centelles "The Universe. Fuck you"
 

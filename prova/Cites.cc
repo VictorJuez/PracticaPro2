@@ -140,7 +140,7 @@ bool Cites::comp(const cita& a, const cita& b){
 	string primer = a.referencia;
 	string primer_lletres;
 	for (int i = 0; i < primer.size(); ++i){
-		if ((primer[i] >= 'a' and primer[i] <= 'z') or (primer[i] > 'A' and primer[i] <= 'Z')){
+		if ((primer[i] >= 'a' and primer[i] <= 'z') or (primer[i] >= 'A' and primer[i] <= 'Z')){
 			primer_lletres.insert(primer_lletres.end(),1,primer[i]);
 			}
 		}
@@ -148,7 +148,7 @@ bool Cites::comp(const cita& a, const cita& b){
 	string segon = b.referencia;
 	string segon_lletres;
 	for (int i = 0; i < segon.size(); ++i){
-		if ((segon[i] >= 'a' and segon[i] <= 'z') or (segon[i] > 'A' and segon[i] <= 'Z')){
+		if ((segon[i] >= 'a' and segon[i] <= 'z') or (segon[i] >= 'A' and segon[i] <= 'Z')){
 			segon_lletres.insert(segon_lletres.end(),1,segon[i]);
 			}
 		}
