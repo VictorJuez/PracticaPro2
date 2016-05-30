@@ -1,23 +1,23 @@
-afegir text "The Universe . Fuck you"
-autor "Arnau Zeta El Amu"
-com com com . com : com hola . hola , com; com. com; hola , com. com: com : hola com. hola ; hola com com hola. com hola com com. ****
+afegir text "holaa"
+autor "enric"
+hola k ase usted. ****
 
-triar text {Universe}
+afegir text "adeu"
+autor "enric"
+adeu. ****
 
-contingut ?
+afegir text "bon dia"
+autor "bover"
+bon k dia. ****
 
-nombre de paraules ?
+textos autor "enric" ?
 
-nombre de frases ?
-
-frases "com hola" ?
-
-triar text {fock u}
-
-frases 1 7 ?
-
-substitueix "com" per "pene"
+triar text {k enric}
 
 contingut ?
+
+frases "k ase usted caca" ?
+
+frases ((((({k ase usted}))))) ?
 
 sortir

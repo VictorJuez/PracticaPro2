@@ -43,7 +43,7 @@ void Cjt_Frases::substituir_cjtfrases(string s){
 
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
-		if ((last < 'a' or last >'z') and (last < 'A' or last > 'Z') and (last < '0' or last > '9')){
+		if (last == '.' or last == '?' or last == '!' or last == ';' or last == ':' or last == ',' ){
 				return true;
 				}
 		return false;
@@ -180,7 +180,7 @@ void Cjt_Frases::conte_paraules(string paraules){
 }
 
 bool Cjt_Frases::expressio_i(string& exp, int j){
-	char signe;
+	char signe = '?';
 	if (exp[0] == '{' and exp[exp.size()-1] == '}'){
 		exp.erase(0,1);
 		exp.erase(exp.size()-1, 1);
@@ -214,19 +214,24 @@ bool Cjt_Frases::expressio_i(string& exp, int j){
 		for(int i=esq.size()-1; esq[i]!='}' and esq[i]!=')'; --i){
 			esq.erase(esq.end()-1);
 			}
-
-		while(dre[0]!='(' and dre[0]!='{'){
-			dre.erase(dre.begin());
-			}
-			
-		dre.erase(dre.size()-1,1);
-
+		if (dre.size() > 0){
+			while(dre[0]!='(' and dre[0]!='{'){
+				dre.erase(dre.begin());
+				}
+			dre.erase(dre.size()-1,1);
+		}
+		else esq.erase(esq.size()-1,1);
+		
 		if(signe == '&'){
 			if(expressio_i(esq,j) and expressio_i(dre,j)) return true;
 			else return false;
 			}
-		else {
+		else if (signe == '|') {
 			if(expressio_i(esq,j) or expressio_i(dre,j)) return true;
+			else return false;
+			}
+		else{
+			if(expressio_i(esq,j)) return true;
 			else return false;
 			}
 		}

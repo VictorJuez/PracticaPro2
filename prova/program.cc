@@ -180,11 +180,10 @@ int main(){
 						aux.erase(aux.size()-3,3);
 						cfrases.conte_paraules(aux);
 					}
-					else if (op[0] == '('){
+					else if (op[0] == '(' or op[0] == '{'){
 						
 						linia.erase(0,7);
 						linia.erase(linia.size()-2,2);
-						//cout << "expressio --> "<< linia << endl;
 						text_triat.consultar_contingut().expressio(linia);
 						}
 					else{
