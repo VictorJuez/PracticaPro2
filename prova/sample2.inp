@@ -1,23 +1,16 @@
-afegir text "holaa"
-autor "enric"
-hola k ase usted. ****
 
-afegir text "adeu"
-autor "enric"
-adeu. ****
 
-afegir text "bon dia"
-autor "bover"
-bon k dia. ****
+afegir text "Where the wild things are"
+autor "Oscar Wilde"
+The night Max wore his wolf suit and made mischief of one kind and another. That very night in his room a forest grew and grew. 
+An ocean tumbled by with a private boat for Max and he sailed off. When he came to the place where the wild things are they 
+roared their terrible roars and rolled their eyes. Max tamed them with the magic trick of staring into their yellow eyes 
+without blinking once. They made him king of all wild things.
+****
 
-textos autor "enric" ?
+triar text {Oscar}
 
-triar text {k enric}
-
-contingut ?
-
-frases "k ase usted caca" ?
-
-frases ((((({k ase usted}))))) ?
+frases (({immoral            book}) | ({Those} & ({meanings} | ({     things    } & (  {beautiful are} | {all}))))) ?
 
 sortir
+

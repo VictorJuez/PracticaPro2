@@ -39,7 +39,7 @@ private:
     static bool ord(freq a,freq b);
     void crear_vfrase(string s, vector<string>& frase);
     bool conte_paraula_expressio(string paraula, int i);
-    bool expressio_i(string& exp, int j);
+    bool expressio_i(vector<string>& exp, int j);
     
 
 public:
