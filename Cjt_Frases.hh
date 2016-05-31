@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 #include <list>
 #include <algorithm>
@@ -21,7 +22,7 @@ using namespace std;
 class Cjt_Frases{
 
 private:
-    vector <list <string> > vfrases;
+	vector <list <string> > vfrases;
     int nparaules;
     struct freq{
         int repeticions;
@@ -34,7 +35,11 @@ private:
     char guardar_signe(string aux);
     bool conte_paraules_plus(list<string>& l, vector<string>& s);
     void afegir(string& s);
+    void imprimir_frase(list<string>& l) const;
     static bool ord(freq a,freq b);
+    void crear_vfrase(string s, vector<string>& frase);
+    bool conte_paraula_expressio(string paraula, int i);
+    bool expressio_i(vector<string>& exp, int j);
     
 
 public:
@@ -54,6 +59,7 @@ public:
 	*/ 
 	void substituir_paraula(string paraula1, string paraula2);
 
+	void substituir_cjtfrases(string s);
 	//Destructora
 	
 //	~Cjt_Frases();
@@ -81,7 +87,9 @@ public:
 		\pre <em>el vector paraules no és buit</em>
 		\post el resultat ens indica si la frase conté la mateixa seqüència de paraules.
 	*/  
-	bool conte_paraules(vector<string> paraules);
+	void conte_paraules(string paraules);
+	
+	void expressio(string& exp);
 	
 	//Lectura i escriptura
 
@@ -101,6 +109,13 @@ public:
 		\pre <em>cert</em>
 		\post S'ha escrit la seqüència de frases del paràmetre implícit al canal estàndar de sortida.
 	*/	
+	
+	void imprimir_nfrase(int n);
+	
 	void escriure() const;
+	
+	void frasesxy(int n, int m) const;
+	
+	void consultar_frasesxy(int n, int m);
 };
 #endif

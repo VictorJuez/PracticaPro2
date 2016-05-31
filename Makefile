@@ -1,7 +1,7 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++0x
 
-practica.tar: program.cc Cjt_Frases.hh Cjt_Textos.hh Text.hh Cites.hh Cjt_Frases.cc Cjt_Textos.cc Text.cc Cites.cc
-	tar -cvf practica.tar program.cc Cjt_Frases.hh Cjt_Textos.hh Text.hh Cites.hh Cjt_Frases.cc Cjt_Textos.cc Text.cc Cites.cc
+practica.tar: program.cc Cjt_Frases.cc Cjt_Textos.cc Text.cc Cites.cc Cites.hh Cjt_Frases.hh Cjt_Textos.hh Text.hh Makefile
+	tar -cvf practica.tar program.cc Cjt_Frases.cc Cjt_Textos.cc Text.cc Cites.cc Cjt_Frases.hh Cjt_Textos.hh Text.hh Cites.hh Makefile
 
 program.exe: program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o
 	g++ -o program.exe program.o Cjt_Frases.o Cjt_Textos.o Text.o Cites.o

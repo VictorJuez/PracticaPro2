@@ -17,8 +17,8 @@ class Text{
 
 private:
 
-	list <string> autor;
-	list <string> titol;
+	string autor;
+	string titol;
 	Cjt_Frases cjtfrase;
 
 public:
@@ -50,13 +50,13 @@ public:
 		\pre <em>El text té autor</em>
 		\post el resultat és l'autor del text en qüestió.
 	*/ 		
-	list <string> consultar_autor();
+	string consultar_autor();
 	
 	/** @brief Consultora de títol. 
 		\pre <em>El text té títol</em>
 		\post el resultat és el títol del text en qüestió.
 	*/        
-	list <string> consultar_titol();
+	string consultar_titol();
 	
 	/** @brief Consultora del contingut. 
 		\pre <em>El text té contingut</em>
@@ -64,13 +64,15 @@ public:
 	*/ 	    
 	Cjt_Frases consultar_contingut();
 	
+	void consultar_frasesxy(int x, int y);
+	
 	//Lectura i escriptura
 	
 	/** @brief Lectura d'un text. 
 		\pre <em>Estan preparats al canal estandar d'entrada un títol, un autor i un contingut</em>
 		\post El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada
 	*/ 		
-	void llegir(istringstream& iss);
+	void llegir(string linia);
 
 	/** @brief Impresió d'un text. 
 		\pre <em>Cert</em>
