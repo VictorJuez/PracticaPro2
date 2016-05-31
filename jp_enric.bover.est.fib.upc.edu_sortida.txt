@@ -1,0 +1,376 @@
+nombre de frases ?
+error
+
+nombre de paraules ?
+error
+
+taula de frequencies ?
+error
+
+afegir cita 2 3
+error
+
+afegir text "The Picture of Dorian Gray"
+
+afegir text "La ciencia. Su metodo y su filosofia"
+
+tots textos ?
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Oscar Wilde "The Picture of Dorian Gray"
+
+info ?
+error
+
+triar text {Mario Wilde}
+error
+
+triar text {moral beautiful charming}
+
+contingut ?
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+3 Those who find beautiful meanings in beautiful things are the cultivated.
+4 For these there is hope.
+5 They are the elect to whom beautiful things mean only Beauty.
+6 There is no such thing as a moral or an immoral book.
+7 Books are well written, or badly written.
+8 That is all.
+
+substitueix "Books" per "Journals"
+
+frases 5 7 ?
+5 They are the elect to whom beautiful things mean only Beauty.
+6 There is no such thing as a moral or an immoral book.
+7 Journals are well written, or badly written.
+
+textos autor "Mario Bunge" ?
+"La ciencia. Su metodo y su filosofia"
+
+nombre de paraules
+66
+
+nombre de frases
+8
+
+tots autors ?
+Mario Bunge 1 1 24
+Oscar Wilde 1 8 66
+
+totes cites ?
+
+afegir cita 1 2
+
+eliminar cita -3 4
+error
+
+info ?
+Oscar Wilde "The Picture of Dorian Gray" 8 66
+Cites Associades:
+OW1
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+
+autor ?
+Oscar Wilde
+
+afegir text "Where the wild things are"
+
+afegir text "Los sistemas de riego antes del siglo X"
+
+afegir text "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+
+tots textos ?
+Mar Sierra "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+Maurice Sendak "Where the wild things are"
+Oscar Wilde "The Picture of Dorian Gray"
+
+triar text {2050}
+
+info ?
+Mar Sierra "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible" 4 89
+Cites Associades:
+
+triar text {aquesta comanda donara error}
+error
+
+triar text {Mar Que comera}
+
+contingut ?
+1 No se puede tener todo: una agricultura ecologica, una ganaderia extensiva, dejar los bosques como estan y comer carne como lo hacemos.
+2 Hay que elegir.
+3 De todos estos factores el mas importante es el de la dieta.
+4 El ultimo modelo matematico, desarrollado por Karl Heinz Erb y sus colegas del instituto de ecologia social de Viena, compara 500 posibles escenarios para alimentar al mundo en 2050 y revela con claridad que: si no queremos destruir los bosques, la extension de la dieta occidental a todo el planeta resulta insostenible.
+
+nombre de frases ?
+4
+
+nombre de paraules ?
+89
+
+taula de frequencies ?
+de 4
+y 3
+el 3
+la 3
+los 2
+que 2
+una 2
+como 2
+todo 2
+dieta 2
+bosques 2
+a 1
+De 1
+El 1
+No 1
+al 1
+en 1
+es 1
+lo 1
+no 1
+se 1
+si 1
+500 1
+Erb 1
+Hay 1
+con 1
+del 1
+mas 1
+por 1
+sus 1
+2050 1
+Karl 1
+para 1
+Heinz 1
+Viena 1
+carne 1
+comer 1
+dejar 1
+estan 1
+estos 1
+mundo 1
+puede 1
+tener 1
+todos 1
+elegir 1
+modelo 1
+revela 1
+social 1
+ultimo 1
+colegas 1
+compara 1
+hacemos 1
+planeta 1
+resulta 1
+claridad 1
+destruir 1
+ecologia 1
+factores 1
+posibles 1
+queremos 1
+alimentar 1
+ecologica 1
+extension 1
+extensiva 1
+ganaderia 1
+instituto 1
+escenarios 1
+importante 1
+matematico 1
+occidental 1
+agricultura 1
+desarrollado 1
+insostenible 1
+
+afegir cita 3 7
+error
+
+triar text {eyes another roars}
+
+contingut ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+
+frases (({night wolf} | {When}) & {And}) ?
+
+frases (((((((((((((((({night wolf})) | {When}))) & {and}))))))))))) ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+
+triar text {Mariona Blay}
+
+contingut ?
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+2 Estas construcciones se distribuyen por la desertica zona de Nazca, al sur de Peru, que fue el hogar de la cultura del mismo nombre entre los anos 200 y 600.
+3 Estas construcciones en espiral eran una especie de sistema de ventilacion que conducia el viento hasta una red de canales subterraneos.
+4 Los Puquios fueron claves para distribuir el agua y que el pueblo Nazca pudiera sobrevivir en esa zona desertica.
+
+frases ({los son} | {agua}) ?
+4 Los Puquios fueron claves para distribuir el agua y que el pueblo Nazca pudiera sobrevivir en esa zona desertica.
+
+frases (({el} & {la}) | {de}) ?
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+2 Estas construcciones se distribuyen por la desertica zona de Nazca, al sur de Peru, que fue el hogar de la cultura del mismo nombre entre los anos 200 y 600.
+3 Estas construcciones en espiral eran una especie de sistema de ventilacion que conducia el viento hasta una red de canales subterraneos.
+
+frases "Son construcciones" ?
+
+frases "son construcciones" ?
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+
+afegir cita 2 3
+
+cites ?
+MBA1
+2 Estas construcciones se distribuyen por la desertica zona de Nazca, al sur de Peru, que fue el hogar de la cultura del mismo nombre entre los anos 200 y 600.
+3 Estas construcciones en espiral eran una especie de sistema de ventilacion que conducia el viento hasta una red de canales subterraneos.
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+
+eliminar cita "MB1"
+error
+
+eliminar cita "MBA1"
+
+cites ?
+
+afegir cita 5 6
+error
+
+afegir cita 1 1
+
+info ?
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X" 4 85
+Cites Associades:
+MBA2
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+
+triar text {500 Sierra}
+
+afegir cita 4 5
+error
+
+triar text {Puquios riego canales}
+
+taula de frequencies ?
+de 7
+el 4
+en 4
+que 4
+la 3
+construcciones 3
+y 2
+se 2
+Los 2
+una 2
+zona 2
+Estas 2
+Nazca 2
+Puquios 2
+espiral 2
+desertica 2
+al 1
+200 1
+600 1
+del 1
+esa 1
+fue 1
+los 1
+por 1
+red 1
+son 1
+sur 1
+Peru 1
+agua 1
+anos 1
+eran 1
+para 1
+entre 1
+forma 1
+hasta 1
+hogar 1
+mismo 1
+claves 1
+fueron 1
+hunden 1
+nombre 1
+pueblo 1
+tierra 1
+viento 1
+canales 1
+cultura 1
+especie 1
+pudiera 1
+sistema 1
+conducia 1
+distribuir 1
+sobrevivir 1
+distribuyen 1
+ventilacion 1
+sofisticadas 1
+subterraneos 1
+
+afegir cita 3 5
+error
+
+tots autors ?
+Mar Sierra 1 4 89
+Mario Bunge 1 1 24
+Mariona Blay Andreu 1 4 85
+Maurice Sendak 1 6 84
+Oscar Wilde 1 8 66
+
+totes cites ?
+MBA2
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+OW1
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+Oscar Wilde "The Picture of Dorian Gray"
+
+eliminar text
+
+eliminar text
+error
+
+tots autors ?
+Mar Sierra 1 4 89
+Mario Bunge 1 1 24
+Maurice Sendak 1 6 84
+Oscar Wilde 1 8 66
+
+totes cites ?
+MBA2
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+OW1
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+Oscar Wilde "The Picture of Dorian Gray"
+
+cites autor "Mariona Blay Andreu" ?
+MBA2
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+"Los sistemas de riego antes del siglo X"
+
+info cita "MBA1" ?
+error
+
+eliminar cita "MBA1"
+error
+
+totes cites ?
+MBA2
+1 Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra.
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+OW1
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+Oscar Wilde "The Picture of Dorian Gray"
+
