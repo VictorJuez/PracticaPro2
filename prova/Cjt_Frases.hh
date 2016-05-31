@@ -35,8 +35,8 @@ private:
     char guardar_signe(string aux);
     bool conte_paraules_plus(list<string>& l, vector<string>& s);
     void afegir(string& s);
-    void imprimir_frase(list<string>& l) const;
-    static bool ord(freq a,freq b);
+    void imprimir_frase(const list<string>& l) const;
+    static bool ord(const freq& a,const freq& b);
     void crear_vfrase(string s, vector<string>& frase);
     bool conte_paraula_expressio(string paraula, int i);
     bool expressio_i(vector<string>& exp, int j);
@@ -60,6 +60,9 @@ public:
 	void substituir_paraula(string paraula1, string paraula2);
 
 	void substituir_cjtfrases(string s);
+	
+	void consultar_frasesxy(int n, int m);
+	
 	//Destructora
 	
 //	~Cjt_Frases();
@@ -89,9 +92,10 @@ public:
 	*/  
 	void conte_paraules(string paraules);
 	
-	void expressio(string& exp);
 	
 	//Lectura i escriptura
+	
+	void expressio(string& exp);
 
 	/** @brief Imprimeix la taula de freqüènces. 
 		\pre <em>cert</em>
@@ -112,10 +116,11 @@ public:
 	
 	void imprimir_nfrase(int n);
 	
-	void escriure() const;
-	
 	void frasesxy(int n, int m) const;
 	
-	void consultar_frasesxy(int n, int m);
+	
+	void escriure() const;
+	
+	
 };
 #endif
