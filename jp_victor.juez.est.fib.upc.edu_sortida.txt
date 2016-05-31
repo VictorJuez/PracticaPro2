@@ -1,0 +1,277 @@
+afegir text "The Picture of Dorian Gray"
+
+afegir text "La ciencia. Su metodo y su filosofia"
+
+afegir text "Primer, text de prova."
+
+info cita "AAA2" ?
+error
+
+contingut ?
+error
+
+triar text {Mario Bunge}
+error
+
+triar text {Albert text}
+
+substitueix "k" per "hola"
+
+frases 8 9 ?
+error
+
+frases -2 2 ?
+error
+
+frases 1 1 ?
+1 Un dos tres quatre cinc, sis, set.
+
+frases 1 4 ?
+error
+
+autor ?
+Mario Bunge Albert
+
+eliminar text
+
+tots autors ?
+Mario Bunge 1 1 24
+Oscar Wilde 1 8 66
+
+totes cites ?
+
+afegir cita 1 2
+error
+
+triar text {el hombre}
+
+info ?
+Mario Bunge "La ciencia. Su metodo y su filosofia" 1 24
+Cites Associades:
+
+autor ?
+Mario Bunge
+
+afegir text "Where the wild things are"
+
+afegir text "Where the wild things ari"
+
+afegir text "Los sistemas de riego antes del siglo X"
+
+afegir text "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+
+tots textos ?
+Mar Sierra "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+Maurice Sendak "Where the wild things are"
+Maurice Sendak "Where the wild things ari"
+Oscar Wilde "The Picture of Dorian Gray"
+
+contingut ?
+1 Por medio de la investigacion cientifica, el hombre ha alcanzado una reconstruccion conceptual del mundo que es cada vez mas amplia, profunda y exacta.
+
+nombre de frases ?
+1
+
+nombre de paraules ?
+24
+
+taula de frequencies ?
+y 1
+de 1
+el 1
+es 1
+ha 1
+la 1
+Por 1
+del 1
+mas 1
+que 1
+una 1
+vez 1
+cada 1
+medio 1
+mundo 1
+amplia 1
+exacta 1
+hombre 1
+profunda 1
+alcanzado 1
+cientifica 1
+conceptual 1
+investigacion 1
+reconstruccion 1
+
+afegir cita 2 3
+error
+
+triar text {Wilde all}
+
+frases {beautiful} ?
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+3 Those who find beautiful meanings in beautiful things are the cultivated.
+5 They are the elect to whom beautiful things mean only Beauty.
+
+frases (({Those} & ({charming} | {cultivated})) & {ugly}) ?
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+
+contingut ?
+1 Those who find ugly meanings in beautiful things are corrupt without being charming.
+2 This is a fault.
+3 Those who find beautiful meanings in beautiful things are the cultivated.
+4 For these there is hope.
+5 They are the elect to whom beautiful things mean only Beauty.
+6 There is no such thing as a moral or an immoral book.
+7 Books are well written, or badly written.
+8 That is all.
+
+tots textos ?
+Mar Sierra "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+Mario Bunge "La ciencia. Su metodo y su filosofia"
+Mariona Blay Andreu "Los sistemas de riego antes del siglo X"
+Maurice Sendak "Where the wild things are"
+Maurice Sendak "Where the wild things ari"
+Oscar Wilde "The Picture of Dorian Gray"
+
+triar text {Sendak Max}
+
+frases ({king} | {roars eyes}) ?
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+6 They made him king of all wild things.
+
+frases (({tamed} | {mischief}) | {king wild}) ?
+1 The night Max wore his wolf suit and made mischief of one kind and another.
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+
+frases "they terrible" ?
+
+frases "their terrible" ?
+4 When he came to the place where the wild things are they roared their terrible roars and rolled their eyes.
+
+afegir cita 2 3
+
+afegir cita 2 2
+
+afegir cita 5 6
+
+cites ?
+MS1
+2 That very night in his room a forest grew and grew.
+3 An ocean tumbled by with a private boat for Max and he sailed off.
+Maurice Sendak "Where the wild things ari"
+MS2
+2 That very night in his room a forest grew and grew.
+Maurice Sendak "Where the wild things ari"
+MS3
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+Maurice Sendak "Where the wild things ari"
+
+eliminar cita "MS1"
+
+eliminar cita "MS1"
+error
+
+taula de frequencies ?
+and 5
+of 3
+Max 3
+the 3
+their 3
+a 2
+he 2
+his 2
+eyes 2
+grew 2
+made 2
+wild 2
+with 2
+night 2
+things 2
+An 1
+by 1
+in 1
+to 1
+The 1
+all 1
+are 1
+for 1
+him 1
+off 1
+one 1
+That 1
+They 1
+When 1
+boat 1
+came 1
+into 1
+kind 1
+king 1
+once 1
+room 1
+suit 1
+them 1
+they 1
+very 1
+wolf 1
+wore 1
+magic 1
+ocean 1
+place 1
+roars 1
+tamed 1
+trick 1
+where 1
+forest 1
+roared 1
+rolled 1
+sailed 1
+yellow 1
+another 1
+private 1
+staring 1
+tumbled 1
+without 1
+blinking 1
+mischief 1
+terrible 1
+
+tots autors ?
+Mar Sierra 1 4 89
+Mario Bunge 1 1 24
+Mariona Blay Andreu 1 4 85
+Maurice Sendak 2 11 108
+Oscar Wilde 1 8 66
+
+eliminar text
+
+triar text {Maurice Sendak}
+
+contingut ?
+1 abc$ lks& com 'estas'€.
+2 Un text cientific pot tenir signes+ i tambe-.
+3 Es un text aleatori sense.
+4 accents com.
+5 l'enunciat de la practica diu.
+
+afegir cita 2 4
+
+totes cites ?
+MS2
+2 That very night in his room a forest grew and grew.
+Maurice Sendak "Where the wild things ari"
+MS3
+5 Max tamed them with the magic trick of staring into their yellow eyes without blinking once.
+6 They made him king of all wild things.
+Maurice Sendak "Where the wild things ari"
+MS4
+2 Un text cientific pot tenir signes+ i tambe-.
+3 Es un text aleatori sense.
+4 accents com.
+Maurice Sendak "Where the wild things are"
+
+eliminar cita "MS1"
+error
+

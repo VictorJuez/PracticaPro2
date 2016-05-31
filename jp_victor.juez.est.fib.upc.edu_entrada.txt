@@ -1,0 +1,141 @@
+afegir text "The Picture of Dorian Gray"
+autor "Oscar Wilde"
+Those who find ugly meanings in beautiful things are corrupt without being charming. This is a fault. 
+Those who find beautiful meanings in beautiful things are the cultivated. For these there is hope. They are the elect 
+to whom beautiful things mean only Beauty. There is no such thing as a moral or an immoral book. Books are well written, 
+or badly written. That is all. 
+****
+
+afegir text "La ciencia. Su metodo y su filosofia"
+autor "Mario Bunge"
+Por medio de la investigacion cientifica, el hombre ha alcanzado una reconstruccion conceptual del mundo que es cada vez mas amplia, profunda y exacta. 
+****
+
+afegir text "Primer, text de prova."
+autor "Mario Bunge Albert"
+Un dos tres quatre cinc, sis, set. Vuit; nou deu onze? ****
+
+info cita "AAA2" ?
+
+contingut ?
+
+triar text {Mario Bunge}
+
+triar text {Albert text}
+
+substitueix "k" per "hola"
+
+frases 8 9 ?
+
+frases -2 2 ?
+
+frases 1 1 ?
+
+frases 1 4 ?
+
+autor ?
+
+eliminar text
+
+tots autors ?
+
+totes cites ?
+
+afegir cita 1 2
+
+triar text {el hombre}
+
+info ?
+
+autor ?
+
+afegir text "Where the wild things are"
+autor "Maurice Sendak"
+abc$ lks& com 'estas'€. Un text cientific pot tenir signes+ i tambe-. Es un text aleatori sense. accents com. l'enunciat de la practica diu.
+****
+
+afegir text "Where the wild things ari"
+autor "Maurice Sendak"
+The night Max wore his wolf suit and made mischief of one kind and another. That very night in his room a forest grew and grew. 
+An ocean tumbled by with a private boat for Max and he sailed off. When he came to the place where the wild things are they 
+roared their terrible roars and rolled their eyes. Max tamed them with the magic trick of staring into their yellow eyes 
+without blinking once. They made him king of all wild things.
+****
+
+afegir text "Los sistemas de riego antes del siglo X"
+autor "Mariona Blay Andreu"
+Los Puquios son construcciones sofisticadas en forma de espiral que se hunden en la tierra. Estas construcciones se distribuyen 
+por la desertica zona de Nazca, al sur de Peru, que fue el hogar de la cultura del mismo nombre entre los anos 200 y 600. Estas 
+construcciones en espiral eran una especie de sistema de ventilacion que conducia el viento hasta una red de canales subterraneos. 
+Los Puquios fueron claves para distribuir el agua y que el pueblo Nazca pudiera sobrevivir en esa zona desertica.
+****
+
+afegir text "Que comera la humanidad en el 2050? Reflexiones sobre alimentacion sostenible"
+autor "Mar Sierra"
+No se puede tener todo: una agricultura ecologica, una ganaderia extensiva, dejar los bosques como estan y comer carne como lo hacemos. 
+Hay que elegir. De todos estos factores el mas importante es el de la dieta. El ultimo modelo matematico, desarrollado por Karl Heinz Erb 
+y sus colegas del instituto de ecologia social de Viena, compara 500 posibles escenarios para alimentar al mundo en 2050 y revela con 
+claridad que: si no queremos destruir los bosques, la extension de la dieta occidental a todo el planeta resulta insostenible.
+****
+
+tots textos ?
+
+contingut ?
+
+nombre de frases ?
+
+nombre de paraules ?
+
+taula de frequencies ?
+
+afegir cita 2 3
+
+triar text {Wilde all}
+
+frases {beautiful} ?
+
+frases (({Those} & ({charming} | {cultivated})) & {ugly}) ?
+
+contingut ?
+
+tots textos ?
+
+triar text {Sendak Max}
+
+frases ({king} | {roars eyes}) ?
+
+frases (({tamed} | {mischief}) | {king wild}) ?
+
+frases "they terrible" ?
+
+frases "their terrible" ?
+
+afegir cita 2 3
+
+afegir cita 2 2
+
+afegir cita 5 6
+
+cites ?
+
+eliminar cita "MS1"
+
+eliminar cita "MS1"
+
+taula de frequencies ?
+
+tots autors ?
+
+eliminar text
+
+triar text {Maurice Sendak}
+
+contingut ?
+
+afegir cita 2 4
+
+totes cites ?
+
+eliminar cita "MS1"
+
+sortir
