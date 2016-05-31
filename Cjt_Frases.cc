@@ -1,46 +1,5 @@
 #include "Cjt_Frases.hh"
 
-void Cjt_Frases::imprimir_frase(list<string>& l) const{
-	bool primer=true;
-	list<string>::const_iterator it;
-	for(it=l.begin(); it!=l.end(); ++it){
-		if(primer){
-			cout << *it;
-			primer=false;
-			}
-		else cout << ' ' << *it;
-		}
-	cout << endl;
-}
-
-void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
-	istringstream iss(s);
-	string op;
-	iss >> op;
-	while(iss){
-		frase.push_back(op);
-		iss >> op;
-		}
-}
-
-void Cjt_Frases::substituir_cjtfrases(string s){
-	vector<list<string> > aux;
-	list<string> laux;
-	istringstream iss(s);
-	string paraula;
-	iss >> paraula;
-	list<string>::iterator it=laux.begin();
-	while (iss){
-        laux.insert(it, paraula);
-        iss >> paraula;
-    }
-    aux.push_back(laux);
-    
-    vfrases.resize(0);
-    vfrases = aux;
-}
-
-
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
 		if (last == '.' or last == '?' or last == '!' or last == ';' or last == ':' or last == ',' ){
@@ -64,9 +23,7 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 	for(it=l.begin(); it!=l.end(); ++it){
 		if((l.size()-cont) < s.size()) return false;
 		string aux=*it;
-		if(te_signe(aux)){ //modificat
-			aux=treure_signes(aux);
-		}
+		if(te_signe(aux)) aux=treure_signes(aux);
 		if (aux==s[0]){
 			if(s.size() == 1) return true;
 			bool b=false;
@@ -74,12 +31,10 @@ bool Cjt_Frases::conte_paraules_plus(list<string>& l, vector<string>& s){
 			for(int i=1; i<s.size() and not b; ++i){
 				++it2;
 				string aux=*it2;
-				if(te_signe(aux)){ //modificat
-				aux=treure_signes(aux);
-					}
+				if(te_signe(aux)) aux=treure_signes(aux);
 				if(aux != s[i]) b=true;
 				if(not b and i == s.size()-1) return true;
-				}
+			}
 		}
 		++cont;
 	}
@@ -92,22 +47,100 @@ void Cjt_Frases::afegir(string& s){
 		if (taula[i].paraula == s){
 			taula[i].repeticions++;
 			nova = true;
-			}
 		}
+	}
 	if (not nova){
 		freq p;
 		p.paraula = s;
 		p.repeticions = 1;
 		taula.push_back(p);
-		}
+	}
 }
 
-bool Cjt_Frases::ord(freq a,freq b){
+void Cjt_Frases::imprimir_frase(const list<string>& l) const{
+	
+	bool primer=true;
+	list<string>::const_iterator it;
+	for(it=l.begin(); it!=l.end(); ++it){
+		if(primer){
+			cout << *it;
+			primer=false;
+		}
+		else cout << ' ' << *it;
+	}
+	cout << endl;
+}
+
+bool Cjt_Frases::ord(const freq& a,const freq& b){
 	if (a.repeticions > b.repeticions) return true;
 	else if (a.repeticions < b.repeticions) return false;
 	else if (a.paraula.size() < b.paraula.size()) return true;
 	else if (a.paraula.size() > b.paraula.size()) return false;
 	return a.paraula < b.paraula;
+}
+
+void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
+	istringstream iss(s);
+	string op;
+	iss >> op;
+	while(iss){
+		frase.push_back(op);
+		iss >> op;
+	}
+}
+
+bool Cjt_Frases::conte_paraula_expressio(string paraula, int i){
+	list<string>::iterator it;
+	for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
+		string aux = *it;
+		if (te_signe(aux)) aux=treure_signes(aux);
+		if(aux == paraula) return true;
+	}
+	return false;
+}
+
+bool Cjt_Frases::expressio_i(vector<string>& exp, int j){
+	string signe;
+	if (exp[0] == "{" and exp[exp.size()-1] == "}"){
+		for (int i = 1; i < exp.size()-1;++i) if(not conte_paraula_expressio(exp[i], j)) return false;
+			return true;
+	}
+	else{
+		vector<string> esq, dre;
+		int cont = 0;
+		bool t = true;
+		for (int i = 0; i < exp.size(); ++i){
+			if (t) esq.push_back(exp[i]);
+			else dre.push_back(exp[i]);
+			if (exp[i] == "(") ++cont;
+			else if (exp[i] == ")") --cont;
+			if (cont == 1 and (exp[i] == "&" or exp[i] == "|")){
+				t = false;
+				signe = exp[i];
+			}
+		}
+        esq.erase(esq.begin());
+		for(int i=esq.size()-1; esq[i]!="}" and esq[i]!=")"; --i) esq.erase(esq.end()-1);
+		if (dre.size() > 0){
+			while(dre[0]!="(" and dre[0]!="{"){
+				dre.erase(dre.begin());
+			}
+			dre.erase(dre.end()-1);
+		}
+		else esq.erase(esq.end()-1);
+		if(signe == "&"){
+			if(expressio_i(esq,j) and expressio_i(dre,j)) return true;
+			else return false;
+		}
+		else if (signe == "|") {
+			if(expressio_i(esq,j) or expressio_i(dre,j)) return true;
+			else return false;
+		}
+		else{
+			if(expressio_i(esq,j)) return true;
+			else return false;
+		}
+	}
 }
 
 Cjt_Frases::Cjt_Frases(){
@@ -123,13 +156,36 @@ void Cjt_Frases::substituir_paraula(string paraula1, string paraula2){
 				char c;
 				c= guardar_signe(aux);
 				aux=treure_signes(aux);
-				if(aux == paraula1){
-					*it = paraula2 + c;
-					}
-				}
-			else if(aux == paraula1) *it=paraula2;
+				if(aux == paraula1)*it = paraula2 + c;
 			}
+			else if(aux == paraula1) *it=paraula2;
 		}
+	}
+}
+
+void Cjt_Frases::substituir_cjtfrases(string s){
+	vector<list<string> > aux;
+	list<string> laux;
+	istringstream iss(s);
+	string paraula;
+	iss >> paraula;
+	list<string>::iterator it=laux.begin();
+	while (iss){
+        laux.insert(it, paraula);
+        iss >> paraula;
+    }
+    aux.push_back(laux);
+    vfrases.resize(0);
+    vfrases = aux;
+}
+
+void Cjt_Frases::consultar_frasesxy(int n, int m) {
+	vector< list<string> > aux;
+	for(int i=n-1; i<m; ++i){
+		aux.push_back(vfrases[i]);
+		}
+	vfrases.resize(0);
+	vfrases = aux;
 }
 
 int Cjt_Frases::numero_de_paraules() const{
@@ -145,26 +201,10 @@ bool Cjt_Frases::conte_paraula(string paraula){
 		list<string>::const_iterator it;
 		for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
 			string aux = *it;
-			
-			if (te_signe(aux)){
-				aux=treure_signes(aux);
-				}
+			if(te_signe(aux)) aux=treure_signes(aux);
 			if(aux == paraula) return true;
-			}
 		}
-	return false;
-}
-
-bool Cjt_Frases::conte_paraula_expressio(string paraula, int i){
-	list<string>::iterator it;
-	for(it=vfrases[i].begin(); it != vfrases[i].end(); ++it){
-		string aux = *it;
-			
-		if (te_signe(aux)){
-			aux=treure_signes(aux);
-			}
-		if(aux == paraula) return true;
-		}
+	}
 	return false;
 }
 
@@ -177,55 +217,6 @@ void Cjt_Frases::conte_paraules(string paraules){
 			imprimir_frase(vfrases[i]);
 		}
 	}
-}
-
-bool Cjt_Frases::expressio_i(vector<string>& exp, int j){
-	string signe;
-	if (exp[0] == "{" and exp[exp.size()-1] == "}"){
-		for (int i = 1; i < exp.size()-1;++i) if(not conte_paraula_expressio(exp[i], j)) return false;
-			return true;
-		}
-	else{
-		vector<string> esq, dre;
-		int cont = 0;
-		bool t = true;
-		for (int i = 0; i < exp.size(); ++i){
-			if (t) esq.push_back(exp[i]);
-			else dre.push_back(exp[i]);
-			
-			if (exp[i] == "(") ++cont;
-			else if (exp[i] == ")") --cont;
-			
-			if (cont == 1 and (exp[i] == "&" or exp[i] == "|")){
-				t = false;
-				signe = exp[i];
-			}
-		}
-        esq.erase(esq.begin());
-		for(int i=esq.size()-1; esq[i]!="}" and esq[i]!=")"; --i){
-			esq.erase(esq.end()-1);
-			}
-		if (dre.size() > 0){
-			while(dre[0]!="(" and dre[0]!="{"){
-				dre.erase(dre.begin());
-				}
-			dre.erase(dre.end()-1);
-		}
-		else esq.erase(esq.end()-1);
-		
-		if(signe == "&"){
-			if(expressio_i(esq,j) and expressio_i(dre,j)) return true;
-			else return false;
-			}
-		else if (signe == "|") {
-			if(expressio_i(esq,j) or expressio_i(dre,j)) return true;
-			else return false;
-			}
-		else{
-			if(expressio_i(esq,j)) return true;
-			else return false;
-			}
-		}
 }
 
 void Cjt_Frases::expressio(string& exp){
@@ -243,23 +234,16 @@ void Cjt_Frases::expressio(string& exp){
 			else {
 				aux.insert(aux.end(),paraula[i]);
                 if (i < paraula.size()-1){
-                    if (paraula[i+1] == '{' or paraula[i+1] == '}' or paraula[i+1] == '(' or paraula[i+1] == ')'){
-                        tractar.push_back(aux);
-                    }                
+                    if (paraula[i+1] == '{' or paraula[i+1] == '}' or paraula[i+1] == '(' or paraula[i+1] == ')') tractar.push_back(aux);               
+				}
 			}
 		}
-	}
         if((paraula[0] == '{' or paraula[0] == '(') and (paraula[paraula.size()-1] != '}' and 
 			paraula[paraula.size()-1] != ')' and paraula[paraula.size()-1] != '(' and paraula[paraula.size()-1] != '{' )) tractar.push_back(aux);
 		if((paraula != "|" and paraula != "&") and (paraula[0] != '{' and paraula[0] != '(') and (paraula[paraula.size()-1] != '}' and 
 			paraula[paraula.size()-1] != ')' )) tractar.push_back(aux);
 		iss >> paraula;
-	}/*
-	for (int i = 0; i < tractar.size(); ++i){
-		cout << ' ' << tractar[i];
 	}
-	cout << tractar.size() << endl;*/
-
 	for(int j=0; j<vfrases.size(); ++j){
 		if(expressio_i(tractar, j)) {
 			cout << j+1 << ' ';
@@ -267,7 +251,6 @@ void Cjt_Frases::expressio(string& exp){
 		}
 	}
 }
-
 
 void Cjt_Frases::taula_frequencies(){
 	list <string>::iterator it;
@@ -277,15 +260,13 @@ void Cjt_Frases::taula_frequencies(){
 			if (te_signe(paraula)){
 				paraula = treure_signes(paraula);
 				afegir(paraula);
-				}
-			else afegir(paraula);
 			}
+			else afegir(paraula);
 		}
+	}
 	sort(taula.begin(),taula.end(),ord);
 	int tamany = taula.size();
-	for (int i = 0; i < tamany; ++i){
-		cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
-		}
+	for (int i = 0; i < tamany; ++i) cout << taula[i].paraula << ' ' << taula[i].repeticions << endl;
 }
 
 void Cjt_Frases::llegir() {  
@@ -310,8 +291,7 @@ void Cjt_Frases::llegir() {
 			}
 			cin >> paraula;
 			fi = paraula[paraula.size()-1];
-			}
-            
+		}
 		if (paraula != "****"){
 			if (paraula == "." or paraula == "?" or paraula == "!"){
 				list<string>::iterator it2 = it;
@@ -322,23 +302,13 @@ void Cjt_Frases::llegir() {
 				l.insert(it,paraula);
 				++nparaules;
 			}
-			
 			cin >>paraula;
 		}
 		vfrases.push_back(l); 
     }
 }
 
-void Cjt_Frases::consultar_frasesxy(int n, int m) {
-	vector< list<string> > aux;
-	for(int i=n-1; i<m; ++i){
-		aux.push_back(vfrases[i]);
-		}
-	vfrases.resize(0);
-	vfrases = aux;
-}
-
-void Cjt_Frases::imprimir_nfrase(int n){
+void Cjt_Frases::imprimir_nfrase(int n) {
 	imprimir_frase(vfrases[n-1]);
 }
 
@@ -346,20 +316,16 @@ void Cjt_Frases::frasesxy(int n, int m) const{
 	list<string>::const_iterator it;
     for (int i = n-1; i < m; ++i){
 		cout << i+1;
-		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			 cout << ' ' << *it;
-			}
+		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it) cout << ' ' << *it;
 		cout << endl;
-		}
+	}
 }
 
 void Cjt_Frases::escriure() const{    
     list<string>::const_iterator it;
     for (int i = 0; i < vfrases.size(); ++i){
 		cout << i+1;
-		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it){
-			 cout << ' ' << *it;
-			}
+		for (it = vfrases[i].begin(); it != vfrases[i].end(); ++it) cout << ' ' << *it;
 		cout << endl;
-		}
+	}
 }

@@ -97,7 +97,7 @@ INPUT                  = "."
 INPUT_ENCODING         = utf-8
 FILE_PATTERNS          = *.hpp \ *.hh \
                          main*.cpp \ main*.cc \
-                         pro2*.cpp \ pro2*.cc \
+                         programa*.cpp \ programa*.cc \
                          principal*.cpp \ principal*.cc
 RECURSIVE              = NO
 EXCLUDE                = *~

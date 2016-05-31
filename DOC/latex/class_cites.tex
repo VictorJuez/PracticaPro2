@@ -1,0 +1,246 @@
+\hypertarget{class_cites}{}\section{Referencia de la Clase Cites}
+\label{class_cites}\index{Cites@{Cites}}
+
+
+Conté operacions de cites.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cites_aef7c40360c5537b4dac136a758e815fc}{Cites} ()
+\begin{DoxyCompactList}\small\item\em Creadora per defecte. S\textquotesingle{}executa automàticament al declarar una cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}{afegir\+\_\+cita} (int x, int y, \hyperlink{class_text}{Text} text)
+\begin{DoxyCompactList}\small\item\em Modificadora afegir cita. S\textquotesingle{}executa automàticament al declarar una cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}{eliminar\+\_\+cita} (string \&referencia)
+\begin{DoxyCompactList}\small\item\em Modificadora eliminar cita. \end{DoxyCompactList}\item 
+\hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases} \hyperlink{class_cites_aaed19239876da7b34636457a0641c7e4}{consultar\+\_\+contingut} (string r)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cites_a4a084e0d91b69314dc14fc4b5974595f}{existeix\+\_\+cita} (int x, int y, string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{existeix\+\_\+cita\+\_\+ref} (string referencia)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}{escriure\+\_\+cita\+\_\+ref} (string \&referencia)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a12ac50ed7017de796b3ce3b96df7d848}{escriure\+\_\+cites\+\_\+autor} (string \&autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cites d\textquotesingle{}autor. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_ac692741811e35c8da2e92906d21cef07}{escriure\+\_\+cita\+\_\+triat} (string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita triat. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_adf71af09037fa45f5cfd3095769f75a4}{escriure\+\_\+cita\+\_\+info} (string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita info. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}{escriure\+\_\+cites} ()
+\begin{DoxyCompactList}\small\item\em Imprimir cites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Conté operacions de cites. 
+
+Todas las operaciones son de {\bfseries coste constante} 
+
+Definición en la línea 20 del archivo Cites.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Cites@{Cites}!Cites@{Cites}}
+\index{Cites@{Cites}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{Cites()}{Cites()}}]{\setlength{\rightskip}{0pt plus 5cm}Cites\+::\+Cites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_aef7c40360c5537b4dac136a758e815fc}{}\label{class_cites_aef7c40360c5537b4dac136a758e815fc}
+
+
+Creadora per defecte. S\textquotesingle{}executa automàticament al declarar una cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat és un conjunt de cites buit. 
+\end{DoxyPostcond}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Cites@{Cites}!afegir\+\_\+cita@{afegir\+\_\+cita}}
+\index{afegir\+\_\+cita@{afegir\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+cita(int x, int y, Text text)}{afegir_cita(int x, int y, Text text)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::afegir\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Text}}]{text}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}{}\label{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}
+
+
+Modificadora afegir cita. S\textquotesingle{}executa automàticament al declarar una cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape \hyperlink{class_text}{Text} no és buit i es compleix 1 $<$= x $<$= y $<$= n on n es el nombre de frases de text} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha afegit una nova cita amb la seva referencia corresponent. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!eliminar\+\_\+cita@{eliminar\+\_\+cita}}
+\index{eliminar\+\_\+cita@{eliminar\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{eliminar\+\_\+cita(string \&referencia)}{eliminar_cita(string &referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::eliminar\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{string \&}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}{}\label{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}
+
+
+Modificadora eliminar cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la mateixa referencia} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha eliminat la cita que tenia la mateixa referència. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!consultar\+\_\+contingut@{consultar\+\_\+contingut}}
+\index{consultar\+\_\+contingut@{consultar\+\_\+contingut}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+contingut(string r)}{consultar_contingut(string r)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cjt\+\_\+\+Frases} Cites\+::consultar\+\_\+contingut (
+\begin{DoxyParamCaption}
+\item[{string}]{r}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_aaed19239876da7b34636457a0641c7e4}{}\label{class_cites_aaed19239876da7b34636457a0641c7e4}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la referencia r} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna el contingut de la cita. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!existeix\+\_\+cita@{existeix\+\_\+cita}}
+\index{existeix\+\_\+cita@{existeix\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{existeix\+\_\+cita(int x, int y, string titol, string autor)}{existeix_cita(int x, int y, string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cites\+::existeix\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a4a084e0d91b69314dc14fc4b5974595f}{}\label{class_cites_a4a084e0d91b69314dc14fc4b5974595f}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si existeix una cita amb el rang marcat per x i y, el titol i l\textquotesingle{}autor del text citat. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!existeix\+\_\+cita\+\_\+ref@{existeix\+\_\+cita\+\_\+ref}}
+\index{existeix\+\_\+cita\+\_\+ref@{existeix\+\_\+cita\+\_\+ref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{existeix\+\_\+cita\+\_\+ref(string referencia)}{existeix_cita_ref(string referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cites\+::existeix\+\_\+cita\+\_\+ref (
+\begin{DoxyParamCaption}
+\item[{string}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{}\label{class_cites_ac80a9416a25f61d4a708ea13aad20da9}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si existeix la referencia en el conjunt de cites i fals si no. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+ref@{escriure\+\_\+cita\+\_\+ref}}
+\index{escriure\+\_\+cita\+\_\+ref@{escriure\+\_\+cita\+\_\+ref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+ref(string \&referencia)}{escriure_cita_ref(string &referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+ref (
+\begin{DoxyParamCaption}
+\item[{string \&}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}{}\label{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la mateixa referència} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}escriu pel canal estandar de sortida la cita amb aquesta referència. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!escriure\+\_\+cites\+\_\+autor@{escriure\+\_\+cites\+\_\+autor}}
+\index{escriure\+\_\+cites\+\_\+autor@{escriure\+\_\+cites\+\_\+autor}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cites\+\_\+autor(string \&autor)}{escriure_cites_autor(string &autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cites\+\_\+autor (
+\begin{DoxyParamCaption}
+\item[{string \&}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a12ac50ed7017de796b3ce3b96df7d848}{}\label{class_cites_a12ac50ed7017de796b3ce3b96df7d848}
+
+
+Imprimir cites d\textquotesingle{}autor. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix l\textquotesingle{}autor dins de les cites} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida les cites de l\textquotesingle{}autor autor. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+triat@{escriure\+\_\+cita\+\_\+triat}}
+\index{escriure\+\_\+cita\+\_\+triat@{escriure\+\_\+cita\+\_\+triat}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+triat(string titol, string autor)}{escriure_cita_triat(string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+triat (
+\begin{DoxyParamCaption}
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac692741811e35c8da2e92906d21cef07}{}\label{class_cites_ac692741811e35c8da2e92906d21cef07}
+
+
+Imprimir cita triat. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Ha d\textquotesingle{}haver un text triat} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida totes les cites del text triat. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+info@{escriure\+\_\+cita\+\_\+info}}
+\index{escriure\+\_\+cita\+\_\+info@{escriure\+\_\+cita\+\_\+info}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+info(string titol, string autor)}{escriure_cita_info(string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_adf71af09037fa45f5cfd3095769f75a4}{}\label{class_cites_adf71af09037fa45f5cfd3095769f75a4}
+
+
+Imprimir cita info. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Ha d\textquotesingle{}existir una cita amb el titol \char`\"{}titol\char`\"{} i l\textquotesingle{}autor \char`\"{}autor\char`\"{} que passem} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida la referència i les cites del text referenciat. 
+\end{DoxyPostcond}
+\index{Cites@{Cites}!escriure\+\_\+cites@{escriure\+\_\+cites}}
+\index{escriure\+\_\+cites@{escriure\+\_\+cites}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cites()}{escriure_cites()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}{}\label{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}
+
+
+Imprimir cites. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida totes les cites. 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cites_8hh}{Cites.\+hh}\end{DoxyCompactItemize}
