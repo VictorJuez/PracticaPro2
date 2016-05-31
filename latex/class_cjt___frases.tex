@@ -1,0 +1,985 @@
+\hypertarget{class_cjt___frases}{}\section{Referencia de la Clase Cjt\+\_\+\+Frases}
+\label{class_cjt___frases}\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+
+
+Conté un conjunt de frases.  
+
+
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_cjt___frases_1_1freq}{freq}
+\begin{DoxyCompactList}\small\item\em Variable de dades que conté una paraula del conjunt de frases i els cops que apareix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cjt___frases_a31e716c9505cf3b9cc5add72c11f44ea}{Cjt\+\_\+\+Frases} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+frases. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a2f71744b91a5d9c6077fb3e0f05048bb}{substituir\+\_\+paraula} (string paraula1, string paraula2)
+\begin{DoxyCompactList}\small\item\em Substitueix una paraula per una altre. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_ab61657ab1517fc6d640a80f8b54e8b83}{substituir\+\_\+cjtfrases} (string s)
+\begin{DoxyCompactList}\small\item\em Substitueix el conjunt de frases. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_ab3f2ab417040813df6d3dee8350559d3}{consultar\+\_\+frasesxy} (int n, int m)
+\begin{DoxyCompactList}\small\item\em Consultora del contingut. \end{DoxyCompactList}\item 
+int \hyperlink{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{numero\+\_\+de\+\_\+paraules} () const 
+\begin{DoxyCompactList}\small\item\em Consultora del número de paraules. \end{DoxyCompactList}\item 
+int \hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\+\_\+de\+\_\+frases} () const 
+\begin{DoxyCompactList}\small\item\em Consultora del número de frases. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___frases_a6e45b67d225ed403aa0ce791d3bed726}{conte\+\_\+paraula} (string paraula)
+\begin{DoxyCompactList}\small\item\em Consultora conté paraula. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a14b7023a8d6db200f472c4b24d28ceed}{conte\+\_\+paraules} (string paraules)
+\begin{DoxyCompactList}\small\item\em Consultora paraules. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a8ea119b6b227b4a00b2084f92f1c2ae2}{expressio} (string \&exp)
+\begin{DoxyCompactList}\small\item\em Imprimeix frases. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a82810909fda7a0dfa200c595ef57033f}{taula\+\_\+frequencies} ()
+\begin{DoxyCompactList}\small\item\em Imprimeix la taula de freqüènces. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_aedcac1f588f4985043b7fb85087b7c71}{llegir} ()
+\begin{DoxyCompactList}\small\item\em Llegeix un \hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases}. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a487b50527aa63fd84f3865712fe694fd}{imprimir\+\_\+nfrase} (int n)
+\begin{DoxyCompactList}\small\item\em Imprimeix una frase. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_adfd3891b0aab6ad19c33c0cfd85fe811}{frasesxy} (int n, int m) const 
+\begin{DoxyCompactList}\small\item\em Imprimeix el rang de frases x y. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_ada8ea95fd9039d2c0d00fd12731f9932}{escriure} () const 
+\begin{DoxyCompactList}\small\item\em Imprimeix el contingut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\+\_\+signe} (string aux)
+\begin{DoxyCompactList}\small\item\em Consultora de signes. \end{DoxyCompactList}\item 
+string \hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\+\_\+signes} (string aux)
+\begin{DoxyCompactList}\small\item\em Eliminadora de signes. \end{DoxyCompactList}\item 
+char \hyperlink{class_cjt___frases_a7a02c62d67d06e05baccb8376fd834cb}{guardar\+\_\+signe} (string aux)
+\begin{DoxyCompactList}\small\item\em Guarda signe. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___frases_a66253708511e5472ecf9311cdb4c3557}{conte\+\_\+paraules\+\_\+plus} (list$<$ string $>$ \&l, vector$<$ string $>$ \&s)
+\begin{DoxyCompactList}\small\item\em Conté paraules. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_aa983e52750a3394c421ac8f49ea57e0e}{afegir} (string \&s)
+\begin{DoxyCompactList}\small\item\em Afegeix taula. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___frases_a47f557da7c998905ce9ef0420075723c}{imprimir\+\_\+frase} (const list$<$ string $>$ \&l) const 
+\begin{DoxyCompactList}\small\item\em Imprimeix una frase. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___frases_a2e262e5ddc41e193b8821d6ab48cd9f7}{conte\+\_\+paraula\+\_\+expressio} (string paraula, int i)
+\begin{DoxyCompactList}\small\item\em Busca paraula en una frase. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\+\_\+i} (vector$<$ string $>$ \&exp, int j)
+\begin{DoxyCompactList}\small\item\em Funció d\textquotesingle{}immersió d\textquotesingle{}expressió. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_cjt___frases_a5b3109b7c405de618084f98dab67b74b}{ord} (const \hyperlink{struct_cjt___frases_1_1freq}{freq} \&a, const \hyperlink{struct_cjt___frases_1_1freq}{freq} \&b)
+\begin{DoxyCompactList}\small\item\em Crieri per ordenar la taula de freqüències, primer per freqüència, després creixenment per tamany, i després alfabèticament. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ list$<$ string $>$ $>$ \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}
+\begin{DoxyCompactList}\small\item\em Estructura de dades que conté el conjunt de frases. \end{DoxyCompactList}\item 
+int \hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules}
+\begin{DoxyCompactList}\small\item\em Conté el número de paraules que té el conjunt de frases. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{struct_cjt___frases_1_1freq}{freq} $>$ \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}
+\begin{DoxyCompactList}\small\item\em Variable de dades que conté les diferents paraules del conjunt de frases i els cops que apareixen. . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Conté un conjunt de frases. 
+
+Todas las operaciones son de {\bfseries coste constante} 
+
+Definición en la línea 22 del archivo Cjt\+\_\+\+Frases.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{Cjt\+\_\+\+Frases()}{Cjt_Frases()}}]{\setlength{\rightskip}{0pt plus 5cm}Cjt\+\_\+\+Frases\+::\+Cjt\+\_\+\+Frases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a31e716c9505cf3b9cc5add72c11f44ea}{}\label{class_cjt___frases_a31e716c9505cf3b9cc5add72c11f44ea}
+
+
+Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+frases. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un conjunt de frases buit. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 146 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+146                       \{
+147   \hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules} = 0;
+148 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!te\+\_\+signe@{te\+\_\+signe}}
+\index{te\+\_\+signe@{te\+\_\+signe}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{te\+\_\+signe(string aux)}{te_signe(string aux)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::te\+\_\+signe (
+\begin{DoxyParamCaption}
+\item[{string}]{aux}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a9b246a0674754ec095357038fc531425}{}\label{class_cjt___frases_a9b246a0674754ec095357038fc531425}
+
+
+Consultora de signes. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape aux no és buit.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si la paraula acaba amb \textquotesingle{},\textquotesingle{}, \textquotesingle{}.\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}!\textquotesingle{}, \textquotesingle{};\textquotesingle{}, \textquotesingle{}\+:\textquotesingle{}. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+3                                    \{
+4   \textcolor{keywordtype}{char} last = aux[aux.size()-1];
+5   \textcolor{keywordflow}{if} (last == \textcolor{charliteral}{'.'} or last == \textcolor{charliteral}{'?'} or last == \textcolor{charliteral}{'!'} or last == \textcolor{charliteral}{';'} or last == \textcolor{charliteral}{':'} or last == \textcolor{charliteral}{','} ) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+6   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+7 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!treure\+\_\+signes@{treure\+\_\+signes}}
+\index{treure\+\_\+signes@{treure\+\_\+signes}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{treure\+\_\+signes(string aux)}{treure_signes(string aux)}}]{\setlength{\rightskip}{0pt plus 5cm}string Cjt\+\_\+\+Frases\+::treure\+\_\+signes (
+\begin{DoxyParamCaption}
+\item[{string}]{aux}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{}\label{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}
+
+
+Eliminadora de signes. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape aux ha de tenir signe} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha eliminat el signe. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+9                                           \{
+10   aux.erase(aux.end()-1);
+11   \textcolor{keywordflow}{return} aux;
+12 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!guardar\+\_\+signe@{guardar\+\_\+signe}}
+\index{guardar\+\_\+signe@{guardar\+\_\+signe}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{guardar\+\_\+signe(string aux)}{guardar_signe(string aux)}}]{\setlength{\rightskip}{0pt plus 5cm}char Cjt\+\_\+\+Frases\+::guardar\+\_\+signe (
+\begin{DoxyParamCaption}
+\item[{string}]{aux}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a7a02c62d67d06e05baccb8376fd834cb}{}\label{class_cjt___frases_a7a02c62d67d06e05baccb8376fd834cb}
+
+
+Guarda signe. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape aux té signe} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna el signe. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 14 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+14                                         \{
+15   \textcolor{keywordflow}{return} aux[aux.size()-1];
+16 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!conte\+\_\+paraules\+\_\+plus@{conte\+\_\+paraules\+\_\+plus}}
+\index{conte\+\_\+paraules\+\_\+plus@{conte\+\_\+paraules\+\_\+plus}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{conte\+\_\+paraules\+\_\+plus(list$<$ string $>$ \&l, vector$<$ string $>$ \&s)}{conte_paraules_plus(list< string > &l, vector< string > &s)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::conte\+\_\+paraules\+\_\+plus (
+\begin{DoxyParamCaption}
+\item[{list$<$ string $>$ \&}]{l, }
+\item[{vector$<$ string $>$ \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a66253708511e5472ecf9311cdb4c3557}{}\label{class_cjt___frases_a66253708511e5472ecf9311cdb4c3557}
+
+
+Conté paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape l i s no són buits} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna cert si l conté les paraules de s en ordre de i=0 fins i=s.\+size()-\/1. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 18 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+18                                                                       \{
+19   list<string>::iterator it;
+20   \textcolor{keywordtype}{int} cont=0;
+21   \textcolor{keywordflow}{for}(it=l.begin(); it!=l.end(); ++it)\{
+22     \textcolor{keywordflow}{if}((l.size()-cont) < s.size()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+23     \textcolor{keywordtype}{string} aux=*it;
+24     \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(aux)) aux=\hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(aux);
+25     \textcolor{keywordflow}{if} (aux==s[0])\{
+26       \textcolor{keywordflow}{if}(s.size() == 1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+27       \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};
+28       list<string>::iterator it2 = it;
+29       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<s.size() and not b; ++i)\{
+30         ++it2;
+31         \textcolor{keywordtype}{string} aux=*it2;
+32         \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(aux)) aux=\hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(aux);
+33         \textcolor{keywordflow}{if}(aux != s[i]) b=\textcolor{keyword}{true};
+34         \textcolor{keywordflow}{if}(not b and i == s.size()-1) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+35       \}
+36     \}
+37     ++cont;
+38   \}
+39   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+40 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!afegir@{afegir}}
+\index{afegir@{afegir}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{afegir(string \&s)}{afegir(string &s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::afegir (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_aa983e52750a3394c421ac8f49ea57e0e}{}\label{class_cjt___frases_aa983e52750a3394c421ac8f49ea57e0e}
+
+
+Afegeix taula. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si s no existeix a la taula de freqüències aquesta es afegida, i si existeix se li suma 1 al contador en qüestió. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 42 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+42                                 \{
+43   \textcolor{keywordtype}{bool} nova = \textcolor{keyword}{false};
+44   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;not nova and (i < \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}.size());++i)\{
+45     \textcolor{keywordflow}{if} (\hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}[i].paraula == s)\{
+46       \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}[i].repeticions++;
+47       nova = \textcolor{keyword}{true};
+48     \}
+49   \}
+50   \textcolor{keywordflow}{if} (not nova)\{
+51     freq p;
+52     p.paraula = s;
+53     p.repeticions = 1;
+54     \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}.push\_back(p);
+55   \}
+56 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!imprimir\+\_\+frase@{imprimir\+\_\+frase}}
+\index{imprimir\+\_\+frase@{imprimir\+\_\+frase}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{imprimir\+\_\+frase(const list$<$ string $>$ \&l) const }{imprimir_frase(const list< string > &l) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::imprimir\+\_\+frase (
+\begin{DoxyParamCaption}
+\item[{const list$<$ string $>$ \&}]{l}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a47f557da7c998905ce9ef0420075723c}{}\label{class_cjt___frases_a47f557da7c998905ce9ef0420075723c}
+
+
+Imprimeix una frase. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escriu pel canal estàndar de sortida la frase l. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 58 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+58                                                           \{
+59   
+60   \textcolor{keywordtype}{bool} primer=\textcolor{keyword}{true};
+61   list<string>::const\_iterator it;
+62   \textcolor{keywordflow}{for}(it=l.begin(); it!=l.end(); ++it)\{
+63     \textcolor{keywordflow}{if}(primer)\{
+64       cout << *it;
+65       primer=\textcolor{keyword}{false};
+66     \}
+67     \textcolor{keywordflow}{else} cout << \textcolor{charliteral}{' '} << *it;
+68   \}
+69   cout << endl;
+70 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!ord@{ord}}
+\index{ord@{ord}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{ord(const freq \&a, const freq \&b)}{ord(const freq &a, const freq &b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::ord (
+\begin{DoxyParamCaption}
+\item[{const {\bf freq} \&}]{a, }
+\item[{const {\bf freq} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_cjt___frases_a5b3109b7c405de618084f98dab67b74b}{}\label{class_cjt___frases_a5b3109b7c405de618084f98dab67b74b}
+
+
+Crieri per ordenar la taula de freqüències, primer per freqüència, després creixenment per tamany, i després alfabèticament. 
+
+
+
+Definición en la línea 72 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+72                                                \{
+73   \textcolor{keywordflow}{if} (a.repeticions > b.repeticions) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+74   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a.repeticions < b.repeticions) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+75   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a.paraula.size() < b.paraula.size()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+76   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (a.paraula.size() > b.paraula.size()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+77   \textcolor{keywordflow}{return} a.paraula < b.paraula;
+78 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!conte\+\_\+paraula\+\_\+expressio@{conte\+\_\+paraula\+\_\+expressio}}
+\index{conte\+\_\+paraula\+\_\+expressio@{conte\+\_\+paraula\+\_\+expressio}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{conte\+\_\+paraula\+\_\+expressio(string paraula, int i)}{conte_paraula_expressio(string paraula, int i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::conte\+\_\+paraula\+\_\+expressio (
+\begin{DoxyParamCaption}
+\item[{string}]{paraula, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a2e262e5ddc41e193b8821d6ab48cd9f7}{}\label{class_cjt___frases_a2e262e5ddc41e193b8821d6ab48cd9f7}
+
+
+Busca paraula en una frase. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix vfrases\mbox{[}i\mbox{]}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna cert si troba la paraula a la frase v\mbox{[}i\mbox{]}. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 92 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+92                                                              \{
+93   list<string>::iterator it;
+94   \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it != \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end(); ++it)\{
+95     \textcolor{keywordtype}{string} aux = *it;
+96     \textcolor{keywordflow}{if} (\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(aux)) aux=\hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(aux);
+97     \textcolor{keywordflow}{if}(aux == paraula) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+98   \}
+99   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+100 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!expressio\+\_\+i@{expressio\+\_\+i}}
+\index{expressio\+\_\+i@{expressio\+\_\+i}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{expressio\+\_\+i(vector$<$ string $>$ \&exp, int j)}{expressio_i(vector< string > &exp, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::expressio\+\_\+i (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$ \&}]{exp, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{}\label{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}
+
+
+Funció d\textquotesingle{}immersió d\textquotesingle{}expressió. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape exp és com a mínim una expressió binaria} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna cert si l\textquotesingle{}expressió es compleix per la frase vfrases\mbox{[}j\mbox{]}. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 102 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+102                                                       \{
+103   \textcolor{keywordtype}{string} signe;
+104   \textcolor{keywordflow}{if} (exp[0] == \textcolor{stringliteral}{"\{"} and exp[exp.size()-1] == \textcolor{stringliteral}{"\}"})\{
+105     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < exp.size()-1;++i) \textcolor{keywordflow}{if}(not \hyperlink{class_cjt___frases_a2e262e5ddc41e193b8821d6ab48cd9f7}{conte\_paraula\_expressio}(exp[i], j))
+       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+106       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+107   \}
+108   \textcolor{keywordflow}{else}\{
+109     vector<string> esq, dre;
+110     \textcolor{keywordtype}{int} cont = 0;
+111     \textcolor{keywordtype}{bool} t = \textcolor{keyword}{true};
+112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < exp.size(); ++i)\{
+113       \textcolor{keywordflow}{if} (t) esq.push\_back(exp[i]);
+114       \textcolor{keywordflow}{else} dre.push\_back(exp[i]);
+115       \textcolor{keywordflow}{if} (exp[i] == \textcolor{stringliteral}{"("}) ++cont;
+116       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (exp[i] == \textcolor{stringliteral}{")"}) --cont;
+117       \textcolor{keywordflow}{if} (cont == 1 and (exp[i] == \textcolor{stringliteral}{"&"} or exp[i] == \textcolor{stringliteral}{"|"}))\{
+118         t = \textcolor{keyword}{false};
+119         signe = exp[i];
+120       \}
+121     \}
+122         esq.erase(esq.begin());
+123     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=esq.size()-1; esq[i]!=\textcolor{stringliteral}{"\}"} and esq[i]!=\textcolor{stringliteral}{")"}; --i) esq.erase(esq.end()-1);
+124     \textcolor{keywordflow}{if} (dre.size() > 0)\{
+125       \textcolor{keywordflow}{while}(dre[0]!=\textcolor{stringliteral}{"("} and dre[0]!=\textcolor{stringliteral}{"\{"})\{
+126         dre.erase(dre.begin());
+127       \}
+128       dre.erase(dre.end()-1);
+129     \}
+130     \textcolor{keywordflow}{else} esq.erase(esq.end()-1);
+131     \textcolor{keywordflow}{if}(signe == \textcolor{stringliteral}{"&"})\{
+132       \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(esq,j) and \hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(dre,j)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+133       \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+134     \}
+135     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (signe == \textcolor{stringliteral}{"|"}) \{
+136       \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(esq,j) or \hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(dre,j)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+137       \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+138     \}
+139     \textcolor{keywordflow}{else}\{
+140       \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(esq,j)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+141       \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+142     \}
+143   \}
+144 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!substituir\+\_\+paraula@{substituir\+\_\+paraula}}
+\index{substituir\+\_\+paraula@{substituir\+\_\+paraula}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{substituir\+\_\+paraula(string paraula1, string paraula2)}{substituir_paraula(string paraula1, string paraula2)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::substituir\+\_\+paraula (
+\begin{DoxyParamCaption}
+\item[{string}]{paraula1, }
+\item[{string}]{paraula2}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a2f71744b91a5d9c6077fb3e0f05048bb}{}\label{class_cjt___frases_a2f71744b91a5d9c6077fb3e0f05048bb}
+
+
+Substitueix una paraula per una altre. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape La paraula1 ha d\textquotesingle{}apareixer com a mínim un cop en el paràmetre implícit.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han substituït totes les paraules coincidents a paraula1 del paràmetre implícit per paraula2. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 150 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+150                                                                    \{
+151   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++i)\{
+152     list<string>::iterator it;
+153     \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it !=\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end(); ++it)\{
+154       \textcolor{keywordtype}{string} aux= *it;
+155       \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(aux))\{
+156         \textcolor{keywordtype}{char} c;
+157         c= \hyperlink{class_cjt___frases_a7a02c62d67d06e05baccb8376fd834cb}{guardar\_signe}(aux);
+158         aux=\hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(aux);
+159         \textcolor{keywordflow}{if}(aux == paraula1)*it = paraula2 + c;
+160       \}
+161       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux == paraula1) *it=paraula2;
+162     \}
+163   \}
+164 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!substituir\+\_\+cjtfrases@{substituir\+\_\+cjtfrases}}
+\index{substituir\+\_\+cjtfrases@{substituir\+\_\+cjtfrases}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{substituir\+\_\+cjtfrases(string s)}{substituir_cjtfrases(string s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::substituir\+\_\+cjtfrases (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_ab61657ab1517fc6d640a80f8b54e8b83}{}\label{class_cjt___frases_ab61657ab1517fc6d640a80f8b54e8b83}
+
+
+Substitueix el conjunt de frases. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape s no és buit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El paràmetre implícit queda substituit per l\textquotesingle{}string s. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 166 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+166                                              \{
+167   vector<list<string> > aux;
+168   list<string> laux;
+169   istringstream iss(s);
+170   \textcolor{keywordtype}{string} paraula;
+171   iss >> paraula;
+172   list<string>::iterator it=laux.begin();
+173   \textcolor{keywordflow}{while} (iss)\{
+174         laux.insert(it, paraula);
+175         iss >> paraula;
+176     \}
+177     aux.push\_back(laux);
+178     \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.resize(0);
+179     \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases} = aux;
+180 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!consultar\+\_\+frasesxy@{consultar\+\_\+frasesxy}}
+\index{consultar\+\_\+frasesxy@{consultar\+\_\+frasesxy}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+frasesxy(int n, int m)}{consultar_frasesxy(int n, int m)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::consultar\+\_\+frasesxy (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_ab3f2ab417040813df6d3dee8350559d3}{}\label{class_cjt___frases_ab3f2ab417040813df6d3dee8350559d3}
+
+
+Consultora del contingut. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape  n $<$= m, n$>$0 i m$<$= numero de frases } 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Modifica el paràmetre implícit de forma que només contè les frases del rang n, m. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 182 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+182                                                 \{
+183   vector< list<string> > aux;
+184   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=n-1; i<m; ++i) aux.push\_back(\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i]);
+185   \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.resize(0);
+186   \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases} = aux;
+187 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!numero\+\_\+de\+\_\+paraules@{numero\+\_\+de\+\_\+paraules}}
+\index{numero\+\_\+de\+\_\+paraules@{numero\+\_\+de\+\_\+paraules}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{numero\+\_\+de\+\_\+paraules() const }{numero_de_paraules() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Cjt\+\_\+\+Frases\+::numero\+\_\+de\+\_\+paraules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{}\label{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}
+
+
+Consultora del número de paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat es el número de paraules del paràmetre implícit. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 189 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+189                                         \{
+190   \textcolor{keywordflow}{return} \hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules};
+191 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!numero\+\_\+de\+\_\+frases@{numero\+\_\+de\+\_\+frases}}
+\index{numero\+\_\+de\+\_\+frases@{numero\+\_\+de\+\_\+frases}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{numero\+\_\+de\+\_\+frases() const }{numero_de_frases() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Cjt\+\_\+\+Frases\+::numero\+\_\+de\+\_\+frases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{}\label{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}
+
+
+Consultora del número de frases. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat es el número de frases del paràmetre implícit 
+\end{DoxyPostcond}
+
+
+Definición en la línea 193 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+193                                       \{
+194   \textcolor{keywordflow}{return} \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size();
+195 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!conte\+\_\+paraula@{conte\+\_\+paraula}}
+\index{conte\+\_\+paraula@{conte\+\_\+paraula}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{conte\+\_\+paraula(string paraula)}{conte_paraula(string paraula)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Frases\+::conte\+\_\+paraula (
+\begin{DoxyParamCaption}
+\item[{string}]{paraula}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a6e45b67d225ed403aa0ce791d3bed726}{}\label{class_cjt___frases_a6e45b67d225ed403aa0ce791d3bed726}
+
+
+Consultora conté paraula. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El vector de paraules no és buit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat indica si el paràmetre implícit conté o no la paraula 
+\end{DoxyPostcond}
+
+
+Definición en la línea 197 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+197                                             \{
+198   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++i)\{
+199     list<string>::const\_iterator it;
+200     \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it != \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end(); ++it)\{
+201       \textcolor{keywordtype}{string} aux = *it;
+202       \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(aux)) aux=\hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(aux);
+203       \textcolor{keywordflow}{if}(aux == paraula) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+204     \}
+205   \}
+206   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+207 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!conte\+\_\+paraules@{conte\+\_\+paraules}}
+\index{conte\+\_\+paraules@{conte\+\_\+paraules}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{conte\+\_\+paraules(string paraules)}{conte_paraules(string paraules)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::conte\+\_\+paraules (
+\begin{DoxyParamCaption}
+\item[{string}]{paraules}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a14b7023a8d6db200f472c4b24d28ceed}{}\label{class_cjt___frases_a14b7023a8d6db200f472c4b24d28ceed}
+
+
+Consultora paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape el vector paraules no és buit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat ens indica si la frase conté la mateixa seqüència de paraules. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 209 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+209                                               \{
+210   vector<string> v;
+211   v=\hyperlink{_cjt___frases_8cc_ad8678c42a5a2598c90e01f5991a239b5}{crear\_frase}(paraules);
+212   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++i)\{
+213     \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_a66253708511e5472ecf9311cdb4c3557}{conte\_paraules\_plus}(\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i], v)) \{
+214       cout << i+1 << \textcolor{charliteral}{' '};
+215       \hyperlink{class_cjt___frases_a47f557da7c998905ce9ef0420075723c}{imprimir\_frase}(\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i]);
+216     \}
+217   \}
+218 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!expressio@{expressio}}
+\index{expressio@{expressio}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{expressio(string \&exp)}{expressio(string &exp)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::expressio (
+\begin{DoxyParamCaption}
+\item[{string \&}]{exp}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a8ea119b6b227b4a00b2084f92f1c2ae2}{}\label{class_cjt___frases_a8ea119b6b227b4a00b2084f92f1c2ae2}
+
+
+Imprimeix frases. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Entra una expressió binària i entre claus o parèntesis i claus dins.} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprimeix pel canal estàndar de sortida les frases del contingut que compleixen l\textquotesingle{}expressió. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 220 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+220                                      \{
+221   istringstream iss(exp);
+222   vector <string> tractar;
+223   \textcolor{keywordtype}{string} paraula;
+224   iss >> paraula;
+225   \textcolor{keywordflow}{while} (iss)\{
+226         \textcolor{keywordtype}{string} aux;
+227     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < paraula.size(); ++i)\{
+228       \textcolor{keywordflow}{if}(paraula[i] == \textcolor{charliteral}{'\{'} or paraula[i] == \textcolor{charliteral}{'\}'} or paraula[i] == \textcolor{charliteral}{'('} or paraula[i] == \textcolor{charliteral}{')'} or paraula[i] == \textcolor{charliteral}{
+      '&'} or paraula[i] == \textcolor{charliteral}{'|'})\{
+229         \textcolor{keywordtype}{string} k(1,paraula[i]);
+230         tractar.push\_back(k); 
+231       \}
+232       \textcolor{keywordflow}{else} \{
+233         aux.insert(aux.end(),paraula[i]);
+234                 \textcolor{keywordflow}{if} (i < paraula.size()-1)\{
+235                     \textcolor{keywordflow}{if} (paraula[i+1] == \textcolor{charliteral}{'\{'} or paraula[i+1] == \textcolor{charliteral}{'\}'} or paraula[i+1] == \textcolor{charliteral}{'('} or paraula[i+1] 
+      == \textcolor{charliteral}{')'}) tractar.push\_back(aux);               
+236         \}
+237       \}
+238     \}
+239         \textcolor{keywordflow}{if}((paraula[0] == \textcolor{charliteral}{'\{'} or paraula[0] == \textcolor{charliteral}{'('}) and (paraula[paraula.size()-1] != \textcolor{charliteral}{'\}'} and 
+240       paraula[paraula.size()-1] != \textcolor{charliteral}{')'} and paraula[paraula.size()-1] != \textcolor{charliteral}{'('} and paraula[paraula.size()-1] !
+      = \textcolor{charliteral}{'\{'} )) tractar.push\_back(aux);
+241     \textcolor{keywordflow}{if}((paraula != \textcolor{stringliteral}{"|"} and paraula != \textcolor{stringliteral}{"&"}) and (paraula[0] != \textcolor{charliteral}{'\{'} and paraula[0] != \textcolor{charliteral}{'('}) and (paraula[
+      paraula.size()-1] != \textcolor{charliteral}{'\}'} and 
+242       paraula[paraula.size()-1] != \textcolor{charliteral}{')'} )) tractar.push\_back(aux);
+243     iss >> paraula;
+244   \}
+245   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++j)\{
+246     \textcolor{keywordflow}{if}(\hyperlink{class_cjt___frases_abb52ecadbfd3fead9e055c12f2947d04}{expressio\_i}(tractar, j)) \{
+247       cout << j+1 << \textcolor{charliteral}{' '};
+248       \hyperlink{class_cjt___frases_a487b50527aa63fd84f3865712fe694fd}{imprimir\_nfrase}(j+1);
+249     \}
+250   \}
+251 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!taula\+\_\+frequencies@{taula\+\_\+frequencies}}
+\index{taula\+\_\+frequencies@{taula\+\_\+frequencies}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{taula\+\_\+frequencies()}{taula_frequencies()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::taula\+\_\+frequencies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a82810909fda7a0dfa200c595ef57033f}{}\label{class_cjt___frases_a82810909fda7a0dfa200c595ef57033f}
+
+
+Imprimeix la taula de freqüènces. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+s\textquotesingle{}ha escrit la taula de frequencies del paràmetre implícit al canal estàndar de sortida 
+\end{DoxyPostcond}
+
+
+Definición en la línea 253 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+253                                   \{
+254   list <string>::iterator it;
+255   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++i)\{
+256     \textcolor{keywordflow}{for} (it = \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it != \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end();++it)\{
+257       \textcolor{keywordtype}{string} paraula = (*it);
+258       \textcolor{keywordflow}{if} (\hyperlink{class_cjt___frases_a9b246a0674754ec095357038fc531425}{te\_signe}(paraula))\{
+259         paraula = \hyperlink{class_cjt___frases_aedb7f629231106b7de351d695bb7524a}{treure\_signes}(paraula);
+260         \hyperlink{class_cjt___frases_aa983e52750a3394c421ac8f49ea57e0e}{afegir}(paraula);
+261       \}
+262       \textcolor{keywordflow}{else} \hyperlink{class_cjt___frases_aa983e52750a3394c421ac8f49ea57e0e}{afegir}(paraula);
+263     \}
+264   \}
+265   sort(\hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}.begin(),\hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}.end(),\hyperlink{class_cjt___frases_a5b3109b7c405de618084f98dab67b74b}{ord});
+266   \textcolor{keywordtype}{int} tamany = \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}.size();
+267   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < tamany; ++i) cout << \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}[i].paraula << \textcolor{charliteral}{' '} << \hyperlink{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{taula}[i].repeticions << 
+      endl;
+268 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!llegir@{llegir}}
+\index{llegir@{llegir}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{llegir()}{llegir()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::llegir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_aedcac1f588f4985043b7fb85087b7c71}{}\label{class_cjt___frases_aedcac1f588f4985043b7fb85087b7c71}
+
+
+Llegeix un \hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases}. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Estan preparats al canal estandar d\textquotesingle{}entrada una seqüència de frases acabada en $\ast$$\ast$$\ast$$\ast$} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d\textquotesingle{}entrada. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 270 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+270                         \{  
+271   \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.resize(0);
+272   \hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules} = 0;  
+273     \textcolor{keywordtype}{string} paraula;
+274     cin >> paraula;
+275   list <string>::iterator it;
+276     \textcolor{keywordflow}{while} (paraula != \textcolor{stringliteral}{"****"})\{
+277     list <string> l;
+278         it = l.begin();
+279         \textcolor{keywordtype}{char} fi = paraula[paraula.size()-1];
+280         \textcolor{keywordflow}{while} ((fi != \textcolor{charliteral}{'.'} and fi != \textcolor{charliteral}{'?'} and fi != \textcolor{charliteral}{'!'}) or (fi >= \textcolor{charliteral}{'0'} and fi <= \textcolor{charliteral}{'9'}))\{
+281       \textcolor{keywordflow}{if} (paraula == \textcolor{stringliteral}{","} or paraula == \textcolor{stringliteral}{";"} or paraula == \textcolor{stringliteral}{":"})\{
+282         list<string>::iterator it2 = it;
+283         --it2;
+284         (*it2) += paraula;
+285       \}
+286       \textcolor{keywordflow}{else}\{  
+287         l.insert(it,paraula);
+288         ++\hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules};
+289       \}
+290       cin >> paraula;
+291       fi = paraula[paraula.size()-1];
+292     \}
+293     \textcolor{keywordflow}{if} (paraula != \textcolor{stringliteral}{"****"})\{
+294       \textcolor{keywordflow}{if} (paraula == \textcolor{stringliteral}{"."} or paraula == \textcolor{stringliteral}{"?"} or paraula == \textcolor{stringliteral}{"!"})\{
+295         list<string>::iterator it2 = it;
+296         --it2;
+297         (*it2) += paraula;
+298       \}
+299       \textcolor{keywordflow}{else}\{
+300         l.insert(it,paraula);
+301         ++\hyperlink{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{nparaules};
+302       \}
+303       cin >>paraula;
+304     \}
+305     \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.push\_back(l); 
+306     \}
+307 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!imprimir\+\_\+nfrase@{imprimir\+\_\+nfrase}}
+\index{imprimir\+\_\+nfrase@{imprimir\+\_\+nfrase}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{imprimir\+\_\+nfrase(int n)}{imprimir_nfrase(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::imprimir\+\_\+nfrase (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___frases_a487b50527aa63fd84f3865712fe694fd}{}\label{class_cjt___frases_a487b50527aa63fd84f3865712fe694fd}
+
+
+Imprimeix una frase. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix la frase número n} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escriu pel canal estàndar de sortida la frase número n. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 309 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+309                                       \{
+310   \hyperlink{class_cjt___frases_a47f557da7c998905ce9ef0420075723c}{imprimir\_frase}(\hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[n-1]);
+311 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!frasesxy@{frasesxy}}
+\index{frasesxy@{frasesxy}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{frasesxy(int n, int m) const }{frasesxy(int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::frasesxy (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___frases_adfd3891b0aab6ad19c33c0cfd85fe811}{}\label{class_cjt___frases_adfd3891b0aab6ad19c33c0cfd85fe811}
+
+
+Imprimeix el rang de frases x y. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape n $<$= m, n$>$0 i m$<$= numero de frases} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprimeix pel canal estàndar de sortida el rang de frases x, y amb el número de frase en la que apareixen respecte del text devant. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 313 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+313                                            \{
+314   list<string>::const\_iterator it;
+315     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = n-1; i < m; ++i)\{
+316     cout << i+1;
+317     \textcolor{keywordflow}{for} (it = \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it != \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end(); ++it) cout << \textcolor{charliteral}{' '} << *it;
+318     cout << endl;
+319   \}
+320 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!escriure@{escriure}}
+\index{escriure@{escriure}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{escriure() const }{escriure() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Frases\+::escriure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___frases_ada8ea95fd9039d2c0d00fd12731f9932}{}\label{class_cjt___frases_ada8ea95fd9039d2c0d00fd12731f9932}
+
+
+Imprimeix el contingut. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape  Cert } 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprimeix pel canal estàndar de sortida tot el conjunt de frases numerades respecte la posició en el text. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 322 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+322                                \{    
+323     list<string>::const\_iterator it;
+324     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}.size(); ++i)\{
+325     cout << i+1;
+326     \textcolor{keywordflow}{for} (it = \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].begin(); it != \hyperlink{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{vfrases}[i].end(); ++it) cout << \textcolor{charliteral}{' '} << *it;
+327     cout << endl;
+328   \}
+329 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!vfrases@{vfrases}}
+\index{vfrases@{vfrases}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{vfrases}{vfrases}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$list $<$string$>$ $>$ Cjt\+\_\+\+Frases\+::vfrases\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}{}\label{class_cjt___frases_a5323db427d06a961818c318d9ba79f3d}
+
+
+Estructura de dades que conté el conjunt de frases. 
+
+
+
+Definición en la línea 26 del archivo Cjt\+\_\+\+Frases.\+hh.
+
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!nparaules@{nparaules}}
+\index{nparaules@{nparaules}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{nparaules}{nparaules}}]{\setlength{\rightskip}{0pt plus 5cm}int Cjt\+\_\+\+Frases\+::nparaules\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}{}\label{class_cjt___frases_a026637b08f81acc25c6084146d73fc40}
+
+
+Conté el número de paraules que té el conjunt de frases. 
+
+
+
+Definición en la línea 29 del archivo Cjt\+\_\+\+Frases.\+hh.
+
+\index{Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}!taula@{taula}}
+\index{taula@{taula}!Cjt\+\_\+\+Frases@{Cjt\+\_\+\+Frases}}
+\subsubsection[{\texorpdfstring{taula}{taula}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf freq}$>$ Cjt\+\_\+\+Frases\+::taula\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}{}\label{class_cjt___frases_a2b7318b7d64136bc71479278db6e103e}
+
+
+Variable de dades que conté les diferents paraules del conjunt de frases i els cops que apareixen. . 
+
+
+
+Definición en la línea 38 del archivo Cjt\+\_\+\+Frases.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cjt___frases_8hh}{Cjt\+\_\+\+Frases.\+hh}\item 
+\hyperlink{_cjt___frases_8cc}{Cjt\+\_\+\+Frases.\+cc}\end{DoxyCompactItemize}

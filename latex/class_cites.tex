@@ -1,0 +1,670 @@
+\hypertarget{class_cites}{}\section{Referencia de la Clase Cites}
+\label{class_cites}\index{Cites@{Cites}}
+
+
+Conté operacions de cites.  
+
+
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_cites_1_1cita}{cita}
+\begin{DoxyCompactList}\small\item\em Variable que defineix cita. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_cites_1_1sref}{sref}
+\begin{DoxyCompactList}\small\item\em Variable que conté una referència sense nombre i el valor més gran que se li ha assignat mai. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cites_aef7c40360c5537b4dac136a758e815fc}{Cites} ()
+\begin{DoxyCompactList}\small\item\em Creadora per defecte. S\textquotesingle{}executa automàticament al declarar una cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}{afegir\+\_\+cita} (int x, int y, \hyperlink{class_text}{Text} text)
+\begin{DoxyCompactList}\small\item\em Modificadora afegir cita. S\textquotesingle{}executa automàticament al declarar una cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}{eliminar\+\_\+cita} (string \&referencia)
+\begin{DoxyCompactList}\small\item\em Modificadora eliminar cita. \end{DoxyCompactList}\item 
+\hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases} \hyperlink{class_cites_aaed19239876da7b34636457a0641c7e4}{consultar\+\_\+contingut} (string r)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cites_a4a084e0d91b69314dc14fc4b5974595f}{existeix\+\_\+cita} (int x, int y, string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{existeix\+\_\+cita\+\_\+ref} (string referencia)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}{escriure\+\_\+cita\+\_\+ref} (string \&referencia)
+\begin{DoxyCompactList}\small\item\em Imprimir cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a12ac50ed7017de796b3ce3b96df7d848}{escriure\+\_\+cites\+\_\+autor} (string \&autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cites d\textquotesingle{}autor. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_ac692741811e35c8da2e92906d21cef07}{escriure\+\_\+cita\+\_\+triat} (string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita triat. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_adf71af09037fa45f5cfd3095769f75a4}{escriure\+\_\+cita\+\_\+info} (string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Imprimir cita info. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}{escriure\+\_\+cites} ()
+\begin{DoxyCompactList}\small\item\em Imprimir cites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipos privados}
+\begin{DoxyCompactItemize}
+\item 
+typedef list$<$ \hyperlink{struct_cites_1_1cita}{cita} $>$\+::iterator \hyperlink{class_cites_ae425e520dfe8c7271cb7465f450e8824}{iterador}
+\begin{DoxyCompactList}\small\item\em shortcurt \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cites_ae425e520dfe8c7271cb7465f450e8824}{iterador} \hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\+\_\+referencia} (string s)
+\begin{DoxyCompactList}\small\item\em Escriure cita. \end{DoxyCompactList}\item 
+string \hyperlink{class_cites_a0a9c4b06356f7c7f6728224abd8ee5d4}{crear\+\_\+ref} (string s, int n)
+\begin{DoxyCompactList}\small\item\em Escriure cita. \end{DoxyCompactList}\item 
+void \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\+\_\+cita} (string \&referencia)
+\begin{DoxyCompactList}\small\item\em Escriure cita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp} (const \hyperlink{struct_cites_1_1cita}{cita} \&a, const \hyperlink{struct_cites_1_1cita}{cita} \&b)
+\begin{DoxyCompactList}\small\item\em Funció per establir el criteri d\textquotesingle{}ordenació vref. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \hyperlink{struct_cites_1_1cita}{cita} $>$ \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}
+\begin{DoxyCompactList}\small\item\em Estructura on s\textquotesingle{}emmagatzen totes les cites. \end{DoxyCompactList}\item 
+\hyperlink{class_cites_ae425e520dfe8c7271cb7465f450e8824}{iterador} \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}
+\begin{DoxyCompactList}\small\item\em Iterador utilitzat per accedir als diferents elements del conjunt de cites. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{struct_cites_1_1sref}{sref} $>$ \hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}
+\begin{DoxyCompactList}\small\item\em Espai de memòria on s\textquotesingle{}emmagatzemen les referències sense nombre i el valor més gran que se li ha assignat mai. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Conté operacions de cites. 
+
+Definición en la línea 17 del archivo Cites.\+hh.
+
+
+
+\subsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\index{Cites@{Cites}!iterador@{iterador}}
+\index{iterador@{iterador}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{iterador}{iterador}}]{\setlength{\rightskip}{0pt plus 5cm}typedef list$<${\bf cita}$>$\+::iterator {\bf Cites\+::iterador}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_ae425e520dfe8c7271cb7465f450e8824}{}\label{class_cites_ae425e520dfe8c7271cb7465f450e8824}
+
+
+shortcurt 
+
+
+
+Definición en la línea 34 del archivo Cites.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Cites@{Cites}!Cites@{Cites}}
+\index{Cites@{Cites}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{Cites()}{Cites()}}]{\setlength{\rightskip}{0pt plus 5cm}Cites\+::\+Cites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_aef7c40360c5537b4dac136a758e815fc}{}\label{class_cites_aef7c40360c5537b4dac136a758e815fc}
+
+
+Creadora per defecte. S\textquotesingle{}executa automàticament al declarar una cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat és un conjunt de cites buit. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 4 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+4             \{
+5   
+6 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Cites@{Cites}!buscar\+\_\+referencia@{buscar\+\_\+referencia}}
+\index{buscar\+\_\+referencia@{buscar\+\_\+referencia}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{buscar\+\_\+referencia(string s)}{buscar_referencia(string s)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cites\+::iterador} Cites\+::buscar\+\_\+referencia (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{}\label{class_cites_af079658fd57e9d9af357c2d4fbea5e52}
+
+
+Escriure cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna un iterador que apunta a la cita que conté la referència s i si no la conté que apunta al end(). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 8 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+8                                               \{
+9   \textcolor{keywordflow}{for}(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}!=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+10     \textcolor{keywordflow}{if}((*itc).referencia == s) \textcolor{keywordflow}{return} \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc};
+11     \}
+12   \textcolor{keywordflow}{return} \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc};
+13 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!crear\+\_\+ref@{crear\+\_\+ref}}
+\index{crear\+\_\+ref@{crear\+\_\+ref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{crear\+\_\+ref(string s, int n)}{crear_ref(string s, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}string Cites\+::crear\+\_\+ref (
+\begin{DoxyParamCaption}
+\item[{string}]{s, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_a0a9c4b06356f7c7f6728224abd8ee5d4}{}\label{class_cites_a0a9c4b06356f7c7f6728224abd8ee5d4}
+
+
+Escriure cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna un string que es la composició de s i n 
+\end{DoxyPostcond}
+
+
+Definición en la línea 15 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+15                                       \{
+16   \textcolor{keywordtype}{string} Result;         
+17   ostringstream convert;  
+18   convert << n;     
+19   Result = convert.str();
+20   \textcolor{keywordflow}{return} s + Result;
+21 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!comp@{comp}}
+\index{comp@{comp}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{comp(const cita \&a, const cita \&b)}{comp(const cita &a, const cita &b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cites\+::comp (
+\begin{DoxyParamCaption}
+\item[{const {\bf cita} \&}]{a, }
+\item[{const {\bf cita} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_cites_a071081d2ce9dd10f701af8f67409e78f}{}\label{class_cites_a071081d2ce9dd10f701af8f67409e78f}
+
+
+Funció per establir el criteri d\textquotesingle{}ordenació vref. 
+
+
+
+Definición en la línea 23 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+23                                             \{
+24   \textcolor{keywordtype}{string} primer = a.referencia;
+25   \textcolor{keywordtype}{string} primer\_lletres;
+26   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < primer.size(); ++i)\{
+27     \textcolor{keywordflow}{if} ((primer[i] >= \textcolor{charliteral}{'a'} and primer[i] <= \textcolor{charliteral}{'z'}) or (primer[i] >= \textcolor{charliteral}{'A'} and primer[i] <= \textcolor{charliteral}{'Z'}))\{
+28       primer\_lletres.insert(primer\_lletres.end(),1,primer[i]);
+29       \}
+30     \}
+31   
+32   \textcolor{keywordtype}{string} segon = b.referencia;
+33   \textcolor{keywordtype}{string} segon\_lletres;
+34   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < segon.size(); ++i)\{
+35     \textcolor{keywordflow}{if} ((segon[i] >= \textcolor{charliteral}{'a'} and segon[i] <= \textcolor{charliteral}{'z'}) or (segon[i] >= \textcolor{charliteral}{'A'} and segon[i] <= \textcolor{charliteral}{'Z'}))\{
+36       segon\_lletres.insert(segon\_lletres.end(),1,segon[i]);
+37       \}
+38     \}
+39   \textcolor{keywordflow}{if} (primer != segon) \textcolor{keywordflow}{return} primer\_lletres < segon\_lletres;
+40   \textcolor{keywordtype}{string} p;
+41   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < primer.size(); ++i)\{
+42     \textcolor{keywordflow}{if} (primer[i] >= \textcolor{charliteral}{'0'} and primer[i] <= \textcolor{charliteral}{'9'})\{
+43       p.insert(p.end(),1,primer[i]);
+44       \}
+45     \}
+46   \textcolor{keywordtype}{string} s;
+47   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < segon.size(); ++i)\{
+48     \textcolor{keywordflow}{if} (segon[i] >= \textcolor{charliteral}{'0'} and segon[i] <= \textcolor{charliteral}{'9'})\{
+49       s.insert(s.end(),1,primer[i]);
+50       \}
+51     \}
+52   \textcolor{keywordtype}{int} pr = atoi(p.c\_str());
+53   \textcolor{keywordtype}{int} se = atoi(s.c\_str()); 
+54   \textcolor{keywordflow}{return} pr < se;
+55 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cita@{escriure\+\_\+cita}}
+\index{escriure\+\_\+cita@{escriure\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita(string \&referencia)}{escriure_cita(string &referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{string \&}]{referencia}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_a959b95c1e881ae212828771c2c876515}{}\label{class_cites_a959b95c1e881ae212828771c2c876515}
+
+
+Escriure cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb referencia\+: \char`\"{}referencia\char`\"{}} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprimeix pel canal estàndar de sortida la cita separada per frases. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 57 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+57                                            \{
+58   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\_referencia}(referencia);
+59   \hyperlink{class_cjt___frases}{Cjt\_Frases} cfrases= (*itc).tcita.consultar\_contingut();
+60   
+61   \textcolor{keywordtype}{int} aux=(*itc).inici;
+62   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<=cfrases.\hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}(); ++i, ++aux)\{
+63     cout << aux << \textcolor{charliteral}{' '};
+64     cfrases.\hyperlink{class_cjt___frases_a487b50527aa63fd84f3865712fe694fd}{imprimir\_nfrase}(i);
+65     \}
+66 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!afegir\+\_\+cita@{afegir\+\_\+cita}}
+\index{afegir\+\_\+cita@{afegir\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+cita(int x, int y, Text text)}{afegir_cita(int x, int y, Text text)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::afegir\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Text}}]{text}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}{}\label{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}
+
+
+Modificadora afegir cita. S\textquotesingle{}executa automàticament al declarar una cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape \hyperlink{class_text}{Text} no és buit i es compleix 1 $<$= x $<$= y $<$= n on n es el nombre de frases de text} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha afegit una nova cita amb la seva referencia corresponent. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 68 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+68                                               \{
+69   text.\hyperlink{class_text_aea3be7481256f9ae7121b7778c034e39}{consultar\_frasesxy}(x,y);
+70   \textcolor{keywordtype}{string} r;
+71   \textcolor{keywordtype}{string} autor = text.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}();
+72   
+73   istringstream iss(autor);
+74   \textcolor{keywordtype}{string} nom;
+75   iss >> nom;
+76   \textcolor{keywordflow}{while} (iss)\{
+77     r.insert(r.end(),1,nom[0]);
+78     iss >> nom;
+79     \}
+80   
+81   \textcolor{keywordtype}{bool} trobat=\textcolor{keyword}{false};
+82   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}.size() and not trobat; ++i)\{
+83     \textcolor{keywordflow}{if}(\hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}[i].ref == r)\{
+84       trobat=\textcolor{keyword}{true};
+85       ++\hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}[i].contador;
+86       \textcolor{keywordtype}{int} aux = \hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}[i].contador;
+87       r= \hyperlink{class_cites_a0a9c4b06356f7c7f6728224abd8ee5d4}{crear\_ref}(r, aux);
+88       \}
+89     \}
+90   \textcolor{keywordflow}{if} (not trobat)\{
+91     sref saux;
+92     saux.ref = r;
+93     saux.contador=1;
+94     r=\hyperlink{class_cites_a0a9c4b06356f7c7f6728224abd8ee5d4}{crear\_ref}(r, 1);
+95     \hyperlink{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{vref}.push\_back(saux);
+96     \}
+97     
+98   cita xcita;
+99   xcita.referencia=r;
+100   xcita.inici = x;
+101   xcita.tcita = text;
+102   
+103   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} = \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end();
+104   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.insert(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}, xcita);
+105   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.sort(\hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp});
+106 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!eliminar\+\_\+cita@{eliminar\+\_\+cita}}
+\index{eliminar\+\_\+cita@{eliminar\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{eliminar\+\_\+cita(string \&referencia)}{eliminar_cita(string &referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::eliminar\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{string \&}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}{}\label{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}
+
+
+Modificadora eliminar cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la mateixa referencia} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha eliminat la cita que tenia la mateixa referència. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 108 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+108                                            \{
+109   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\_referencia}(referencia);
+110   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.erase(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc});
+111 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!consultar\+\_\+contingut@{consultar\+\_\+contingut}}
+\index{consultar\+\_\+contingut@{consultar\+\_\+contingut}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+contingut(string r)}{consultar_contingut(string r)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cjt\+\_\+\+Frases} Cites\+::consultar\+\_\+contingut (
+\begin{DoxyParamCaption}
+\item[{string}]{r}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_aaed19239876da7b34636457a0641c7e4}{}\label{class_cites_aaed19239876da7b34636457a0641c7e4}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la referencia r} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna el contingut de la cita. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 113 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+113                                              \{
+114   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\_referencia}(r);
+115   \textcolor{keywordflow}{return} (*itc).tcita.consultar\_contingut();
+116 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!existeix\+\_\+cita@{existeix\+\_\+cita}}
+\index{existeix\+\_\+cita@{existeix\+\_\+cita}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{existeix\+\_\+cita(int x, int y, string titol, string autor)}{existeix_cita(int x, int y, string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cites\+::existeix\+\_\+cita (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a4a084e0d91b69314dc14fc4b5974595f}{}\label{class_cites_a4a084e0d91b69314dc14fc4b5974595f}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si existeix una cita amb el rang marcat per x i y, el titol i l\textquotesingle{}autor del text citat. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 118 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+118                                                                  \{
+119   \textcolor{keywordflow}{for}(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}!=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+120     \textcolor{keywordflow}{if}((*itc).tcita.consultar\_titol() == titol and (*itc).tcita.consultar\_autor() == autor)\{
+121       \textcolor{keywordflow}{if}(((*itc).inici == x)and ((*itc).inici + (*itc).tcita.consultar\_contingut().numero\_de\_frases()-1 == 
+      y)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+122       \}
+123     \}
+124   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+125 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!existeix\+\_\+cita\+\_\+ref@{existeix\+\_\+cita\+\_\+ref}}
+\index{existeix\+\_\+cita\+\_\+ref@{existeix\+\_\+cita\+\_\+ref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{existeix\+\_\+cita\+\_\+ref(string referencia)}{existeix_cita_ref(string referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cites\+::existeix\+\_\+cita\+\_\+ref (
+\begin{DoxyParamCaption}
+\item[{string}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{}\label{class_cites_ac80a9416a25f61d4a708ea13aad20da9}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si existeix la referencia en el conjunt de cites i fals si no. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 127 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+127                                               \{
+128   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\_referencia}(referencia);
+129   \textcolor{keywordflow}{if} (\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} == \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+130   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+131 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+ref@{escriure\+\_\+cita\+\_\+ref}}
+\index{escriure\+\_\+cita\+\_\+ref@{escriure\+\_\+cita\+\_\+ref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+ref(string \&referencia)}{escriure_cita_ref(string &referencia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+ref (
+\begin{DoxyParamCaption}
+\item[{string \&}]{referencia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}{}\label{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}
+
+
+Imprimir cita. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix una cita amb la mateixa referència} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}escriu pel canal estandar de sortida la cita amb aquesta referència. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 133 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+133                                                \{
+134   \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_af079658fd57e9d9af357c2d4fbea5e52}{buscar\_referencia}(referencia);
+135   cout << (*itc).tcita.consultar\_autor() << \textcolor{charliteral}{' '};
+136   cout << \textcolor{charliteral}{'"'} << (*itc).tcita.consultar\_titol()<< \textcolor{charliteral}{'"'} << endl;
+137   cout << (*itc).inici << \textcolor{charliteral}{'-'} << (*itc).inici + (*itc).tcita.consultar\_contingut().numero\_de\_frases()-1 << 
+      endl;
+138   \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\_cita}(referencia);
+139 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cites\+\_\+autor@{escriure\+\_\+cites\+\_\+autor}}
+\index{escriure\+\_\+cites\+\_\+autor@{escriure\+\_\+cites\+\_\+autor}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cites\+\_\+autor(string \&autor)}{escriure_cites_autor(string &autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cites\+\_\+autor (
+\begin{DoxyParamCaption}
+\item[{string \&}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a12ac50ed7017de796b3ce3b96df7d848}{}\label{class_cites_a12ac50ed7017de796b3ce3b96df7d848}
+
+
+Imprimir cites d\textquotesingle{}autor. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix l\textquotesingle{}autor dins de les cites} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida les cites de l\textquotesingle{}autor autor. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 141 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+141                                              \{
+142   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.sort(\hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp});
+143   \textcolor{keywordflow}{for}(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}!=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+144     \textcolor{keywordflow}{if}((*itc).tcita.consultar\_autor() == autor)\{
+145       cout <<(*itc).referencia << endl;
+146       \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\_cita}((*itc).referencia);
+147       cout << \textcolor{charliteral}{'"'} << (*itc).tcita.consultar\_titol() << \textcolor{charliteral}{'"'} << endl;
+148       \}
+149     \}
+150 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+triat@{escriure\+\_\+cita\+\_\+triat}}
+\index{escriure\+\_\+cita\+\_\+triat@{escriure\+\_\+cita\+\_\+triat}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+triat(string titol, string autor)}{escriure_cita_triat(string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+triat (
+\begin{DoxyParamCaption}
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_ac692741811e35c8da2e92906d21cef07}{}\label{class_cites_ac692741811e35c8da2e92906d21cef07}
+
+
+Imprimir cita triat. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Ha d\textquotesingle{}haver un text triat} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida totes les cites del text triat. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 152 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+152                                                          \{
+153   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.sort(\hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp});
+154   \textcolor{keywordflow}{for} (\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} = \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} != \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+155     \textcolor{keywordflow}{if} (titol == (*itc).tcita.consultar\_titol() and autor == (*itc).tcita.consultar\_autor())\{
+156       \textcolor{keywordtype}{string} ref = (*itc).referencia;
+157       cout << ref << endl;
+158       \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\_cita}(ref);
+159       \textcolor{keywordtype}{string} a = (*itc).tcita.consultar\_autor();
+160       \textcolor{keywordtype}{string} t = (*itc).tcita.consultar\_titol();
+161       cout << a << \textcolor{charliteral}{' '} << \textcolor{charliteral}{'"'} << t << \textcolor{charliteral}{'"'} << endl;
+162       \}
+163     \}
+164 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cita\+\_\+info@{escriure\+\_\+cita\+\_\+info}}
+\index{escriure\+\_\+cita\+\_\+info@{escriure\+\_\+cita\+\_\+info}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cita\+\_\+info(string titol, string autor)}{escriure_cita_info(string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cita\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_adf71af09037fa45f5cfd3095769f75a4}{}\label{class_cites_adf71af09037fa45f5cfd3095769f75a4}
+
+
+Imprimir cita info. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Ha d\textquotesingle{}existir una cita amb el titol \char`\"{}titol\char`\"{} i l\textquotesingle{}autor \char`\"{}autor\char`\"{} que passem} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida la referència i les cites del text referenciat. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 166 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+166                                                         \{
+167   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.sort(\hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp});
+168   \textcolor{keywordflow}{for}(\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc}!=\hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+169     \textcolor{keywordflow}{if}((*itc).tcita.consultar\_titol() == titol and (*itc).tcita.consultar\_autor() == autor)\{
+170       cout << (*itc).referencia << endl;
+171       \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\_cita}((*itc).referencia);
+172       \}
+173     \}
+174 \}
+\end{DoxyCode}
+\index{Cites@{Cites}!escriure\+\_\+cites@{escriure\+\_\+cites}}
+\index{escriure\+\_\+cites@{escriure\+\_\+cites}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+cites()}{escriure_cites()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cites\+::escriure\+\_\+cites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}{}\label{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}
+
+
+Imprimir cites. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han escrit pel canal estàndar de sortida totes les cites. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 176 del archivo Cites.\+cc.
+
+
+\begin{DoxyCode}
+176                           \{
+177   \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.sort(\hyperlink{class_cites_a071081d2ce9dd10f701af8f67409e78f}{comp});
+178   \textcolor{keywordflow}{for} (\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} = \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.begin(); \hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc} != \hyperlink{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{lcites}.end(); ++\hyperlink{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{itc})\{
+179     \textcolor{keywordtype}{string} s = (*itc).referencia;
+180     cout << s << endl;
+181     \hyperlink{class_cites_a959b95c1e881ae212828771c2c876515}{escriure\_cita}(s);
+182     \textcolor{keywordtype}{string} a = (*itc).tcita.consultar\_autor();
+183     \textcolor{keywordtype}{string} t = (*itc).tcita.consultar\_titol();
+184     cout << a << \textcolor{charliteral}{' '} << \textcolor{charliteral}{'"'} << t << \textcolor{charliteral}{'"'} << endl;
+185     \}
+186 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Cites@{Cites}!lcites@{lcites}}
+\index{lcites@{lcites}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{lcites}{lcites}}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf cita}$>$ Cites\+::lcites\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}{}\label{class_cites_a5bcd3b42706ea04fea35fe9db7f5838d}
+
+
+Estructura on s\textquotesingle{}emmagatzen totes les cites. 
+
+
+
+Definición en la línea 37 del archivo Cites.\+hh.
+
+\index{Cites@{Cites}!itc@{itc}}
+\index{itc@{itc}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{itc}{itc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterador} Cites\+::itc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}{}\label{class_cites_a25951edde2ccf918aa4b2ad7ae6271fa}
+
+
+Iterador utilitzat per accedir als diferents elements del conjunt de cites. 
+
+
+
+Definición en la línea 40 del archivo Cites.\+hh.
+
+\index{Cites@{Cites}!vref@{vref}}
+\index{vref@{vref}!Cites@{Cites}}
+\subsubsection[{\texorpdfstring{vref}{vref}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf sref}$>$ Cites\+::vref\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cites_acf50e611e8f49533071e82fd9ff9b55a}{}\label{class_cites_acf50e611e8f49533071e82fd9ff9b55a}
+
+
+Espai de memòria on s\textquotesingle{}emmagatzemen les referències sense nombre i el valor més gran que se li ha assignat mai. 
+
+
+
+Definición en la línea 43 del archivo Cites.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cites_8hh}{Cites.\+hh}\item 
+\hyperlink{_cites_8cc}{Cites.\+cc}\end{DoxyCompactItemize}

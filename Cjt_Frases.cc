@@ -2,10 +2,8 @@
 
 bool Cjt_Frases::te_signe(string aux){
 	char last = aux[aux.size()-1];
-		if (last == '.' or last == '?' or last == '!' or last == ';' or last == ':' or last == ',' ){
-				return true;
-				}
-		return false;
+	if (last == '.' or last == '?' or last == '!' or last == ';' or last == ':' or last == ',' ) return true;
+	return false;
 }
 
 string Cjt_Frases::treure_signes(string aux){
@@ -79,14 +77,16 @@ bool Cjt_Frases::ord(const freq& a,const freq& b){
 	return a.paraula < b.paraula;
 }
 
-void Cjt_Frases::crear_vfrase(string s, vector<string>& frase){
+vector<string> crear_frase(string s){
+	vector<string> frase;
 	istringstream iss(s);
 	string op;
 	iss >> op;
 	while(iss){
 		frase.push_back(op);
 		iss >> op;
-	}
+		}
+	return frase;
 }
 
 bool Cjt_Frases::conte_paraula_expressio(string paraula, int i){
@@ -181,9 +181,7 @@ void Cjt_Frases::substituir_cjtfrases(string s){
 
 void Cjt_Frases::consultar_frasesxy(int n, int m) {
 	vector< list<string> > aux;
-	for(int i=n-1; i<m; ++i){
-		aux.push_back(vfrases[i]);
-		}
+	for(int i=n-1; i<m; ++i) aux.push_back(vfrases[i]);
 	vfrases.resize(0);
 	vfrases = aux;
 }
@@ -210,7 +208,7 @@ bool Cjt_Frases::conte_paraula(string paraula){
 
 void Cjt_Frases::conte_paraules(string paraules){
 	vector<string> v;
-	crear_vfrase(paraules, v);
+	v=crear_frase(paraules);
 	for(int i=0; i<vfrases.size(); ++i){
 		if(conte_paraules_plus(vfrases[i], v)) {
 			cout << i+1 << ' ';

@@ -1,13 +1,6 @@
 /** @file Cites.hh
     @brief Especificació de la clase Cites
 */
-
-/** @class Cites
-    @brief Conté operacions de cites.
-
-    Todas las operaciones son de <b>coste constante</b>
-*/
-	
 #include <list>
 #ifndef CITES_HH
 #define CITES_HH
@@ -17,6 +10,10 @@
 #include <string>
 
 using namespace std;
+
+/** @class Cites
+    @brief Conté operacions de cites.
+*/
 class Cites{
 
 private:

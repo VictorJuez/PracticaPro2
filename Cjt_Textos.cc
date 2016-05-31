@@ -5,14 +5,8 @@ Cjt_Textos::Cjt_Textos(){
 	it_triat = ctextos.end();
 }
 
-void Cjt_Textos::imprimir_vector(vector<string>& v){
-	for(int i=0; i<v.size(); ++i){
-		cout << v[i] << ' ';
-	}
-	cout << endl;
-}
-
-void Cjt_Textos::crear_vfrase(string s, vector<string>& frase){
+vector<string> crear_vfrase(string s){
+	vector<string> frase;
 	istringstream iss(s);
 	string op;
 	iss >> op;
@@ -20,14 +14,14 @@ void Cjt_Textos::crear_vfrase(string s, vector<string>& frase){
 		frase.push_back(op);
 		iss >> op;
 		}
+	return frase;
 }
 
 bool Cjt_Textos::trobar_paraules(vector<string> v, Text& t){
 	Cjt_Frases titol;
 	titol.substituir_cjtfrases(t.consultar_titol());
 	
-	vector <string> autor;
-	crear_vfrase(t.consultar_autor(), autor);
+	vector<string> autor=crear_vfrase(t.consultar_autor());
 	
 	vector <bool> vb(v.size(), 0);
 	
@@ -95,8 +89,7 @@ void Cjt_Textos::triar_text(string& s){
 	bool b2=false;
 	for(it=ctextos.begin(); not b2 and it!=ctextos.end(); ++it){
 		Text t=*it;
-		vector <string> frase;
-		crear_vfrase(s, frase);
+		vector <string> frase = crear_vfrase(s);
 		if(trobar_paraules(frase, t) and not b){
 			b=true;
 			it_triat=it;
@@ -134,17 +127,6 @@ void Cjt_Textos::imprimir_textos(){
 		cout << v[j].autor << ' ' << '"' << v[j].titol << '"' << endl;
 		}
 	}
-
-
-void Cjt_Textos::imprimir() {
-	list<Text>::iterator it;
-	Cjt_Frases cfrases;
-	for(it=ctextos.begin(); it!= ctextos.end(); ++it){
-		Text aux = *it;
-		cout << aux.consultar_autor() << ' ' << aux.consultar_titol() << endl;
-		aux.consultar_contingut().escriure();
-		}
-}
 
 void Cjt_Textos::imprimir_tots_autors() const{
 	vector<s1> v;

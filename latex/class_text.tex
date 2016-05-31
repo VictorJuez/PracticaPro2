@@ -1,0 +1,288 @@
+\hypertarget{class_text}{}\section{Referencia de la Clase Text}
+\label{class_text}\index{Text@{Text}}
+
+
+Conté un conjunt de frases.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_text_ab3e26143fccc52699bcc5149cae852bc}{Text} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_a03db3fb1c8edcc6f0b628f0864d865b7}{substituir\+\_\+paraula} (string paraula1, string paraula2)
+\begin{DoxyCompactList}\small\item\em Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. \end{DoxyCompactList}\item 
+string \hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\+\_\+autor} ()
+\begin{DoxyCompactList}\small\item\em Consultora d\textquotesingle{}autor. \end{DoxyCompactList}\item 
+string \hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\+\_\+titol} ()
+\begin{DoxyCompactList}\small\item\em Consultora de títol. \end{DoxyCompactList}\item 
+\hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases} \hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\+\_\+contingut} ()
+\begin{DoxyCompactList}\small\item\em Consultora del contingut. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_aea3be7481256f9ae7121b7778c034e39}{consultar\+\_\+frasesxy} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Consultora del contingut. \end{DoxyCompactList}\item 
+void \hyperlink{class_text_a4e7d5e74fb9065f9771bd33a5e263776}{llegir} (string linia)
+\begin{DoxyCompactList}\small\item\em Lectura d\textquotesingle{}un text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_text_ad8f978ad7d2735c371990cce7bdc0d8f}{autor}
+\begin{DoxyCompactList}\small\item\em Autor del text. \end{DoxyCompactList}\item 
+string \hyperlink{class_text_abebeee870d4c29258cd1641b0e5f0947}{titol}
+\begin{DoxyCompactList}\small\item\em Títol del text. \end{DoxyCompactList}\item 
+\hyperlink{class_cjt___frases}{Cjt\+\_\+\+Frases} \hyperlink{class_text_a61609677a5dab23e37398e796f41f061}{cjtfrase}
+\begin{DoxyCompactList}\small\item\em Contingut del text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Conté un conjunt de frases. 
+
+Definición en la línea 14 del archivo Text.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Text@{Text}!Text@{Text}}
+\index{Text@{Text}!Text@{Text}}
+\subsubsection[{\texorpdfstring{Text()}{Text()}}]{\setlength{\rightskip}{0pt plus 5cm}Text\+::\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_ab3e26143fccc52699bcc5149cae852bc}{}\label{class_text_ab3e26143fccc52699bcc5149cae852bc}
+
+
+Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un \hyperlink{class_text}{Text} sense autor, ni títol, ni contingut, ni cites. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+3           \{
+4   
+5 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Text@{Text}!substituir\+\_\+paraula@{substituir\+\_\+paraula}}
+\index{substituir\+\_\+paraula@{substituir\+\_\+paraula}!Text@{Text}}
+\subsubsection[{\texorpdfstring{substituir\+\_\+paraula(string paraula1, string paraula2)}{substituir_paraula(string paraula1, string paraula2)}}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+::substituir\+\_\+paraula (
+\begin{DoxyParamCaption}
+\item[{string}]{paraula1, }
+\item[{string}]{paraula2}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_a03db3fb1c8edcc6f0b628f0864d865b7}{}\label{class_text_a03db3fb1c8edcc6f0b628f0864d865b7}
+
+
+Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape La paraula1 ha d\textquotesingle{}apareixer com a mínim un cop en el contingut del paràmetre implícit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}han substituït totes les paraules coincidents a paraula1 del contingut del paràmetre implícit i s\textquotesingle{}han substituït per paraula2. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 8 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+8                                                              \{
+9   \hyperlink{class_text_a61609677a5dab23e37398e796f41f061}{cjtfrase}.\hyperlink{class_cjt___frases_a2f71744b91a5d9c6077fb3e0f05048bb}{substituir\_paraula}(paraula1, paraula2);
+10 \}
+\end{DoxyCode}
+\index{Text@{Text}!consultar\+\_\+autor@{consultar\+\_\+autor}}
+\index{consultar\+\_\+autor@{consultar\+\_\+autor}!Text@{Text}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+autor()}{consultar_autor()}}]{\setlength{\rightskip}{0pt plus 5cm}string Text\+::consultar\+\_\+autor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_a0e8d29f53728da7b65ff1e87588ec407}{}\label{class_text_a0e8d29f53728da7b65ff1e87588ec407}
+
+
+Consultora d\textquotesingle{}autor. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El text té autor} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat és l\textquotesingle{}autor del text en qüestió. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 12 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+12                             \{
+13   \textcolor{keywordflow}{return} \hyperlink{class_text_ad8f978ad7d2735c371990cce7bdc0d8f}{autor};
+14 \}
+\end{DoxyCode}
+\index{Text@{Text}!consultar\+\_\+titol@{consultar\+\_\+titol}}
+\index{consultar\+\_\+titol@{consultar\+\_\+titol}!Text@{Text}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+titol()}{consultar_titol()}}]{\setlength{\rightskip}{0pt plus 5cm}string Text\+::consultar\+\_\+titol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_ac33cbed6f5553a4901a8440e215befb6}{}\label{class_text_ac33cbed6f5553a4901a8440e215befb6}
+
+
+Consultora de títol. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El text té títol} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat és el títol del text en qüestió. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 16 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+16                             \{
+17   \textcolor{keywordflow}{return} \hyperlink{class_text_abebeee870d4c29258cd1641b0e5f0947}{titol};
+18 \}
+\end{DoxyCode}
+\index{Text@{Text}!consultar\+\_\+contingut@{consultar\+\_\+contingut}}
+\index{consultar\+\_\+contingut@{consultar\+\_\+contingut}!Text@{Text}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+contingut()}{consultar_contingut()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cjt\+\_\+\+Frases} Text\+::consultar\+\_\+contingut (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_ae21dfb276d73f5a5b0994650335591c9}{}\label{class_text_ae21dfb276d73f5a5b0994650335591c9}
+
+
+Consultora del contingut. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El text té contingut} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+el resultat és el contingut del text en qüestió. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 20 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+20                                     \{
+21   \textcolor{keywordflow}{return} \hyperlink{class_text_a61609677a5dab23e37398e796f41f061}{cjtfrase};
+22 \}
+\end{DoxyCode}
+\index{Text@{Text}!consultar\+\_\+frasesxy@{consultar\+\_\+frasesxy}}
+\index{consultar\+\_\+frasesxy@{consultar\+\_\+frasesxy}!Text@{Text}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+frasesxy(int x, int y)}{consultar_frasesxy(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+::consultar\+\_\+frasesxy (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_aea3be7481256f9ae7121b7778c034e39}{}\label{class_text_aea3be7481256f9ae7121b7778c034e39}
+
+
+Consultora del contingut. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape  x $<$= y, x$>$0 i y$<$= numero de frases } 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Modifica el paràmetre implícit de forma que només contè les frases del rang x, y. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 24 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+24                                          \{
+25   \hyperlink{class_text_a61609677a5dab23e37398e796f41f061}{cjtfrase}.\hyperlink{class_cjt___frases_ab3f2ab417040813df6d3dee8350559d3}{consultar\_frasesxy}(x,y);
+26 \}
+\end{DoxyCode}
+\index{Text@{Text}!llegir@{llegir}}
+\index{llegir@{llegir}!Text@{Text}}
+\subsubsection[{\texorpdfstring{llegir(string linia)}{llegir(string linia)}}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+::llegir (
+\begin{DoxyParamCaption}
+\item[{string}]{linia}
+\end{DoxyParamCaption}
+)}\hypertarget{class_text_a4e7d5e74fb9065f9771bd33a5e263776}{}\label{class_text_a4e7d5e74fb9065f9771bd33a5e263776}
+
+
+Lectura d\textquotesingle{}un text. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Estan preparats al canal estandar d\textquotesingle{}entrada un títol, un autor i un contingut} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d\textquotesingle{}entrada 
+\end{DoxyPostcond}
+
+
+Definición en la línea 28 del archivo Text.\+cc.
+
+
+\begin{DoxyCode}
+28                              \{
+29   linia.erase(0,13);
+30     linia.erase(linia.size()-1,1);
+31     \hyperlink{class_text_abebeee870d4c29258cd1641b0e5f0947}{titol} = linia;
+32 
+33     getline(cin,linia);
+34     linia.erase(0,7);
+35     linia.erase(linia.size()-1,1);
+36     \hyperlink{class_text_ad8f978ad7d2735c371990cce7bdc0d8f}{autor} = linia;
+37     
+38     \hyperlink{class_text_a61609677a5dab23e37398e796f41f061}{cjtfrase}.\hyperlink{class_cjt___frases_aedcac1f588f4985043b7fb85087b7c71}{llegir}();
+39 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Text@{Text}!autor@{autor}}
+\index{autor@{autor}!Text@{Text}}
+\subsubsection[{\texorpdfstring{autor}{autor}}]{\setlength{\rightskip}{0pt plus 5cm}string Text\+::autor\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_text_ad8f978ad7d2735c371990cce7bdc0d8f}{}\label{class_text_ad8f978ad7d2735c371990cce7bdc0d8f}
+
+
+Autor del text. 
+
+
+
+Definición en la línea 18 del archivo Text.\+hh.
+
+\index{Text@{Text}!titol@{titol}}
+\index{titol@{titol}!Text@{Text}}
+\subsubsection[{\texorpdfstring{titol}{titol}}]{\setlength{\rightskip}{0pt plus 5cm}string Text\+::titol\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_text_abebeee870d4c29258cd1641b0e5f0947}{}\label{class_text_abebeee870d4c29258cd1641b0e5f0947}
+
+
+Títol del text. 
+
+
+
+Definición en la línea 21 del archivo Text.\+hh.
+
+\index{Text@{Text}!cjtfrase@{cjtfrase}}
+\index{cjtfrase@{cjtfrase}!Text@{Text}}
+\subsubsection[{\texorpdfstring{cjtfrase}{cjtfrase}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cjt\+\_\+\+Frases} Text\+::cjtfrase\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_text_a61609677a5dab23e37398e796f41f061}{}\label{class_text_a61609677a5dab23e37398e796f41f061}
+
+
+Contingut del text. 
+
+
+
+Definición en la línea 24 del archivo Text.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_text_8hh}{Text.\+hh}\item 
+\hyperlink{_text_8cc}{Text.\+cc}\end{DoxyCompactItemize}

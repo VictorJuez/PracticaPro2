@@ -1,0 +1,37 @@
+\hypertarget{_cjt___frases_8cc}{}\section{Referencia del Archivo Cjt\+\_\+\+Frases.\+cc}
+\label{_cjt___frases_8cc}\index{Cjt\+\_\+\+Frases.\+cc@{Cjt\+\_\+\+Frases.\+cc}}
+Dependencia gráfica adjunta para Cjt\+\_\+\+Frases.\+cc\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \hyperlink{_cjt___frases_8cc_ad8678c42a5a2598c90e01f5991a239b5}{crear\+\_\+frase} (string s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\index{Cjt\+\_\+\+Frases.\+cc@{Cjt\+\_\+\+Frases.\+cc}!crear\+\_\+frase@{crear\+\_\+frase}}
+\index{crear\+\_\+frase@{crear\+\_\+frase}!Cjt\+\_\+\+Frases.\+cc@{Cjt\+\_\+\+Frases.\+cc}}
+\subsubsection[{\texorpdfstring{crear\+\_\+frase(string s)}{crear_frase(string s)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ crear\+\_\+frase (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{_cjt___frases_8cc_ad8678c42a5a2598c90e01f5991a239b5}{}\label{_cjt___frases_8cc_ad8678c42a5a2598c90e01f5991a239b5}
+
+
+Definición en la línea 80 del archivo Cjt\+\_\+\+Frases.\+cc.
+
+
+\begin{DoxyCode}
+80                                     \{
+81   vector<string> frase;
+82   istringstream iss(s);
+83   \textcolor{keywordtype}{string} op;
+84   iss >> op;
+85   \textcolor{keywordflow}{while}(iss)\{
+86     frase.push\_back(op);
+87     iss >> op;
+88     \}
+89   \textcolor{keywordflow}{return} frase;
+90 \}
+\end{DoxyCode}

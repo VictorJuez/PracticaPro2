@@ -1,0 +1,282 @@
+\hypertarget{program_8cc}{}\section{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.\+cc@{program.\+cc}}
+Dependencia gráfica adjunta para program.\+cc\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{program_8cc_a587463abe31465865b048e3cb7c93893}{netejar} (string s)
+\begin{DoxyCompactList}\small\item\em Programa principal per la pràctica {\itshape Gestor de textos i cites}. \end{DoxyCompactList}\item 
+int \hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\index{program.\+cc@{program.\+cc}!netejar@{netejar}}
+\index{netejar@{netejar}!program.\+cc@{program.\+cc}}
+\subsubsection[{\texorpdfstring{netejar(string s)}{netejar(string s)}}]{\setlength{\rightskip}{0pt plus 5cm}string netejar (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{program_8cc_a587463abe31465865b048e3cb7c93893}{}\label{program_8cc_a587463abe31465865b048e3cb7c93893}
+
+
+Programa principal per la pràctica {\itshape Gestor de textos i cites}. 
+
+
+
+Definición en la línea 23 del archivo program.\+cc.
+
+
+\begin{DoxyCode}
+23                         \{
+24   s.erase(0,1);
+25     s.erase(s.size()-1,1);
+26     \textcolor{keywordflow}{return} s;
+27 \}
+\end{DoxyCode}
+\index{program.\+cc@{program.\+cc}!main@{main}}
+\index{main@{main}!program.\+cc@{program.\+cc}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definición en la línea 30 del archivo program.\+cc.
+
+
+\begin{DoxyCode}
+30           \{
+31     \hyperlink{class_cjt___textos}{Cjt\_Textos} ctextos;
+32     \hyperlink{class_text}{Text} text\_triat;
+33     \hyperlink{class_cjt___frases}{Cjt\_Frases} cfrases;
+34     \hyperlink{class_cites}{Cites} cites;
+35     \hyperlink{class_text}{Text} text;
+36     \textcolor{keywordtype}{string} linia;
+37     ws(cin);
+38     getline(cin,linia);
+39     \textcolor{keywordflow}{while} (linia!=\textcolor{stringliteral}{"sortir"})\{
+40     cout << linia << endl;
+41         istringstream iss(linia);
+42         \textcolor{keywordtype}{string} op;
+43         iss >> op;
+44         \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"afegir"})\{
+45             iss >> op;
+46             \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"text"})\{        
+47         text.\hyperlink{class_text_a4e7d5e74fb9065f9771bd33a5e263776}{llegir}(linia);
+48         \textcolor{keywordtype}{string} autor = text.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}();
+49         \textcolor{keywordtype}{string} titol = text.\hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}();
+50         \textcolor{keywordflow}{if}(not ctextos.\hyperlink{class_cjt___textos_a04f209abc7bbeb2d55715a32f950a8df}{existent}(titol, autor)) ctextos.\hyperlink{class_cjt___textos_a1f8b5c6cf35bc96e409855ac93002a62}{afegir\_text}(text);
+51         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+52             \}
+53             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"cita"})\{
+54         \textcolor{keywordflow}{if} (ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{ 
+55           \textcolor{keywordtype}{int} x, y;
+56           iss >> x;
+57           iss >> y;
+58           \textcolor{keywordflow}{if} (x <= y and y <= text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}().
+      \hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}() and x > 0)\{
+59             \textcolor{keywordflow}{if} (not cites.\hyperlink{class_cites_a4a084e0d91b69314dc14fc4b5974595f}{existeix\_cita}(x, y, text\_triat.
+      \hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}(), text\_triat.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}() ))\{
+60               cites.\hyperlink{class_cites_ac39a9d48653f5cbd3e6b49dd9174035f}{afegir\_cita}(x,y,text\_triat);
+61             \}
+62             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+63           \}
+64           \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+65         \}
+66         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+67             \}
+68         \}
+69         
+70         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"triar"})\{
+71       linia.erase(0,12);
+72       linia.erase(linia.size()-1, 1);
+73             ctextos.\hyperlink{class_cjt___textos_aa2e5ac744d6306047c6cdda58aad5c19}{triar\_text}(linia);
+74             \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+75         text\_triat = ctextos.\hyperlink{class_cjt___textos_ab9be9e85d5d74013e4596c8bc612adae}{consultar\_text\_triat}();
+76       \}
+77       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+78         \}
+79         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"eliminar"})\{
+80             iss >> op;
+81             \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"text"})\{
+82         \textcolor{keywordflow}{if} (ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{    
+83           ctextos.\hyperlink{class_cjt___textos_a69c7fdefd849715024904dda5fa32118}{eliminar\_text}(); 
+84         \}               
+85         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl; 
+86             \}
+87             
+88             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"cita"})\{
+89                 \textcolor{keywordtype}{string} referencia;
+90                 iss >> referencia;
+91                 referencia.erase(0,1);
+92                 referencia.erase(referencia.size()-1,1);
+93                 \textcolor{keywordflow}{if} (cites.\hyperlink{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{existeix\_cita\_ref}(referencia))\{
+94           cites.\hyperlink{class_cites_a4abd76ae9a2cf1883a4ca233b7f6879e}{eliminar\_cita}(referencia);
+95         \}
+96         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+97             \}
+98         \}
+99         
+100         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"substitueix"})\{
+101       \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+102         \textcolor{keywordtype}{string} paraula1, paraula2;            
+103         iss >> paraula1;                  
+104         paraula1 = \hyperlink{program_8cc_a587463abe31465865b048e3cb7c93893}{netejar}(paraula1);        
+105         iss >> op;                      
+106         iss >> paraula2;                    
+107         paraula2 = \hyperlink{program_8cc_a587463abe31465865b048e3cb7c93893}{netejar}(paraula2);
+108         text\_triat.\hyperlink{class_text_a03db3fb1c8edcc6f0b628f0864d865b7}{substituir\_paraula}(paraula1, paraula2);
+109         \}
+110       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+111       
+112       
+113         \}
+114         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"textos"})\{
+115             \textcolor{keywordtype}{string} autor;
+116       autor = linia.erase(0,14);
+117       autor = autor.erase(autor.size()-3, 3);
+118             ctextos.\hyperlink{class_cjt___textos_a73d74ade60f967c56fd463b4a78c9886}{imprimir\_textos\_autor}(autor);
+119         \}
+120         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"tots"})\{
+121             iss >> op;
+122             \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"textos"})\{
+123                 iss >> op;
+124                 \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"?"})ctextos.\hyperlink{class_cjt___textos_acea595bafcaf74bb82b4eb8bb3164314}{imprimir\_textos}();
+125             \}
+126             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"autors"})\{
+127                 iss >> op;
+128                 \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"?"})ctextos.\hyperlink{class_cjt___textos_abfab611c433280199a2b1a035fdab840}{imprimir\_tots\_autors}();
+129             \}
+130         \}
+131         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"info"})\{
+132             iss >> op;
+133             \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"cita"})\{
+134                 \textcolor{keywordtype}{string} referencia;
+135                 iss >> referencia;
+136                 referencia.erase(0,1);  
+137                 referencia.erase(referencia.size()-1,1);
+138                 \textcolor{keywordflow}{if} (cites.\hyperlink{class_cites_ac80a9416a25f61d4a708ea13aad20da9}{existeix\_cita\_ref}(referencia))\{
+139           cites.\hyperlink{class_cites_a91f8acd21c6867250f1ef4f4e4b32adb}{escriure\_cita\_ref}(referencia);
+140         \}
+141         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+142             \} 
+143             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"?"})\{
+144         \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+145           \textcolor{keywordtype}{string} autor = text\_triat.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}();   
+146           \textcolor{keywordtype}{string} titol = text\_triat.\hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}();   
+147           cout << autor << \textcolor{charliteral}{' '} << \textcolor{charliteral}{'"'} << titol << \textcolor{charliteral}{'"'};    
+148           cfrases = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();      
+149           \textcolor{keywordtype}{int} nfrases, nparaules;               
+150           nfrases = cfrases.\hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}();       
+151           nparaules = cfrases.\hyperlink{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{numero\_de\_paraules}();     
+152           cout << \textcolor{charliteral}{' '} << nfrases << \textcolor{charliteral}{' '} << nparaules << endl; 
+153           cout << \textcolor{stringliteral}{"Cites Associades:"} << endl;
+154           cites.\hyperlink{class_cites_adf71af09037fa45f5cfd3095769f75a4}{escriure\_cita\_info}(titol, autor);
+155           \}
+156         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+157             \}
+158             
+159         \}
+160         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"autor"})\{
+161       \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+162         iss >> op;
+163         cout << text\_triat.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}() << endl;
+164       \}
+165       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+166         \}
+167         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"contingut"})\{
+168       \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+169         iss >> op;
+170         text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}().\hyperlink{class_cjt___frases_ada8ea95fd9039d2c0d00fd12731f9932}{escriure}();
+171       \}
+172       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+173         \}
+174         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"frases"})\{
+175       \textcolor{keywordflow}{if} (ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+176         iss >> op;
+177           \textcolor{keywordflow}{if} (op[0] == \textcolor{charliteral}{'"'})\{
+178             cfrases = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();
+179             \textcolor{keywordtype}{string} aux = linia.erase(0,8);
+180             aux.erase(aux.size()-3,3);
+181             cfrases.\hyperlink{class_cjt___frases_a14b7023a8d6db200f472c4b24d28ceed}{conte\_paraules}(aux);
+182           \}
+183           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op[0] == \textcolor{charliteral}{'('} or op[0] == \textcolor{charliteral}{'\{'})\{
+184             
+185             linia.erase(0,7);
+186             linia.erase(linia.size()-2,2);
+187             text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}().\hyperlink{class_cjt___frases_a8ea119b6b227b4a00b2084f92f1c2ae2}{expressio}(linia);
+188             \}
+189           \textcolor{keywordflow}{else}\{
+190             \textcolor{keywordtype}{int} x, y;
+191             x =atoi(op.c\_str());
+192             iss >> y;
+193             cfrases = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();
+194             \textcolor{keywordflow}{if} (x <=y and y <= cfrases.\hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}() and x > 0)\{
+195               cfrases.\hyperlink{class_cjt___frases_adfd3891b0aab6ad19c33c0cfd85fe811}{frasesxy}(x,y);
+196             \}
+197             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+198           \}
+199       \}
+200       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+201     \}            
+202         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"nombre"})\{
+203       \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+204         iss >> op;
+205         iss >> op;
+206         \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"frases"})\{
+207           iss >> op;
+208           \textcolor{keywordtype}{int} nfrases = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}().
+      \hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}();
+209           cout << nfrases << endl;
+210           \}
+211         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"paraules"})\{
+212           iss >> op;
+213           \textcolor{keywordtype}{int} nparaules = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}().
+      \hyperlink{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{numero\_de\_paraules}();
+214           cout << nparaules << endl;
+215           \}
+216         \}
+217       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+218         \}
+219         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"taula"})\{
+220       \textcolor{keywordflow}{if}(ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+221         cfrases = text\_triat.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();
+222         cfrases.\hyperlink{class_cjt___frases_a82810909fda7a0dfa200c595ef57033f}{taula\_frequencies}();
+223       \}
+224       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+225     \}
+226     
+227     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"cites"})\{
+228       iss >> op;
+229       \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"autor"})\{
+230         \textcolor{keywordtype}{string} autor;
+231         autor = linia;
+232         autor.erase(0,13);
+233         autor.erase(autor.size()-3,3);
+234         cites.\hyperlink{class_cites_a12ac50ed7017de796b3ce3b96df7d848}{escriure\_cites\_autor}(autor);
+235         
+236         \}
+237       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"?"})\{
+238         \textcolor{keywordflow}{if} (ctextos.\hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\_triat}())\{
+239           cites.\hyperlink{class_cites_ac692741811e35c8da2e92906d21cef07}{escriure\_cita\_triat}(text\_triat.
+      \hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}(), text\_triat.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}());
+240         \}
+241         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"error"} << endl;
+242       \}
+243         \}
+244       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"totes"})\{
+245                 cites.\hyperlink{class_cites_a7cbdd378b53f56bc20dfa2f16e6be49e}{escriure\_cites}();
+246       \}
+247     
+248         
+249         cout << endl;
+250         ws(cin);
+251         getline (cin,linia);
+252        
+253     \}
+254     
+255 \}
+\end{DoxyCode}

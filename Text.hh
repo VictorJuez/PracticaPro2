@@ -10,15 +10,17 @@
 #include <string>
 /** @class Text
     @brief Conté un conjunt de frases.
-
-    Todas las operaciones son de <b>coste constante</b>
 */
 class Text{
 
 private:
-
+	/** @brief Autor del text. */
 	string autor;
+	
+	/** @brief Títol del text. */
 	string titol;
+	
+	/** @brief Contingut del text. */
 	Cjt_Frases cjtfrase;
 
 public:
@@ -64,6 +66,10 @@ public:
 	*/ 	    
 	Cjt_Frases consultar_contingut();
 	
+	/** @brief Consultora del contingut. 
+		\pre <em> x <= y, x>0 i y<= numero de frases </em>
+		\post Modifica el paràmetre implícit de forma que només contè les frases del rang x, y.
+	*/ 	
 	void consultar_frasesxy(int x, int y);
 	
 	//Lectura i escriptura

@@ -9,32 +9,46 @@
 
 /** @class Cjt_Textos
     @brief Conté un conjunt de textos.
-
-    Todas las operaciones son de <b>coste constante</b>
 */
 class Cjt_Textos{
 
 private:
+	/** @brief Estructura de dades on s'emmagatzema el conjunt de textos.*/
 	list <Text> ctextos;
+	
+	/** @brief Iterador que apunta al text triat quan triat és cert.*/
 	list <Text>::iterator it_triat;
+	
+	/** @brief Variable que conté un autor amb un títol d'un text seu.*/
 	bool triat;
+	
+	/** @brief Variable que conté un autor amb un títol d'un text seu.*/
 	struct aut_tit{
 		string autor;
 		string titol;
 	};
+	
+	/** @brief Variable que conté un autor amb els respectius numero de texos que té, frases i paraules totals.*/
 	struct s1{
 		string aautor;
 		int num_textos;
 		int num_frases;
 		int num_paraules;
 	};
-	static bool ordena(aut_tit a,aut_tit b);
-	static bool o(string a, string b);
-	static bool u(s1 a, s1 b);
 	
-	void imprimir_vector(vector<string>& v);
-	bool apareix_contingut(string& s);
-	void crear_vfrase(string s, vector<string>& frase);
+	/** @brief Funció per establir el criteri d'ordenació, primer per autor i després per títol*/	
+	static bool ordena(aut_tit a,aut_tit b);
+	
+	/** @brief Funció per establir el criteri d'ordenació el qual és alfabèticament*/	
+	static bool o(string a, string b);
+
+	/** @brief Funció per establir el criteri d'ordenació el qual ordena alfabèticament per autor (aautor)*/	
+	static bool u(s1 a, s1 b);
+
+	/** @brief Busca les paraules. 
+		\pre <em>v i text no són buits </em>
+		\post retorna cert si totes les paraules apareixen o en el títol o en l'autor o en el contingut del text.
+	*/ 
 	bool trobar_paraules(vector<string> v, Text& t);
 
 public:
@@ -83,6 +97,10 @@ public:
 	*/ 	
 	bool text_triat();
 	
+	/** @brief Consultora. 
+		\pre <em>Cert</em>
+		\post retorna cert si existeix un text amb el titol "titol" i l'autor "autor" i fals si no.
+	*/ 
 	bool existent(string titol, string autor);
 	
 	/** @brief Retorna el text triat. 
@@ -93,13 +111,10 @@ public:
 	
 	//Lectura i escriptura
 	
-	/** @brief Imprimeix titol i autor. 
+	/** @brief Imprimeix tots els textos. 
 		\pre <em>Cert</em>
-		\post Escriu pel canal estàndar de sortida el títol i l'autor de cada text ordenats per autor i després títol.
-	*/ 		
-	
-	void imprimir();
-	
+		\post Escriu pel canal estàndar de sortida tots els textos ordenats primer per autor i despres per títol.
+	*/ 
 	void imprimir_textos();
 	
 	/** @brief Imprimeix els títols de l'autor. 

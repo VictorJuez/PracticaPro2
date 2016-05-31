@@ -1,0 +1,591 @@
+\hypertarget{class_cjt___textos}{}\section{Referencia de la Clase Cjt\+\_\+\+Textos}
+\label{class_cjt___textos}\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+
+
+Conté un conjunt de textos.  
+
+
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_cjt___textos_1_1aut__tit}{aut\+\_\+tit}
+\begin{DoxyCompactList}\small\item\em Variable que conté un autor amb un títol d\textquotesingle{}un text seu. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_cjt___textos_1_1s1}{s1}
+\begin{DoxyCompactList}\small\item\em Variable que conté un autor amb els respectius numero de texos que té, frases i paraules totals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cjt___textos_a294e9acbffc974a871f9417579390ad4}{Cjt\+\_\+\+Textos} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_a1f8b5c6cf35bc96e409855ac93002a62}{afegir\+\_\+text} (const \hyperlink{class_text}{Text} \&text)
+\begin{DoxyCompactList}\small\item\em Modificadora afegir text. afegeix un text al paràmetre implícit. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_a69c7fdefd849715024904dda5fa32118}{eliminar\+\_\+text} ()
+\begin{DoxyCompactList}\small\item\em Modificadora eliminar text. elimina un text al paràmetre implícit. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_aa2e5ac744d6306047c6cdda58aad5c19}{triar\+\_\+text} (string \&s)
+\begin{DoxyCompactList}\small\item\em Modificadora triar text. busca el text que conté les paraules. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{text\+\_\+triat} ()
+\begin{DoxyCompactList}\small\item\em Consultora text triat. Consulta si hi ha un text triat o no. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___textos_a04f209abc7bbeb2d55715a32f950a8df}{existent} (string titol, string autor)
+\begin{DoxyCompactList}\small\item\em Consultora. \end{DoxyCompactList}\item 
+\hyperlink{class_text}{Text} \hyperlink{class_cjt___textos_ab9be9e85d5d74013e4596c8bc612adae}{consultar\+\_\+text\+\_\+triat} ()
+\begin{DoxyCompactList}\small\item\em Retorna el text triat. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_acea595bafcaf74bb82b4eb8bb3164314}{imprimir\+\_\+textos} ()
+\begin{DoxyCompactList}\small\item\em Imprimeix tots els textos. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_a73d74ade60f967c56fd463b4a78c9886}{imprimir\+\_\+textos\+\_\+autor} (string \&autor) const 
+\begin{DoxyCompactList}\small\item\em Imprimeix els títols de l\textquotesingle{}autor. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt___textos_abfab611c433280199a2b1a035fdab840}{imprimir\+\_\+tots\+\_\+autors} () const 
+\begin{DoxyCompactList}\small\item\em Imprimeix tots els autors amb el nombre de textos, frases i paraules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_cjt___textos_a163e5d34f0a71a91db943909d100e45b}{trobar\+\_\+paraules} (vector$<$ string $>$ v, \hyperlink{class_text}{Text} \&t)
+\begin{DoxyCompactList}\small\item\em Busca les paraules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_cjt___textos_acc49a622df536569dd8b6cb527e5d84e}{ordena} (\hyperlink{struct_cjt___textos_1_1aut__tit}{aut\+\_\+tit} a, \hyperlink{struct_cjt___textos_1_1aut__tit}{aut\+\_\+tit} b)
+\begin{DoxyCompactList}\small\item\em Funció per establir el criteri d\textquotesingle{}ordenació, primer per autor i després per títol. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_cjt___textos_a8eba85661f4ab2efb7108594bfdc2514}{o} (string a, string b)
+\begin{DoxyCompactList}\small\item\em Funció per establir el criteri d\textquotesingle{}ordenació el qual és alfabèticament. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_cjt___textos_a586115f5b8f182038544ccc67dfc09bc}{u} (\hyperlink{struct_cjt___textos_1_1s1}{s1} a, \hyperlink{struct_cjt___textos_1_1s1}{s1} b)
+\begin{DoxyCompactList}\small\item\em Funció per establir el criteri d\textquotesingle{}ordenació el qual ordena alfabèticament per autor (aautor) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \hyperlink{class_text}{Text} $>$ \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}
+\begin{DoxyCompactList}\small\item\em Estructura de dades on s\textquotesingle{}emmagatzema el conjunt de textos. \end{DoxyCompactList}\item 
+list$<$ \hyperlink{class_text}{Text} $>$\+::iterator \hyperlink{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{it\+\_\+triat}
+\begin{DoxyCompactList}\small\item\em Iterador que apunta al text triat quan triat és cert. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat}
+\begin{DoxyCompactList}\small\item\em Variable que conté un autor amb un títol d\textquotesingle{}un text seu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Conté un conjunt de textos. 
+
+Definición en la línea 13 del archivo Cjt\+\_\+\+Textos.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{Cjt\+\_\+\+Textos()}{Cjt_Textos()}}]{\setlength{\rightskip}{0pt plus 5cm}Cjt\+\_\+\+Textos\+::\+Cjt\+\_\+\+Textos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_a294e9acbffc974a871f9417579390ad4}{}\label{class_cjt___textos_a294e9acbffc974a871f9417579390ad4}
+
+
+Creadora por defecte. S\textquotesingle{}executa automàticament al declarar un cjt\+\_\+textos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un conjunt de textos buit. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+3                       \{
+4   \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat} = \textcolor{keyword}{false};
+5   \hyperlink{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{it\_triat} = \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end();
+6 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!ordena@{ordena}}
+\index{ordena@{ordena}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{ordena(aut\+\_\+tit a, aut\+\_\+tit b)}{ordena(aut_tit a, aut_tit b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::ordena (
+\begin{DoxyParamCaption}
+\item[{{\bf aut\+\_\+tit}}]{a, }
+\item[{{\bf aut\+\_\+tit}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_cjt___textos_acc49a622df536569dd8b6cb527e5d84e}{}\label{class_cjt___textos_acc49a622df536569dd8b6cb527e5d84e}
+
+
+Funció per establir el criteri d\textquotesingle{}ordenació, primer per autor i després per títol. 
+
+
+
+Definición en la línea 52 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+52                                           \{
+53   \textcolor{keywordflow}{if} (a.autor != b.autor) \textcolor{keywordflow}{return} a.autor < b.autor;
+54   \textcolor{keywordflow}{return} a.titol < b.titol;
+55   
+56 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!o@{o}}
+\index{o@{o}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{o(string a, string b)}{o(string a, string b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::o (
+\begin{DoxyParamCaption}
+\item[{string}]{a, }
+\item[{string}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_cjt___textos_a8eba85661f4ab2efb7108594bfdc2514}{}\label{class_cjt___textos_a8eba85661f4ab2efb7108594bfdc2514}
+
+
+Funció per establir el criteri d\textquotesingle{}ordenació el qual és alfabèticament. 
+
+
+
+Definición en la línea 58 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+58                                     \{
+59   \textcolor{keywordflow}{return} a < b;
+60   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!u@{u}}
+\index{u@{u}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{u(s1 a, s1 b)}{u(s1 a, s1 b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::u (
+\begin{DoxyParamCaption}
+\item[{{\bf s1}}]{a, }
+\item[{{\bf s1}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_cjt___textos_a586115f5b8f182038544ccc67dfc09bc}{}\label{class_cjt___textos_a586115f5b8f182038544ccc67dfc09bc}
+
+
+Funció per establir el criteri d\textquotesingle{}ordenació el qual ordena alfabèticament per autor (aautor) 
+
+
+
+Definición en la línea 62 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+62                             \{
+63   \textcolor{keywordflow}{return} a.aautor < b.aautor;
+64   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!trobar\+\_\+paraules@{trobar\+\_\+paraules}}
+\index{trobar\+\_\+paraules@{trobar\+\_\+paraules}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{trobar\+\_\+paraules(vector$<$ string $>$ v, Text \&t)}{trobar_paraules(vector< string > v, Text &t)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::trobar\+\_\+paraules (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$}]{v, }
+\item[{{\bf Text} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___textos_a163e5d34f0a71a91db943909d100e45b}{}\label{class_cjt___textos_a163e5d34f0a71a91db943909d100e45b}
+
+
+Busca les paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape v i text no són buits } 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si totes les paraules apareixen o en el títol o en l\textquotesingle{}autor o en el contingut del text. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 20 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+20                                                          \{
+21   \hyperlink{class_cjt___frases}{Cjt\_Frases} titol;
+22   titol.\hyperlink{class_cjt___frases_ab61657ab1517fc6d640a80f8b54e8b83}{substituir\_cjtfrases}(t.\hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}());
+23   
+24   vector<string> autor=\hyperlink{_cjt___textos_8cc_a888edde821412b43dc1ad81adb3e9665}{crear\_vfrase}(t.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}());
+25   
+26   vector <bool> vb(v.size(), 0);
+27   
+28   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size() and not vb[i]; ++i)\{  \textcolor{comment}{//buscar al títol}
+29     \textcolor{keywordflow}{if}(titol.\hyperlink{class_cjt___frases_a6e45b67d225ed403aa0ce791d3bed726}{conte\_paraula}(v[i])) vb[i] = \textcolor{keyword}{true};
+30   \}
+31     
+32   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size(); ++i)\{  \textcolor{comment}{//buscar al autor}
+33     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<autor.size() and not vb[i]; ++j)\{
+34       \textcolor{keywordflow}{if}(v[i] == autor[j]) vb[i] = \textcolor{keyword}{true};
+35     \}
+36   \}
+37     
+38   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size(); ++i)\{  \textcolor{comment}{//buscar al contingut}
+39     \textcolor{keywordflow}{if} (not vb[i])\{
+40       \hyperlink{class_cjt___frases}{Cjt\_Frases} cfrases;
+41       cfrases= t.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();
+42       \textcolor{keywordflow}{if}(cfrases.\hyperlink{class_cjt___frases_a6e45b67d225ed403aa0ce791d3bed726}{conte\_paraula}(v[i])) vb[i]=\textcolor{keyword}{true};
+43       \}
+44   \}
+45   
+46   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<vb.size(); ++i)\{
+47     \textcolor{keywordflow}{if} (not vb[i]) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+48     \}
+49   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+50 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!afegir\+\_\+text@{afegir\+\_\+text}}
+\index{afegir\+\_\+text@{afegir\+\_\+text}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+text(const Text \&text)}{afegir_text(const Text &text)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::afegir\+\_\+text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Text} \&}]{text}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_a1f8b5c6cf35bc96e409855ac93002a62}{}\label{class_cjt___textos_a1f8b5c6cf35bc96e409855ac93002a62}
+
+
+Modificadora afegir text. afegeix un text al paràmetre implícit. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El text té un títol diferent a qualsevol text ja existent al paràmetre implícit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha afegit el text al conjunt de textos. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 75 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+75                                             \{
+76   list <Text>::iterator fi;
+77   fi = \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end();
+78   \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.insert(fi,text);
+79 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!eliminar\+\_\+text@{eliminar\+\_\+text}}
+\index{eliminar\+\_\+text@{eliminar\+\_\+text}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{eliminar\+\_\+text()}{eliminar_text()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::eliminar\+\_\+text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_a69c7fdefd849715024904dda5fa32118}{}\label{class_cjt___textos_a69c7fdefd849715024904dda5fa32118}
+
+
+Modificadora eliminar text. elimina un text al paràmetre implícit. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Tenim un text triat} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha eliminat el text i no tenim cap text triat. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 81 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+81                               \{
+82   \hyperlink{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{it\_triat} = \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.erase(\hyperlink{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{it\_triat});
+83   \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat} = \textcolor{keyword}{false};
+84   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!triar\+\_\+text@{triar\+\_\+text}}
+\index{triar\+\_\+text@{triar\+\_\+text}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{triar\+\_\+text(string \&s)}{triar_text(string &s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::triar\+\_\+text (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_aa2e5ac744d6306047c6cdda58aad5c19}{}\label{class_cjt___textos_aa2e5ac744d6306047c6cdda58aad5c19}
+
+
+Modificadora triar text. busca el text que conté les paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix un únic text amb les paraules introduïdes} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El text triat és el que conté les paraules. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 86 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+86                                     \{
+87   list<Text>::iterator it;
+88   \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};
+89   \textcolor{keywordtype}{bool} b2=\textcolor{keyword}{false};
+90   \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.begin(); not b2 and it!=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end(); ++it)\{
+91     \hyperlink{class_text}{Text} t=*it;
+92     vector <string> frase = \hyperlink{_cjt___textos_8cc_a888edde821412b43dc1ad81adb3e9665}{crear\_vfrase}(s);
+93     \textcolor{keywordflow}{if}(\hyperlink{class_cjt___textos_a163e5d34f0a71a91db943909d100e45b}{trobar\_paraules}(frase, t) and not b)\{
+94       b=\textcolor{keyword}{true};
+95       \hyperlink{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{it\_triat}=it;
+96       \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat}=\textcolor{keyword}{true};
+97       \}
+98     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_cjt___textos_a163e5d34f0a71a91db943909d100e45b}{trobar\_paraules}(frase, t) and b)\{
+99       b2=\textcolor{keyword}{true};
+100       \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat}=\textcolor{keyword}{false};
+101     \}
+102   \}
+103   \textcolor{keywordflow}{if}(not b) \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat}=\textcolor{keyword}{false};
+104   
+105 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!text\+\_\+triat@{text\+\_\+triat}}
+\index{text\+\_\+triat@{text\+\_\+triat}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{text\+\_\+triat()}{text_triat()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::text\+\_\+triat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}{}\label{class_cjt___textos_abd1ec8b9d6bfdeea602dea3398dd0599}
+
+
+Consultora text triat. Consulta si hi ha un text triat o no. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna cert si hi ha un text triat i fals si no. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 107 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+107                            \{
+108   \textcolor{keywordflow}{return} \hyperlink{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{triat};
+109   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!existent@{existent}}
+\index{existent@{existent}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{existent(string titol, string autor)}{existent(string titol, string autor)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::existent (
+\begin{DoxyParamCaption}
+\item[{string}]{titol, }
+\item[{string}]{autor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_a04f209abc7bbeb2d55715a32f950a8df}{}\label{class_cjt___textos_a04f209abc7bbeb2d55715a32f950a8df}
+
+
+Consultora. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retorna cert si existeix un text amb el titol \char`\"{}titol\char`\"{} i l\textquotesingle{}autor \char`\"{}autor\char`\"{} i fals si no. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 66 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+66                                                    \{
+67   list<Text>::iterator it;
+68   \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.begin(); it!=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end(); ++it)\{
+69     \textcolor{keywordflow}{if}((*it).consultar\_autor() == autor and (*it).consultar\_titol()== titol) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+70     \}
+71   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+72 \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!consultar\+\_\+text\+\_\+triat@{consultar\+\_\+text\+\_\+triat}}
+\index{consultar\+\_\+text\+\_\+triat@{consultar\+\_\+text\+\_\+triat}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+text\+\_\+triat()}{consultar_text_triat()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text} Cjt\+\_\+\+Textos\+::consultar\+\_\+text\+\_\+triat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_ab9be9e85d5d74013e4596c8bc612adae}{}\label{class_cjt___textos_ab9be9e85d5d74013e4596c8bc612adae}
+
+
+Retorna el text triat. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Hi ha un text triat} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retorna el text triat. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 111 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+111                                      \{
+112   \hyperlink{class_text}{Text} text = (*it\_triat);
+113   \textcolor{keywordflow}{return} text;
+114   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!imprimir\+\_\+textos@{imprimir\+\_\+textos}}
+\index{imprimir\+\_\+textos@{imprimir\+\_\+textos}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{imprimir\+\_\+textos()}{imprimir_textos()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::imprimir\+\_\+textos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_cjt___textos_acea595bafcaf74bb82b4eb8bb3164314}{}\label{class_cjt___textos_acea595bafcaf74bb82b4eb8bb3164314}
+
+
+Imprimeix tots els textos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cert} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escriu pel canal estàndar de sortida tots els textos ordenats primer per autor i despres per títol. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 116 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+116                                 \{
+117   vector <aut\_tit> v (\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.size());
+118   list <Text>::iterator it;
+119   \textcolor{keywordtype}{int} i = 0;
+120   \textcolor{keywordflow}{for} (it = \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.begin(); it != \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end(); ++it)\{
+121     v[i].autor = (*it).consultar\_autor();
+122     v[i].titol = (*it).consultar\_titol();
+123     ++i;
+124     \}
+125   sort(v.begin(), v.end(),\hyperlink{class_cjt___textos_acc49a622df536569dd8b6cb527e5d84e}{ordena});
+126   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < v.size();++j)\{
+127     cout << v[j].autor << \textcolor{charliteral}{' '} << \textcolor{charliteral}{'"'} << v[j].titol << \textcolor{charliteral}{'"'} << endl;
+128     \}
+129   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!imprimir\+\_\+textos\+\_\+autor@{imprimir\+\_\+textos\+\_\+autor}}
+\index{imprimir\+\_\+textos\+\_\+autor@{imprimir\+\_\+textos\+\_\+autor}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{imprimir\+\_\+textos\+\_\+autor(string \&autor) const }{imprimir_textos_autor(string &autor) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::imprimir\+\_\+textos\+\_\+autor (
+\begin{DoxyParamCaption}
+\item[{string \&}]{autor}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___textos_a73d74ade60f967c56fd463b4a78c9886}{}\label{class_cjt___textos_a73d74ade60f967c56fd463b4a78c9886}
+
+
+Imprimeix els títols de l\textquotesingle{}autor. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Existeix l\textquotesingle{}autor} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escriu pel canal estàndar de sortida els títols dels textos de l\textquotesingle{}autor. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 165 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+165                                                          \{
+166   vector <string> v;
+167   list <Text>::const\_iterator it;
+168   \textcolor{keywordflow}{for} (it = \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.begin(); it != \hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end(); ++it)\{
+169     \hyperlink{class_text}{Text} t = (*it);
+170     \textcolor{keywordtype}{string} aut = t.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}();
+171     \textcolor{keywordflow}{if} (aut == linia)\{
+172       \textcolor{keywordtype}{string} tit = t.\hyperlink{class_text_ac33cbed6f5553a4901a8440e215befb6}{consultar\_titol}();
+173       v.push\_back(tit);
+174       \}
+175     \}
+176   sort (v.begin(),v.end(),\hyperlink{class_cjt___textos_a8eba85661f4ab2efb7108594bfdc2514}{o});
+177   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < v.size();++i)\{
+178     cout << \textcolor{charliteral}{'"'} << v[i] << \textcolor{charliteral}{'"'} << endl;
+179     \}
+180   \}
+\end{DoxyCode}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!imprimir\+\_\+tots\+\_\+autors@{imprimir\+\_\+tots\+\_\+autors}}
+\index{imprimir\+\_\+tots\+\_\+autors@{imprimir\+\_\+tots\+\_\+autors}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{imprimir\+\_\+tots\+\_\+autors() const }{imprimir_tots_autors() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cjt\+\_\+\+Textos\+::imprimir\+\_\+tots\+\_\+autors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_cjt___textos_abfab611c433280199a2b1a035fdab840}{}\label{class_cjt___textos_abfab611c433280199a2b1a035fdab840}
+
+
+Imprimeix tots els autors amb el nombre de textos, frases i paraules. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape El conjunt de textos no és buit} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escriu pel canal estàndar de sortida els autors amb el nombre de textos, frases i paraules. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 131 del archivo Cjt\+\_\+\+Textos.\+cc.
+
+
+\begin{DoxyCode}
+131                                            \{
+132   vector<s1> v;
+133   list<Text>::const\_iterator it;
+134   \textcolor{keywordflow}{for}(it=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.begin(); it!=\hyperlink{class_cjt___textos_a73503568d56e3a77949f720684916492}{ctextos}.end(); ++it)\{
+135     \hyperlink{class_text}{Text} text=*it;
+136     \hyperlink{class_cjt___frases}{Cjt\_Frases} cfrases = text.\hyperlink{class_text_ae21dfb276d73f5a5b0994650335591c9}{consultar\_contingut}();
+137     \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};
+138     \textcolor{keywordtype}{int} i;
+139     \textcolor{keywordflow}{for}(i=0; not b and i<v.size() ; ++i)\{
+140       \textcolor{keywordflow}{if}(v[i].aautor==text.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}()) b=\textcolor{keyword}{true};
+141       \}
+142     --i;
+143     
+144     \textcolor{keywordflow}{if}(b) \{
+145       ++v[i].num\_textos;
+146       v[i].num\_paraules += cfrases.\hyperlink{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{numero\_de\_paraules}();
+147       v[i].num\_frases += cfrases.\hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}();
+148       \}
+149 
+150     \textcolor{keywordflow}{else}\{
+151       s1 aux;
+152       aux.num\_textos = 1;
+153       aux.aautor = text.\hyperlink{class_text_a0e8d29f53728da7b65ff1e87588ec407}{consultar\_autor}();
+154       aux.num\_frases = cfrases.\hyperlink{class_cjt___frases_aaf9ad179f28ad0b4e782510c345e0cca}{numero\_de\_frases}();
+155       aux.num\_paraules = cfrases.\hyperlink{class_cjt___frases_a42ba9f0a302235d52ca4063dd9ef2145}{numero\_de\_paraules}();
+156       v.push\_back(aux);
+157       \}
+158   \}
+159   sort(v.begin(),v.end(),\hyperlink{class_cjt___textos_a586115f5b8f182038544ccc67dfc09bc}{u});
+160   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size(); ++i)\{
+161     cout << v[i].aautor << \textcolor{charliteral}{' '} << v[i].num\_textos << \textcolor{charliteral}{' '} << v[i].num\_frases << \textcolor{charliteral}{' '} << v[i].num\_paraules << 
+      endl;
+162     \}
+163 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!ctextos@{ctextos}}
+\index{ctextos@{ctextos}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{ctextos}{ctextos}}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf Text}$>$ Cjt\+\_\+\+Textos\+::ctextos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___textos_a73503568d56e3a77949f720684916492}{}\label{class_cjt___textos_a73503568d56e3a77949f720684916492}
+
+
+Estructura de dades on s\textquotesingle{}emmagatzema el conjunt de textos. 
+
+
+
+Definición en la línea 17 del archivo Cjt\+\_\+\+Textos.\+hh.
+
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!it\+\_\+triat@{it\+\_\+triat}}
+\index{it\+\_\+triat@{it\+\_\+triat}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{it\+\_\+triat}{it_triat}}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf Text}$>$\+::iterator Cjt\+\_\+\+Textos\+::it\+\_\+triat\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}{}\label{class_cjt___textos_ab4e8c0ec60d6cd3d71c348926ed4d46a}
+
+
+Iterador que apunta al text triat quan triat és cert. 
+
+
+
+Definición en la línea 20 del archivo Cjt\+\_\+\+Textos.\+hh.
+
+\index{Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}!triat@{triat}}
+\index{triat@{triat}!Cjt\+\_\+\+Textos@{Cjt\+\_\+\+Textos}}
+\subsubsection[{\texorpdfstring{triat}{triat}}]{\setlength{\rightskip}{0pt plus 5cm}bool Cjt\+\_\+\+Textos\+::triat\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}{}\label{class_cjt___textos_abc00e6c9c3b2d4ebfcfc4ad15e2646ed}
+
+
+Variable que conté un autor amb un títol d\textquotesingle{}un text seu. 
+
+
+
+Definición en la línea 23 del archivo Cjt\+\_\+\+Textos.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cjt___textos_8hh}{Cjt\+\_\+\+Textos.\+hh}\item 
+\hyperlink{_cjt___textos_8cc}{Cjt\+\_\+\+Textos.\+cc}\end{DoxyCompactItemize}
