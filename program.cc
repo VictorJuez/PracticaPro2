@@ -1,20 +1,23 @@
 /**
- * @mainpage Practica Pro2.
-S'introdueixen les classes <em>Frase</em>, <em>Cjt_Frases</em>, <em>Text</em>, <em>Cjt_Textos</em> i <em>Cites</em> .
+ * @mainpage Prctica Pro2.
+S'introdueixen les classes <em>Cjt_Frases</em>, <em>Text</em>, <em>Cjt_Textos</em> i <em>Cites</em> .
 
-Només es documenten elements públics.
+El programa principal es troba en el mòdul <em>program.cc</em>. Per resoldre les operacions necessàries del gestor, em pensat que el adient era crear les classes <em>Cjt_Frases</em>,  <em>Text</em>, <em>Cjt_Textos</em> i <em>Cites</em>.
+Per desenvolupar les classes em optat per les llistes i els vectors ja que hem considerat que eren les que més opcions i llibertat ens oferien, sempre pensant però amb l'eficiència. 
 */
 
-/** @file main.cc
+/** @file program.cc
     @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.
 */
+#include "Cjt_Textos.hh"
+#include "Cites.hh"
 
-
+#ifndef NO_DIAGRAM
 #include <sstream>
 #include <string>
 #include <iostream>
-#include "Cjt_Textos.hh"
-#include "Cites.hh"
+#endif
+
 using namespace std;
 
 /** @brief Programa principal per la pràctica <em>Gestor de textos i cites</em>.

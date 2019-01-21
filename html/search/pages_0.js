@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['practica_20pro2_2e',['Practica Pro2.',['../index.html',1,'']]]
+  ['prctica_20pro2_2e',['Prctica Pro2.',['../index.html',1,'']]]
 ];

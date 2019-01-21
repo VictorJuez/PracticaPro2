@@ -1,13 +1,16 @@
 /** @file Cites.hh
     @brief Especificació de la clase Cites
 */
-#include <list>
+
 #ifndef CITES_HH
 #define CITES_HH
 
 
 #include "Text.hh"
+#ifndef NO_DIAGRAM
 #include <string>
+#include <list>
+#endif
 
 using namespace std;
 

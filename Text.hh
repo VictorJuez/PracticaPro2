@@ -6,8 +6,11 @@
 #define TEXT_HH
 
 #include "Cjt_Frases.hh"
+
+#ifndef NO_DIAGRAM
 #include <sstream>
 #include <string>
+#endif
 /** @class Text
     @brief Conté un conjunt de frases.
 */
@@ -79,10 +82,5 @@ public:
 		\post El paràmetre implícit passa a tenir els atributs llegits pel canal estàndard d'entrada
 	*/ 		
 	void llegir(string linia);
-
-	/** @brief Impresió d'un text. 
-		\pre <em>Cert</em>
-		\post S'ha escrit el títol, l'autor i el contingut pel canal estandar de sortida
-	*/ 	
 };
 #endif

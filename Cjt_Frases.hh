@@ -4,18 +4,18 @@
 #ifndef CJTFRASES_HH
 #define CJTFRASES_HH
 
+#ifndef NO_DIAGRAM
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <list>
 #include <algorithm>
+#endif
 
 
 /** @class Cjt_Frases
     @brief Conté un conjunt de frases.
-
-    Todas las operaciones son de <b>coste constante</b>
 */
 using namespace std;
 
